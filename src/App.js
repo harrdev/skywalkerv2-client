@@ -13,34 +13,14 @@ import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import People from './components/People'
-import { getSWData } from './api/allData'
-
+import Planets from './components/Planets'
 const App = () => {
 
 	const [user, setUser] = useState(null)
 	const [msgAlerts, setMsgAlerts] = useState([])
-	const [people, setPeople] = useState([])
-
-	useEffect(() => {
-		getAllData()
-	}, [])
-
-	const getAllData = () => {
-		getSWData()
-			.then((swdata) => {
-				console.log("This is the data: ", swdata.data.results[0].name)
-				const swpeople = swdata.data.results.map((name) => {
-					return name
-				})
-				console.log("swpeople is: ", swpeople)
-				setPeople(swpeople)
-			})
-			.catch(err => console.log(err))
-	}
 
 	console.log('user in app', user)
 	console.log('message alerts', msgAlerts)
-	console.log('people in app', people)
 	const clearUser = () => {
 		console.log('clear user ran')
 		setUser(null)
@@ -65,9 +45,12 @@ const App = () => {
 		<Fragment>
 			<Header user={user} />
 			<Routes>
-				<Route path='/' element={<Home msgAlert={msgAlert} user={user} people={people} />} />
+				<Route path='/' element={<Home msgAlert={msgAlert} user={user} />} />
 				<Route path='/People'
-					element={<People msgAlert={msgAlert} user={user} people={people} />}
+					element={<People msgAlert={msgAlert} user={user} />}
+				/>
+				<Route path='/Planets'
+					element={<Planets msgAlert={msgAlert} user={user} />}
 				/>
 				<Route
 					path='/sign-up'

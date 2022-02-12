@@ -10,6 +10,7 @@ const Home = (props) => {
 		<div className="home">
 			<h2>Skywalker Academy</h2>
 			<h3><Link to="./People">People</Link></h3>
+			<h3><Link to="./Planets">Planets</Link></h3>
 		</div>
 	)
 }
