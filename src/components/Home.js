@@ -1,11 +1,10 @@
 const Home = (props) => {
 	// const { msgAlert, user } = props
 	console.log('props in home', props)
-	console.log("Props for people: ", props.people[0].name)
 	const peopleList = props.people.map((p, i) => {
 		return (
 			<li key={i}>
-				<div className="name">{p.name}
+				<div className="name">{p.name}: Eye Color: {p.eye_color}
 				</div>
 			</li>
 		)
