@@ -1,32 +1,12 @@
 import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-import { getPlanets } from '../api/planets'
 
 const Planets = (props) => {
 	console.log('props in planets', props)
-	const [planets, setPlanets] = useState([])
-
-	useEffect(() => {
-		getAllPlanets()
-	}, [])
-
-	const getAllPlanets = () => {
-		getPlanets()
-			.then((planets) => {
-                console.log("This is the planets data: ", planets)
-				const swplanets = planets.data.results.map((name) => {
-					return name
-				})
-				setPlanets(swplanets)
-			})
-			.catch(err => console.log(err))
-	}
 	
-	const planetsList = planets.map((p, i) => {
+	const planetsList = props.planets.map((p, i) => {
 		return (
 			<li key={i}>
-				<div className="name">{p.name}
-				</div>
+				<Link to={`${p.name}`} style={{ fontSize: "25px", padding: "15px" }}>{p.name}</Link>
 			</li>
 		)
 	})

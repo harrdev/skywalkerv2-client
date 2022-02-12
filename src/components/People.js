@@ -1,31 +1,12 @@
 import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-import { getPeople } from '../api/people'
 
 const People = (props) => {
 	console.log('props in people', props)
-	const [people, setPeople] = useState([])
 
-	useEffect(() => {
-		getAllPeople()
-	}, [])
-
-	const getAllPeople = () => {
-		getPeople()
-			.then((swdata) => {
-				const swpeople = swdata.data.results.map((name) => {
-					return name
-				})
-				setPeople(swpeople)
-			})
-			.catch(err => console.log(err))
-	}
-	
-	const peopleList = people.map((p, i) => {
+	const peopleList = props.people.map((p, i) => {
 		return (
 			<li key={i}>
-				<div className="name">{p.name}: Eye Color: {p.eye_color}
-				</div>
+				<Link to={`${p.name}`} style={{ fontSize: "25px", padding: "15px" }}>{p.name}</Link>
 			</li>
 		)
 	})

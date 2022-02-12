@@ -1,32 +1,12 @@
 import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-import { getVehicles } from '../api/vehicles'
 
 const Vehicles = (props) => {
 	console.log('props in planets', props)
-	const [vehicles, setVehicles] = useState([])
-
-	useEffect(() => {
-		getAllVehicles()
-	}, [])
-
-	const getAllVehicles = () => {
-		getVehicles()
-			.then((vehicles) => {
-                console.log("This is the vehicles data: ", vehicles)
-				const swvehicles = vehicles.data.results.map((name) => {
-					return name
-				})
-				setVehicles(swvehicles)
-			})
-			.catch(err => console.log(err))
-	}
 	
-	const vehiclesList = vehicles.map((p, i) => {
+	const vehiclesList = props.vehicles.map((p, i) => {
 		return (
 			<li key={i}>
-				<div className="name">{p.name}
-				</div>
+				<Link to={`${p.name}`} style={{ fontSize: "25px", padding: "15px" }}>{p.name}</Link>
 			</li>
 		)
 	})

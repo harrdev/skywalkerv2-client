@@ -1,32 +1,11 @@
 import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-import { getFilms } from '../api/films'
 
 const Films = (props) => {
 	console.log('props in planets', props)
-	const [films, setFilms] = useState([])
-
-	useEffect(() => {
-		getAllfilms()
-	}, [])
-
-	const getAllfilms = () => {
-		getFilms()
-			.then((films) => {
-                console.log("This is the films data: ", films.data.results[0].title)
-				const swfilms = films.data.results.map((title) => {
-					return title
-				})
-				setFilms(swfilms)
-			})
-			.catch(err => console.log(err))
-	}
-	
-	const filmsList = films.map((p, i) => {
+	const filmsList = props.films.map((p, i) => {
 		return (
 			<li key={i}>
-				<div className="name">{p.title}
-				</div>
+				<Link to={`${p.title}`} style={{ fontSize: "25px", padding: "15px" }}>{p.title}</Link>
 			</li>
 		)
 	})
