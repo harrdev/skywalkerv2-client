@@ -16,6 +16,8 @@ import People from './components/People'
 import Planets from './components/Planets'
 import Vehicles from './components/Vehicles'
 import Species from './components/Species'
+import Starships from './components/Starships'
+import Films from './components/Films'
 const App = () => {
 
 	const [user, setUser] = useState(null)
@@ -59,6 +61,12 @@ const App = () => {
 				/>
 				<Route path='/Species'
 					element={<Species msgAlert={msgAlert} user={user} />}
+				/>
+				<Route path='/Starships'
+					element={<Starships msgAlert={msgAlert} user={user} />}
+				/>
+				<Route path='/Films'
+					element={<Films msgAlert={msgAlert} user={user} />}
 				/>
 				<Route
 					path='/sign-up'
