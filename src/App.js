@@ -15,6 +15,7 @@ import ChangePassword from './components/auth/ChangePassword'
 import People from './components/People'
 import Planets from './components/Planets'
 import Vehicles from './components/Vehicles'
+import Species from './components/Species'
 const App = () => {
 
 	const [user, setUser] = useState(null)
@@ -55,6 +56,9 @@ const App = () => {
 				/>
 				<Route path='/Vehicles'
 					element={<Vehicles msgAlert={msgAlert} user={user} />}
+				/>
+				<Route path='/Species'
+					element={<Species msgAlert={msgAlert} user={user} />}
 				/>
 				<Route
 					path='/sign-up'

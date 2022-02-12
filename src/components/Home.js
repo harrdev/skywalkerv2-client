@@ -12,6 +12,7 @@ const Home = (props) => {
 			<h3><Link to="./People">People</Link></h3>
 			<h3><Link to="./Planets">Planets</Link></h3>
 			<h3><Link to="./Vehicles">Vehicles</Link></h3>
+			<h3><Link to="./Species">Species</Link></h3>
 		</div>
 	)
 }
