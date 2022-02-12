@@ -14,6 +14,7 @@ import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import People from './components/People'
 import Planets from './components/Planets'
+import Vehicles from './components/Vehicles'
 const App = () => {
 
 	const [user, setUser] = useState(null)
@@ -51,6 +52,9 @@ const App = () => {
 				/>
 				<Route path='/Planets'
 					element={<Planets msgAlert={msgAlert} user={user} />}
+				/>
+				<Route path='/Vehicles'
+					element={<Vehicles msgAlert={msgAlert} user={user} />}
 				/>
 				<Route
 					path='/sign-up'
