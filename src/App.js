@@ -16,7 +16,12 @@ import Vehicles from './components/Vehicles'
 import Species from './components/Species'
 import Starships from './components/Starships'
 import Films from './components/Films'
-import Details from './components/Details'
+import PeopleDetails from './components/Details/PeopleDetails'
+import PlanetsDetails from './components/Details/PlanetsDetails'
+import VehicleDetails from './components/Details/VehicleDetails'
+import StarshipsDetails from './components/Details/StarshipDetails'
+import FilmDetails from './components/Details/FilmDetails'
+import SpeciesDetails from './components/Details/SpeciesDetails'
 import { getPeople } from './api/people'
 import { getPlanets } from './api/planets'
 import { getFilms } from './api/films'
@@ -159,22 +164,22 @@ const App = () => {
 					element={<Films msgAlert={msgAlert} user={user} films={films} />}
 				/>
 				<Route path='People/:id'
-					element={<Details msgAlert={msgAlert} user={user} people={people} />}
+					element={<PeopleDetails msgAlert={msgAlert} user={user} people={people} />}
 				/>
 				<Route path='Planets/:id'
-					element={<Details msgAlert={msgAlert} user={user} planets={planets} />}
+					element={<PlanetsDetails msgAlert={msgAlert} user={user} planets={planets} />}
 				/>
 				<Route path='Vehicles/:id'
-					element={<Details msgAlert={msgAlert} user={user} vehicles={vehicles} />}
+					element={<VehicleDetails msgAlert={msgAlert} user={user} vehicles={vehicles} />}
 				/>
-				<Route path='Films/:id'
-					element={<Details msgAlert={msgAlert} user={user} films={films} />}
+				<Route path='Film/:id'
+					element={<FilmDetails msgAlert={msgAlert} user={user} films={films} />}
 				/>
 				<Route path='Species/:id'
-					element={<Details msgAlert={msgAlert} user={user} species={species} />}
+					element={<SpeciesDetails msgAlert={msgAlert} user={user} species={species} />}
 				/>
 				<Route path='Starships/:id'
-					element={<Details msgAlert={msgAlert} user={user} starships={starships} />}
+					element={<StarshipsDetails msgAlert={msgAlert} user={user} starships={starships} />}
 				/>
 				<Route
 					path='/sign-up'
