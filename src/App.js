@@ -12,6 +12,7 @@ import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
+import People from './components/People'
 import { getSWData } from './api/allData'
 
 const App = () => {
@@ -25,16 +26,16 @@ const App = () => {
 	}, [])
 
 	const getAllData = () => {
-		getSWData() 
-		.then((swdata) => {
-			console.log("This is the data: ", swdata.data.results[0].name)
-			const swpeople = swdata.data.results.map((name) => {
-				return name
+		getSWData()
+			.then((swdata) => {
+				console.log("This is the data: ", swdata.data.results[0].name)
+				const swpeople = swdata.data.results.map((name) => {
+					return name
+				})
+				console.log("swpeople is: ", swpeople)
+				setPeople(swpeople)
 			})
-			console.log("swpeople is: ", swpeople)
-			setPeople(swpeople)
-		})
-		.catch(err => console.log(err))
+			.catch(err => console.log(err))
 	}
 
 	console.log('user in app', user)
@@ -64,7 +65,10 @@ const App = () => {
 		<Fragment>
 			<Header user={user} />
 			<Routes>
-				<Route path='/' element={<Home msgAlert={msgAlert} user={user} people={people}/>} />
+				<Route path='/' element={<Home msgAlert={msgAlert} user={user} people={people} />} />
+				<Route path='/People'
+					element={<People msgAlert={msgAlert} user={user} people={people} />}
+				/>
 				<Route
 					path='/sign-up'
 					element={<SignUp msgAlert={msgAlert} setUser={setUser} />}
