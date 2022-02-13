@@ -1,5 +1,4 @@
 import { useParams } from "react-router";
-import { useState, useEffect } from 'react'
 
 const StarshipDetails = (props) => {
     const swdata = useParams()

@@ -1,10 +1,6 @@
-import react from 'react'
 import { Link } from 'react-router-dom'
 
 const Home = (props) => {
-	// const { msgAlert, user } = props
-	console.log('props in home', props)
-
 
 	return (
 		<div className="home">

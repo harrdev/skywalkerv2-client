@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 
 const People = (props) => {
-	console.log('props in people', props)
 
 	const peopleList = props.people.map((p, i) => {
 		return (

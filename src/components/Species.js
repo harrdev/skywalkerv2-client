@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 
 const Species = (props) => {
-	console.log('props in planets', props)
 	
 	const speciesList = props.species.map((p, i) => {
 		return (

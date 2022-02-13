@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 
 const Planets = (props) => {
-	console.log('props in planets', props)
 	
 	const planetsList = props.planets.map((p, i) => {
 		return (

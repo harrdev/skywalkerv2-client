@@ -10,7 +10,6 @@ export const getFilms = (res) => {
     url: apiUrl + '/Films'
 })
     .then(res => {
-        console.log("Get Films called")
         return res
     })
     .catch((error) => console.log(error))

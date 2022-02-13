@@ -1,5 +1,4 @@
 import { useParams } from "react-router";
-import { useState, useEffect } from 'react'
 
 const VehicleDetails = (props) => {
     const swdata = useParams()

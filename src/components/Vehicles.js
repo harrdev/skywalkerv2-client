@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 
 const Vehicles = (props) => {
-	console.log('props in planets', props)
 	
 	const vehiclesList = props.vehicles.map((p, i) => {
 		return (

@@ -1,7 +1,6 @@
-import React, { useState, Fragment } from 'react'
+import React, { useState, useEffect, Fragment } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { v4 as uuid } from 'uuid'
-import { useEffect } from 'react'
 import AutoDismissAlert from './components/shared/AutoDismissAlert/AutoDismissAlert'
 import Header from './components/shared/Header'
 import RequireAuth from './components/shared/RequireAuth'
@@ -163,22 +162,22 @@ const App = () => {
 				<Route path='/Films'
 					element={<Films msgAlert={msgAlert} user={user} films={films} />}
 				/>
-				<Route path='People/:id'
+				<Route path='People/:name'
 					element={<PeopleDetails msgAlert={msgAlert} user={user} people={people} />}
 				/>
-				<Route path='Planets/:id'
+				<Route path='Planets/:name'
 					element={<PlanetsDetails msgAlert={msgAlert} user={user} planets={planets} />}
 				/>
-				<Route path='Vehicles/:id'
+				<Route path='Vehicles/:name'
 					element={<VehicleDetails msgAlert={msgAlert} user={user} vehicles={vehicles} />}
 				/>
-				<Route path='Film/:id'
+				<Route path='Film/:title'
 					element={<FilmDetails msgAlert={msgAlert} user={user} films={films} />}
 				/>
-				<Route path='Species/:id'
+				<Route path='Species/:name'
 					element={<SpeciesDetails msgAlert={msgAlert} user={user} species={species} />}
 				/>
-				<Route path='Starships/:id'
+				<Route path='Starships/:name'
 					element={<StarshipsDetails msgAlert={msgAlert} user={user} starships={starships} />}
 				/>
 				<Route

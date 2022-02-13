@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 
 const Films = (props) => {
-	console.log('props in planets', props)
 	const filmsList = props.films.map((p, i) => {
 		return (
 			<li key={i}>
