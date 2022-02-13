@@ -22,12 +22,6 @@ import VehicleDetails from './components/Details/VehicleDetails'
 import StarshipsDetails from './components/Details/StarshipDetails'
 import FilmDetails from './components/Details/FilmDetails'
 import SpeciesDetails from './components/Details/SpeciesDetails'
-import { getPeople } from './api/people'
-import { getPlanets } from './api/planets'
-import { getFilms } from './api/films'
-import { getSpecies } from './api/species'
-import { getStarships } from './api/starships'
-import { getVehicles } from './api/vehicles'
 
 const App = () => {
 
