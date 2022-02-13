@@ -6,9 +6,13 @@ const PeopleDetails = (props) => {
 	const person = props.people.filter(person => person.name === personName.name)
 	const p = person[0]
 
-	// filter through planets to match url to people's homeworld url
-	// const personsHomeworld = props.planets.filter(homeworld => p.homeworld.includes(homeworld.url))
-	// const filterHomeworld = personsHomeworld[0].name
+	const affiliations = p.affiliations.map((a, i) => {
+		return (
+			<li key={i}>
+				{a} 
+			</li>
+		)
+	})
 
 	return (
 		<div className="details">
@@ -27,7 +31,14 @@ const PeopleDetails = (props) => {
 			<h3>Born Location: {p.bornLocation}</h3>
 			<h3>Homeworld: {p.homeworld}</h3>
 			<div>
-				<img src={p.image} height="340" width="250"></img>
+				<h3>Affiliations:</h3>
+				<ul>
+					{affiliations}
+				</ul>
+			</div>
+			<h3>Wiki: <a rel="noreferrer" target = "_blank" href={p.wiki}>{p.name}</a></h3>
+			<div>
+				<img src={p.image} height="300" width="250"></img>
 			</div>
 		</div>
 	)
