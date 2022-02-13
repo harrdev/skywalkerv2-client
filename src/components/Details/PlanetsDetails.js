@@ -1,12 +1,22 @@
 import { useParams } from 'react-router-dom'
+import axios from 'axios'
+import { useState } from 'react'
 
 const PlanetDetails = (props) => {
-
 	const planetName = useParams()
 
 	const planet = props.planets.filter(planet => planet.name === planetName.name)
-	console.log("Matched planet data: ", planet)
 	const p = planet[0]
+
+	const planetResidents = props.people.filter(person => p.residents.includes(person.url))
+	.map((person =>  {
+		return ( 
+		<li>
+			{person.name}
+		</li>
+		)
+	}))
+
 	return (
 		<div className="details">
 			<h2>Planet Details Page</h2>
@@ -19,6 +29,11 @@ const PlanetDetails = (props) => {
 			<h3>Terrain: {p.terrain}</h3>
 			<h3>Surface Water: {p.surface_water}</h3>
 			<h3>Population: {p.population}</h3>
+			<h3>Residents: 
+				<ul>
+					{planetResidents}
+				</ul>
+			</h3>
 		</div>
 	)
 }
