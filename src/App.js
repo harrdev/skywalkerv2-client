@@ -163,7 +163,7 @@ const App = () => {
 					element={<Films msgAlert={msgAlert} user={user} films={films} />}
 				/>
 				<Route path='People/:name'
-					element={<PeopleDetails msgAlert={msgAlert} user={user} people={people} />}
+					element={<PeopleDetails msgAlert={msgAlert} user={user} planets={planets} people={people} />}
 				/>
 				<Route path='Planets/:name'
 					element={<PlanetsDetails msgAlert={msgAlert} user={user} people={people}planets={planets} />}

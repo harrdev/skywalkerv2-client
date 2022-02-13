@@ -6,13 +6,13 @@ const SpeciesDetails = (props) => {
 	const s = speciesData[0]
 
 	const speciesPeople = props.people.filter(person => s.people.includes(person.url))
-	.map((person =>  {
+	.map((person, i) =>  {
 		return ( 
-		<li>
+		<li key={i}>
 			{person.name}
 		</li>
 		)
-	}))
+	})
 
 	return (
 		<div className="details">
@@ -35,4 +35,3 @@ const SpeciesDetails = (props) => {
 }
 
 export default SpeciesDetails
-//             "homeworld": "https://swapi.dev/api/speciesDatas/9/", 
