@@ -1,6 +1,4 @@
 import { Link } from 'react-router-dom'
-import axios from 'axios'
-import { useState, useEffect } from 'react'
 const People = (props) => {
 
 	const peopleList = props.people.map((p, i) => {
@@ -10,7 +8,6 @@ const People = (props) => {
 			</li>
 		)
 	})
-	console.log("PeopleList is : ", peopleList)
 
 	return (
 		<div className="people">

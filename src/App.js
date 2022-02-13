@@ -43,65 +43,108 @@ const App = () => {
 	useEffect(() => {
 		getAllPeople()
 		getAllPlanets()
-		getAllfilms()
-		getAllspecies()
-		getAllstarships()
+		getAllFilms()
+		getAllSpecies()
+		getAllStarships()
 		getAllVehicles()
 	}, [])
 
 	const getAllVehicles = () => {
-		getVehicles()
-			.then((vehicles) => {
-				const swvehicles = vehicles.data.results.map((name) => {
-					return name
+		let endpoints = [
+			'http://swapi.dev/api/vehicles/?page=1',
+			'http://swapi.dev/api/vehicles/?page=2',
+			'http://swapi.dev/api/vehicles/?page=3',
+			'http://swapi.dev/api/vehicles/?page=4'
+		];
+		Promise.all(endpoints.map((endpoint) => axios.get(endpoint)))
+			.then((res) => {
+				let vehicleArray = []
+				res.map((vehicle) => {
+					vehicle.data.results.map(p => {
+						vehicleArray.push(p)
+					})
 				})
-				setVehicles(swvehicles)
+				setVehicles(vehicleArray)
 			})
-			.catch(err => console.log(err))
 	}
 
-	const getAllstarships = () => {
-		getStarships()
-			.then((starships) => {
-				const swstarships = starships.data.results.map((name) => {
-					return name
+	const getAllStarships = () => {
+		let endpoints = [
+			'http://swapi.dev/api/starships/?page=1',
+			'http://swapi.dev/api/starships/?page=2',
+			'http://swapi.dev/api/starships/?page=3',
+			'http://swapi.dev/api/starships/?page=4'
+		];
+		Promise.all(endpoints.map((endpoint) => axios.get(endpoint)))
+			.then((res) => {
+				let starshipArray = []
+				res.map((starship) => {
+					starship.data.results.map(p => {
+						starshipArray.push(p)
+					})
 				})
-				setStarships(swstarships)
+				setStarships(starshipArray)
 			})
-			.catch(err => console.log(err))
 	}
 
-	const getAllspecies = () => {
-		getSpecies()
-			.then((species) => {
-				const swspecies = species.data.results.map((name) => {
-					return name
+	const getAllSpecies = () => {
+		let endpoints = [
+			'http://swapi.dev/api/species/?page=1',
+			'http://swapi.dev/api/species/?page=2',
+			'http://swapi.dev/api/species/?page=3',
+			'http://swapi.dev/api/species/?page=4'
+		];
+		Promise.all(endpoints.map((endpoint) => axios.get(endpoint)))
+			.then((res) => {
+				let speciesArray = []
+				res.map((species) => {
+					species.data.results.map(s => {
+						speciesArray.push(s)
+					})
 				})
-				setSpecies(swspecies)
+				setSpecies(speciesArray)
 			})
-			.catch(err => console.log(err))
 	}
 
-	const getAllfilms = () => {
-		getFilms()
-			.then((films) => {
-				const swfilms = films.data.results.map((title) => {
-					return title
-				})
-				setFilms(swfilms)
+	// const getAllfilms = () => {
+	// 	getFilms()
+	// 		.then((films) => {
+	// 			const swfilms = films.data.results.map((title) => {
+	// 				return title
+	// 			})
+	// 			setFilms(swfilms)
+	// 		})
+	// 		.catch(err => console.log(err))
+	// }
+	const getAllFilms = () => {
+		let endpoints = [
+			'http://swapi.dev/api/films/?page=1',
+		];
+		Promise.all(endpoints.map((endpoint) => axios.get(endpoint)))
+			.then((res) => {
+				setFilms(res[0].data.results)
 			})
-			.catch(err => console.log(err))
 	}
 
 	const getAllPlanets = () => {
-		getPlanets()
-			.then((planets) => {
-				const swplanets = planets.data.results.map((name) => {
-					return name
+		let endpoints = [
+			'http://swapi.dev/api/planets/?page=1',
+			'http://swapi.dev/api/planets/?page=2',
+			'http://swapi.dev/api/planets/?page=3',
+			'http://swapi.dev/api/planets/?page=4',
+			'http://swapi.dev/api/planets/?page=5',
+			'http://swapi.dev/api/planets/?page=6'
+		];
+		Promise.all(endpoints.map((endpoint) => axios.get(endpoint)))
+			.then((res) => {
+				let planetArray = []
+				res.map((planet) => {
+					planet.data.results.map(p => {
+						planetArray.push(p)
+					})
 				})
-				setPlanets(swplanets)
+				setPlanets(planetArray)
 			})
-			.catch(err => console.log(err))
 	}
 
 	const getAllPeople = () => {
@@ -119,13 +162,13 @@ const App = () => {
 		Promise.all(endpoints.map((endpoint) => axios.get(endpoint)))
 			.then((res) => {
 				let peopleArray = []
-				const swPeople = res.map((person) => {
-					const eachPerson = person.data.results.map(p => {
+				res.map((person) => {
+					person.data.results.map(p => {
 						peopleArray.push(p)
 					})
 				})
 				setPeople(peopleArray)
-			});
+			})
 	}
 	
 	const clearUser = () => {
