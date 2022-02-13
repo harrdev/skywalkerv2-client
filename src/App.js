@@ -4,6 +4,7 @@ import { v4 as uuid } from 'uuid'
 import AutoDismissAlert from './components/shared/AutoDismissAlert/AutoDismissAlert'
 import Header from './components/shared/Header'
 import RequireAuth from './components/shared/RequireAuth'
+import axios from 'axios'
 import Home from './components/Home'
 import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
@@ -51,7 +52,6 @@ const App = () => {
 	const getAllVehicles = () => {
 		getVehicles()
 			.then((vehicles) => {
-				console.log("This is the vehicles data: ", vehicles)
 				const swvehicles = vehicles.data.results.map((name) => {
 					return name
 				})
@@ -63,7 +63,6 @@ const App = () => {
 	const getAllstarships = () => {
 		getStarships()
 			.then((starships) => {
-				console.log("This is the starships data: ", starships)
 				const swstarships = starships.data.results.map((name) => {
 					return name
 				})
@@ -75,7 +74,6 @@ const App = () => {
 	const getAllspecies = () => {
 		getSpecies()
 			.then((species) => {
-				console.log("This is the species data: ", species)
 				const swspecies = species.data.results.map((name) => {
 					return name
 				})
@@ -87,7 +85,6 @@ const App = () => {
 	const getAllfilms = () => {
 		getFilms()
 			.then((films) => {
-				console.log("This is the films data: ", films.data.results[0].title)
 				const swfilms = films.data.results.map((title) => {
 					return title
 				})
@@ -99,7 +96,6 @@ const App = () => {
 	const getAllPlanets = () => {
 		getPlanets()
 			.then((planets) => {
-				console.log("This is the planets data: ", planets)
 				const swplanets = planets.data.results.map((name) => {
 					return name
 				})
@@ -109,16 +105,29 @@ const App = () => {
 	}
 
 	const getAllPeople = () => {
-		getPeople()
-			.then((swdata) => {
-				const swpeople = swdata.data.results.map((name) => {
-					return name
+		let endpoints = [
+			'http://swapi.dev/api/people/?page=1',
+			'http://swapi.dev/api/people/?page=2',
+			'http://swapi.dev/api/people/?page=3',
+			'http://swapi.dev/api/people/?page=4',
+			'http://swapi.dev/api/people/?page=5',
+			'http://swapi.dev/api/people/?page=6',
+			'http://swapi.dev/api/people/?page=7',
+			'http://swapi.dev/api/people/?page=8',
+			'http://swapi.dev/api/people/?page=9',
+		];
+		Promise.all(endpoints.map((endpoint) => axios.get(endpoint)))
+			.then((res) => {
+				let peopleArray = []
+				const swPeople = res.map((person) => {
+					const eachPerson = person.data.results.map(p => {
+						peopleArray.push(p)
+					})
 				})
-				setPeople(swpeople)
-			})
-			.catch(err => console.log(err))
+				setPeople(peopleArray)
+			});
 	}
-
+	
 	const clearUser = () => {
 		console.log('clear user ran')
 		setUser(null)
@@ -151,7 +160,7 @@ const App = () => {
 					element={<Planets msgAlert={msgAlert} user={user} planets={planets} />}
 				/>
 				<Route path='/Vehicles'
-					element={<Vehicles msgAlert={msgAlert} user={user} vehicles={vehicles}/>}
+					element={<Vehicles msgAlert={msgAlert} user={user} vehicles={vehicles} />}
 				/>
 				<Route path='/Species'
 					element={<Species msgAlert={msgAlert} user={user} species={species} />}
@@ -166,7 +175,7 @@ const App = () => {
 					element={<PeopleDetails msgAlert={msgAlert} user={user} planets={planets} people={people} />}
 				/>
 				<Route path='Planets/:name'
-					element={<PlanetsDetails msgAlert={msgAlert} user={user} people={people}planets={planets} />}
+					element={<PlanetsDetails msgAlert={msgAlert} user={user} people={people} planets={planets} />}
 				/>
 				<Route path='Vehicles/:name'
 					element={<VehicleDetails msgAlert={msgAlert} user={user} vehicles={vehicles} />}
