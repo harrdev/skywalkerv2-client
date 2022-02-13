@@ -1,13 +1,11 @@
 import { useParams } from 'react-router-dom'
-import axios from 'axios'
-import { useState } from 'react'
 
 const PlanetDetails = (props) => {
 	const planetName = useParams()
-
+	// Filters planets to match passed useparams to display correct information
 	const planet = props.planets.filter(planet => planet.name === planetName.name)
 	const p = planet[0]
-
+	// Filters and maps planet resident URLS to match and display
 	const planetResidents = props.people.filter(person => p.residents.includes(person.url))
 	.map((person =>  {
 		return ( 

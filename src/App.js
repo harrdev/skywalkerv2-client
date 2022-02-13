@@ -175,7 +175,7 @@ const App = () => {
 					element={<FilmDetails msgAlert={msgAlert} user={user} films={films} />}
 				/>
 				<Route path='Species/:name'
-					element={<SpeciesDetails msgAlert={msgAlert} user={user} species={species} />}
+					element={<SpeciesDetails msgAlert={msgAlert} user={user} people={people} species={species} />}
 				/>
 				<Route path='Starships/:name'
 					element={<StarshipsDetails msgAlert={msgAlert} user={user} starships={starships} />}
