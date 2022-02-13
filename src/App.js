@@ -120,6 +120,22 @@ const App = () => {
 			})
 	}
 
+	const getAllPeople = () => {
+		let endpoints = [
+			'https://akabab.github.io/starwars-api/api/all.json',
+		];
+		Promise.all(endpoints.map((endpoint) => axios.get(endpoint)))
+			.then((res) => {
+				console.log("People res: ", res[0].data)
+				let peopleArray = []
+				res[0].data.map((people) => {
+					peopleArray.push(people)
+					console.log("Peopleis : ", people)
+				})
+				setPeople(peopleArray)
+			})
+	}
+
 	const getAllPlanets = () => {
 		let endpoints = [
 			'http://swapi.dev/api/planets/?page=1',
@@ -141,30 +157,30 @@ const App = () => {
 			})
 	}
 
-	const getAllPeople = () => {
-		let endpoints = [
-			'http://swapi.dev/api/people/?page=1',
-			'http://swapi.dev/api/people/?page=2',
-			'http://swapi.dev/api/people/?page=3',
-			'http://swapi.dev/api/people/?page=4',
-			'http://swapi.dev/api/people/?page=5',
-			'http://swapi.dev/api/people/?page=6',
-			'http://swapi.dev/api/people/?page=7',
-			'http://swapi.dev/api/people/?page=8',
-			'http://swapi.dev/api/people/?page=9',
-		];
-		Promise.all(endpoints.map((endpoint) => axios.get(endpoint)))
-			.then((res) => {
-				let peopleArray = []
-				res.map((person) => {
-					person.data.results.map(p => {
-						peopleArray.push(p)
-					})
-				})
-				setPeople(peopleArray)
-			})
-	}
-	
+	// const getAllPeople = () => {
+	// 	let endpoints = [
+	// 		'http://swapi.dev/api/people/?page=1',
+	// 		'http://swapi.dev/api/people/?page=2',
+	// 		'http://swapi.dev/api/people/?page=3',
+	// 		'http://swapi.dev/api/people/?page=4',
+	// 		'http://swapi.dev/api/people/?page=5',
+	// 		'http://swapi.dev/api/people/?page=6',
+	// 		'http://swapi.dev/api/people/?page=7',
+	// 		'http://swapi.dev/api/people/?page=8',
+	// 		'http://swapi.dev/api/people/?page=9',
+	// 	];
+	// 	Promise.all(endpoints.map((endpoint) => axios.get(endpoint)))
+	// 		.then((res) => {
+	// 			let peopleArray = []
+	// 			res.map((person) => {
+	// 				person.data.results.map(p => {
+	// 					peopleArray.push(p)
+	// 				})
+	// 			})
+	// 			setPeople(peopleArray)
+	// 		})
+	// }
+
 	const clearUser = () => {
 		console.log('clear user ran')
 		setUser(null)
