@@ -24,6 +24,7 @@ import VehicleDetails from './components/Details/VehicleDetails'
 import StarshipsDetails from './components/Details/StarshipDetails'
 import FilmDetails from './components/Details/FilmDetails'
 import SpeciesDetails from './components/Details/SpeciesDetails'
+import FavePlanets from './components/FavePlanets'
 
 const App = () => {
 
@@ -192,6 +193,12 @@ const App = () => {
 					element={
 						<RequireAuth user={user}>
 							<Saved msgAlert={msgAlert} user={user} />
+						</RequireAuth>}
+				/>
+				<Route path='/FavePlanets'
+					element={
+						<RequireAuth user={user}>
+							<FavePlanets msgAlert={msgAlert} user={user} />
 						</RequireAuth>}
 				/>
 				<Route path='/Dashboard/People'

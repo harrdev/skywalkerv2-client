@@ -15,7 +15,12 @@ const authenticatedOptions = (
 		</Nav.Link>
 		<Nav.Link>
 			<Link to='saved' style={linkStyle}>
-				Saved Data
+				Favorites
+			</Link>
+		</Nav.Link>
+		<Nav.Link>
+			<Link to='FavePlanets' style={linkStyle}>
+				Favorite Planets
 			</Link>
 		</Nav.Link>
 		<Nav.Link>

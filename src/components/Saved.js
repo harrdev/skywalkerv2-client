@@ -20,16 +20,19 @@ const Saved = (props) => {
     }, [])
 
     const removePerson = (s) => {
+        console.log("Person state is: ", favePeople)
         deletePerson(s._id, user)
             .then(res => {
                 getPeople(user)
-                .then(res => {
-                    let favePeopleArray = []
-                    res.data.people.map((people) => {
-                        favePeopleArray.push(people)
+                    .then(res => {
+                        let favePeopleArray = []
+                        res.data.people.map((people) => {
+                            favePeopleArray.push(people)
+                        })
+                        setFavePeople(favePeopleArray)
                     })
-                    setFavePeople(favePeopleArray)
-                })
+                    .catch((error) => {
+                    })
             })
     }
 
@@ -49,10 +52,12 @@ const Saved = (props) => {
 
     return (
         <div className="saved">
-            <h2>Saved Data</h2>
-            <ul>
-                {favePeopleList}
-            </ul>
+            <div className="savedPeople">
+                <h2>Saved People</h2>
+                <ul>
+                    {favePeopleList}
+                </ul>
+            </div>
         </div>
     )
 }

@@ -1,25 +1,25 @@
 import apiUrl from '../apiConfig'
 import axios from 'axios'
 
-export const getPeople = (res) => {
-    console.log("getPeople res is: ", res)
+export const getPlanets = (res) => {
+    console.log("getPlanets res is: ", res)
     return axios({
     method: 'GET',
     headers: {
         "Authorization": `Bearer ${res.token}`
     },
-    url: apiUrl + '/saved'
+    url: apiUrl + '/FavePlanets'
 })
     .then(res => {
-        console.log('favePeople GET called')
+        console.log('favePlanets GET called')
         return res
     })
     .catch((error) => console.log(error))
 }
 
-export const deletePerson = (id, user) => {
+export const deletePlanets = (id, user) => {
     return axios({
-        url: `${apiUrl}/saved/${id}`,
+        url: `${apiUrl}/FavePlanets/${id}`,
         method: 'DELETE',
         headers: {
         	Authorization: `Token token=${user.token}`,
