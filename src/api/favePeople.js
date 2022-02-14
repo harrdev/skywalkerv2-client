@@ -15,3 +15,15 @@ export const getPeople = (res) => {
     })
     .catch((error) => console.log(error))
 }
+
+export const deletePerson = (id, user) => {
+    console.log('This is the id of person to Delete: ', id)
+    console.log('This is the user: ', user)
+    return axios({
+        url: `${apiUrl}/saved/${id}`,
+        method: 'DELETE',
+        headers: {
+        	Authorization: `Token token=${user.token}`,
+        },
+    })
+}
