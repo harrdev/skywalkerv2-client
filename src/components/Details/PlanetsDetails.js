@@ -6,14 +6,14 @@ const PlanetDetails = (props) => {
 	const planet = props.planets.filter(planet => planet.name === planetName.name)
 	const p = planet[0]
 	// Filters and maps planet resident URLS to match and display
-	const planetResidents = props.people.filter(person => p.residents.includes(person.url))
-	.map((person, i) =>  {
-		return ( 
-		<li key={i}>
-			{person.name}
-		</li>
-		)
-	})
+	// const planetResidents = props.people.filter(person => p.residents.includes(person.homeworld))
+	// .map((person, i) =>  {
+	// 	return ( 
+	// 	<li key={i}>
+	// 		{person.name}
+	// 	</li>
+	// 	)
+	// })
 
 	return (
 		<div className="details">
@@ -27,11 +27,11 @@ const PlanetDetails = (props) => {
 			<h3>Terrain: {p.terrain}</h3>
 			<h3>Surface Water: {p.surface_water}</h3>
 			<h3>Population: {p.population}</h3>
-			<h3>Residents: 
+			{/* <h3>Residents: 
 				<ul>
 					{planetResidents}
 				</ul>
-			</h3>
+			</h3> */}
 		</div>
 	)
 }
