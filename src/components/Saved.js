@@ -1,23 +1,43 @@
 import { getPeople } from '../api/favePeople'
+import { Link, useState, useEffect } from 'react'
 
 const Saved = (props) => {
-	const { user } = props
+    const { user } = props
+    const [favePeople, setFavePeople] = useState([])
 
-    getPeople(user)
-    .then(res => {
-        // console.log('This is our Res for GetFOllowedCoins ', res)
-        // res = Object.values(res.data)
-        console.log("Res is: ", res)
-        // console.log('This is our Res for 2nd GetFOllowedCoins ', res)
-        // setSavedCoins(res)
+    useEffect(() => {
+        getPeople(user)
+            .then(res => {
+                let favePeopleArray = []
+                res.data.people.map((people) => {
+                    favePeopleArray.push(people)
+                })
+                setFavePeople(favePeopleArray)
+            })
+            .catch((error) => {
+                console.log("getPeople and setting state errored out: ", error)
+            })
+    }, [])
+
+    console.log("favePeople are: ", favePeople)
+    const favePeopleList = favePeople.map((p, i) => {
+        return (
+            <li key={i}>
+                <div className="favePeople">
+                    {p.name}
+                </div>
+            </li>
+        )
     })
-	return (
-		<div className="saved">
-			<h2>Saved Data</h2>
-			<ul>
-			</ul>
-		</div>
-	)
+
+    return (
+        <div className="saved">
+            <h2>Saved Data</h2>
+            <ul>
+                {favePeopleList}
+            </ul>
+        </div>
+    )
 }
 
 export default Saved
