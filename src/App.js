@@ -10,6 +10,8 @@ import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
+import Dashboard from './components/Dashboard'
+import Saved from './components/Saved'
 import People from './components/People'
 import Planets from './components/Planets'
 import Vehicles from './components/Vehicles'
@@ -180,62 +182,74 @@ const App = () => {
 			<Header user={user} />
 			<Routes>
 				<Route path='/' element={<Home msgAlert={msgAlert} user={user} />} />
-				<Route path='/People'
+				<Route path='/Dashboard'
+					element={
+						<RequireAuth user={user}>
+							<Dashboard msgAlert={msgAlert} user={user} />
+						</RequireAuth>}
+				/>
+				<Route path='/Saved'
+					element={
+						<RequireAuth user={user}>
+							<Saved msgAlert={msgAlert} user={user} />
+						</RequireAuth>}
+				/>
+				<Route path='/Dashboard/People'
 					element={
 						<RequireAuth user={user}>
 							<People msgAlert={msgAlert} user={user} people={people} />
 						</RequireAuth>}
 				/>
-				<Route path='/Planets'
+				<Route path='/Dashboard/Planets'
 					element={
 						<RequireAuth user={user}><Planets msgAlert={msgAlert} user={user} planets={planets} /> </RequireAuth>}
 				/>
-				<Route path='/Vehicles'
+				<Route path='/Dashboard/Vehicles'
 					element={
 						<RequireAuth user={user}><Vehicles msgAlert={msgAlert} user={user} vehicles={vehicles} />
 						</RequireAuth>}
 				/>
-				<Route path='/Species'
+				<Route path='/Dashboard/Species'
 					element={
 						<RequireAuth user={user}><Species msgAlert={msgAlert} user={user} species={species} />
 						</RequireAuth>}
 				/>
-				<Route path='/Starships'
+				<Route path='/Dashboard/Starships'
 					element={
 						<RequireAuth user={user}><Starships msgAlert={msgAlert} user={user} starships={starships} />
 						</RequireAuth>}
 				/>
-				<Route path='/Films'
+				<Route path='/Dashboard/Films'
 					element={
 						<RequireAuth user={user}><Films msgAlert={msgAlert} user={user} films={films} />
 						</RequireAuth>}
 				/>
-				<Route path='People/:name'
+				<Route path='/Dashboard/People/:name'
 					element={
 						<RequireAuth user={user}><PeopleDetails msgAlert={msgAlert} user={user} planets={planets} people={people} />
 						</RequireAuth>}
 				/>
-				<Route path='Planets/:name'
+				<Route path='/Dashboard/Planets/:name'
 					element={
 						<RequireAuth user={user}><PlanetsDetails msgAlert={msgAlert} user={user} people={people} planets={planets} />
 						</RequireAuth>}
 				/>
-				<Route path='Vehicles/:name'
+				<Route path='/Dashboard/Vehicles/:name'
 					element={
 						<RequireAuth user={user}><VehicleDetails msgAlert={msgAlert} user={user} vehicles={vehicles} />
 						</RequireAuth>}
 				/>
-				<Route path='Films/:name'
+				<Route path='/Dashboard/Films/:name'
 					element={
 						<RequireAuth user={user}><FilmDetails msgAlert={msgAlert} user={user} films={films} />
 						</RequireAuth>}
 				/>
-				<Route path='Species/:name'
+				<Route path='/Dashboard/Species/:name'
 					element={
 						<RequireAuth user={user}><SpeciesDetails msgAlert={msgAlert} user={user} people={people} species={species} />
 						</RequireAuth>}
 				/>
-				<Route path='Starships/:name'
+				<Route path='/Dashboard/Starships/:name'
 					element={
 						<RequireAuth user={user}><StarshipsDetails msgAlert={msgAlert} user={user} starships={starships} />
 						</RequireAuth>}

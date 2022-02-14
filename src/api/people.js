@@ -2,8 +2,6 @@ import apiUrl from '../apiConfig'
 import axios from 'axios'
 
 export const addPerson = (info, user) => {
-    console.log("User: ", user)
-    console.log("Info: ", info)
     return axios({
         method: 'POST',
         headers: {
