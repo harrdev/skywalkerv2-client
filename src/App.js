@@ -181,40 +181,64 @@ const App = () => {
 			<Routes>
 				<Route path='/' element={<Home msgAlert={msgAlert} user={user} />} />
 				<Route path='/People'
-					element={<People msgAlert={msgAlert} user={user} people={people} />}
+					element={
+						<RequireAuth user={user}>
+							<People msgAlert={msgAlert} user={user} people={people} />
+						</RequireAuth>}
 				/>
 				<Route path='/Planets'
-					element={<Planets msgAlert={msgAlert} user={user} planets={planets} />}
+					element={
+						<RequireAuth user={user}><Planets msgAlert={msgAlert} user={user} planets={planets} /> </RequireAuth>}
 				/>
 				<Route path='/Vehicles'
-					element={<Vehicles msgAlert={msgAlert} user={user} vehicles={vehicles} />}
+					element={
+						<RequireAuth user={user}><Vehicles msgAlert={msgAlert} user={user} vehicles={vehicles} />
+						</RequireAuth>}
 				/>
 				<Route path='/Species'
-					element={<Species msgAlert={msgAlert} user={user} species={species} />}
+					element={
+						<RequireAuth user={user}><Species msgAlert={msgAlert} user={user} species={species} />
+						</RequireAuth>}
 				/>
 				<Route path='/Starships'
-					element={<Starships msgAlert={msgAlert} user={user} starships={starships} />}
+					element={
+						<RequireAuth user={user}><Starships msgAlert={msgAlert} user={user} starships={starships} />
+						</RequireAuth>}
 				/>
 				<Route path='/Films'
-					element={<Films msgAlert={msgAlert} user={user} films={films} />}
+					element={
+						<RequireAuth user={user}><Films msgAlert={msgAlert} user={user} films={films} />
+						</RequireAuth>}
 				/>
 				<Route path='People/:name'
-					element={<PeopleDetails msgAlert={msgAlert} user={user} planets={planets} people={people} />}
+					element={
+						<RequireAuth user={user}><PeopleDetails msgAlert={msgAlert} user={user} planets={planets} people={people} />
+						</RequireAuth>}
 				/>
 				<Route path='Planets/:name'
-					element={<PlanetsDetails msgAlert={msgAlert} user={user} people={people} planets={planets} />}
+					element={
+						<RequireAuth user={user}><PlanetsDetails msgAlert={msgAlert} user={user} people={people} planets={planets} />
+						</RequireAuth>}
 				/>
 				<Route path='Vehicles/:name'
-					element={<VehicleDetails msgAlert={msgAlert} user={user} vehicles={vehicles} />}
+					element={
+						<RequireAuth user={user}><VehicleDetails msgAlert={msgAlert} user={user} vehicles={vehicles} />
+						</RequireAuth>}
 				/>
 				<Route path='Films/:name'
-					element={<FilmDetails msgAlert={msgAlert} user={user} films={films} />}
+					element={
+						<RequireAuth user={user}><FilmDetails msgAlert={msgAlert} user={user} films={films} />
+						</RequireAuth>}
 				/>
 				<Route path='Species/:name'
-					element={<SpeciesDetails msgAlert={msgAlert} user={user} people={people} species={species} />}
+					element={
+						<RequireAuth user={user}><SpeciesDetails msgAlert={msgAlert} user={user} people={people} species={species} />
+						</RequireAuth>}
 				/>
 				<Route path='Starships/:name'
-					element={<StarshipsDetails msgAlert={msgAlert} user={user} starships={starships} />}
+					element={
+						<RequireAuth user={user}><StarshipsDetails msgAlert={msgAlert} user={user} starships={starships} />
+						</RequireAuth>}
 				/>
 				<Route
 					path='/sign-up'
@@ -240,17 +264,19 @@ const App = () => {
 						</RequireAuth>}
 				/>
 			</Routes>
-			{msgAlerts.map((msgAlert) => (
-				<AutoDismissAlert
-					key={msgAlert.id}
-					heading={msgAlert.heading}
-					variant={msgAlert.variant}
-					message={msgAlert.message}
-					id={msgAlert.id}
-					deleteAlert={deleteAlert}
-				/>
-			))}
-		</Fragment>
+			{
+				msgAlerts.map((msgAlert) => (
+					<AutoDismissAlert
+						key={msgAlert.id}
+						heading={msgAlert.heading}
+						variant={msgAlert.variant}
+						message={msgAlert.message}
+						id={msgAlert.id}
+						deleteAlert={deleteAlert}
+					/>
+				))
+			}
+		</Fragment >
 	)
 }
 

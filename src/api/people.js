@@ -6,9 +6,9 @@ export const addPerson = (info, user) => {
     console.log("Info: ", info)
     return axios({
         method: 'POST',
-        // headers: {
-        //     "Authorization": `Bearer ${user.token}`
-        // },
+        headers: {
+            "Authorization": `Bearer ${user.token}`
+        },
         url: apiUrl + `/People`,
         data: {
             info: {

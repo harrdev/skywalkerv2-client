@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
 import { addPerson } from '../api/people'
+import react from 'react'
 const People = (props) => {
-	
-	const addToFave = (info, user) => {
+	const { user } = props
+	const addToFave = (info) => {
         // createFollowedCoin(info, user)
 		addPerson(info, user)
         //     .then(res => {
