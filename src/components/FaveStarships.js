@@ -1,4 +1,4 @@
-import { getStarships, deleteStarships } from '../api/faveStarships'
+import { getStarships, deleteStarships } from '../api/starships'
 import { Link, useState, useEffect } from 'react'
 
 const FaveStarships = (props) => {

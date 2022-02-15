@@ -1,4 +1,4 @@
-import { getPeople, deletePerson } from '../api/favePeople'
+import { getPeople, deletePerson } from '../api/people'
 import { Link, useState, useEffect } from 'react'
 
 const FavePeople = (props) => {

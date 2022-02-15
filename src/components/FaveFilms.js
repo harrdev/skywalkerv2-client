@@ -1,4 +1,4 @@
-import { getFilms, deleteFilms } from '../api/faveFilms'
+import { getFilms, deleteFilms } from '../api/films'
 import { Link, useState, useEffect } from 'react'
 
 const FaveFilms = (props) => {

@@ -1,4 +1,4 @@
-import { getSpecies, deleteSpecies } from '../api/faveSpecies'
+import { getSpecies, deleteSpecies } from '../api/species'
 import { Link, useState, useEffect } from 'react'
 
 const FaveSpecies = (props) => {

@@ -1,4 +1,4 @@
-import { getVehicles, deleteVehicles } from '../api/faveVehicles'
+import { getVehicles, deleteVehicles } from '../api/vehicles'
 import { Link, useState, useEffect } from 'react'
 
 const FaveVehicles = (props) => {

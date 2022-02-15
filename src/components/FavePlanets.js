@@ -1,4 +1,4 @@
-import { getPlanets, deletePlanets } from '../api/favePlanets'
+import { getPlanets, deletePlanets } from '../api/planets'
 import { Link, useState, useEffect } from 'react'
 
 const FavePlanets = (props) => {

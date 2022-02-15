@@ -19,16 +19,6 @@ const authenticatedOptions = (
 			</Link>
 		</Nav.Link>
 		<Nav.Link>
-			<Link to='FavePeople' style={linkStyle}>
-				Favorite People
-			</Link>
-		</Nav.Link>
-		<Nav.Link>
-			<Link to='FavePlanets' style={linkStyle}>
-				Favorite Planets
-			</Link>
-		</Nav.Link>
-		<Nav.Link>
 			<Link to='change-password' style={linkStyle}>
 				Change Password
 			</Link>
