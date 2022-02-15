@@ -31,6 +31,8 @@ import FaveVehicles from './components/FaveVehicles'
 import FaveStarships from './components/FaveStarships'
 import FaveFilms from './components/FaveFilms'
 import Favorites from './components/Favorites'
+import FavePeopleDetails from './components/Details/FavePeopleDetails'
+import FavePlanetDetails from './components/Details/FavePlanetDetails'
 
 const App = () => {
 	const [user, setUser] = useState(null)
@@ -234,6 +236,18 @@ const App = () => {
 					element={
 						<RequireAuth user={user}>
 							<FavePeople msgAlert={msgAlert} user={user} />
+						</RequireAuth>}
+				/>
+				<Route path='/People/:id'
+					element={
+						<RequireAuth user={user}>
+							<FavePeopleDetails msgAlert={msgAlert} user={user} />
+						</RequireAuth>}
+				/>
+				<Route path='/Planets/:id'
+					element={
+						<RequireAuth user={user}>
+							<FavePlanetDetails msgAlert={msgAlert} user={user} />
 						</RequireAuth>}
 				/>
 				<Route path='/Dashboard/People'

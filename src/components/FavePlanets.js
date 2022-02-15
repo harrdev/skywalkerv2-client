@@ -1,5 +1,6 @@
 import { getPlanets, deletePlanets } from '../api/planets'
-import { Link, useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 const FavePlanets = (props) => {
     const { user } = props
@@ -39,7 +40,7 @@ const FavePlanets = (props) => {
         return (
             <li key={i}>
                 <div className="savedPlanets">
-                    {p.name}
+                    <Link to={`/Planets/${p.name}`} style={{ fontSize: "25px", padding: "15px" }}>{p.name}</Link>
                 </div>
                 <div className="planetRemoveButton">
                     <button className="removeButton" onClick={() => removePlanet(p)}>Delete from Favorites</button>
@@ -52,9 +53,9 @@ const FavePlanets = (props) => {
     return (
         <div className="favePlanets">
             <h2>Favorite Planets</h2>
-                <ul>
-                    {favePlanetList}
-                </ul>      
+            <ul>
+                {favePlanetList}
+            </ul>
         </div>
     )
 }

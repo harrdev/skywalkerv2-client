@@ -1,5 +1,6 @@
 import { getPeople, deletePerson } from '../api/people'
-import { Link, useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 const FavePeople = (props) => {
     const { user } = props
@@ -38,8 +39,8 @@ const FavePeople = (props) => {
     const favePeopleList = favePeople.map((p, i) => {
         return (
             <li key={i}>
-                <div className="favePeople">
-                    {p.name}
+                <div>
+                    <Link to={`/People/${p.name}`} style={{ fontSize: "25px", padding: "15px" }}>{p.name}</Link>
                 </div>
                 <div className="peopleRemoveButton">
                     <button className="removeButton" onClick={() => removePerson(p)}>Delete from Favorites</button>
