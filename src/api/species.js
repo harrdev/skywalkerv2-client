@@ -1,17 +1,24 @@
 import apiUrl from '../apiConfig'
 import axios from 'axios'
 
-export const getSpecies = (res) => {
+export const addSpecies = (info, user) => {
     return axios({
-    method: 'GET',
-    headers: {
-        // "Authorization": `Bearer ${res.token}`
-    },
-    url: apiUrl + '/Species'
-})
-    .then(res => {
-        console.log("Get Species called")
-        return res
+        method: 'POST',
+        headers: {
+            "Authorization": `Bearer ${user.token}`
+        },
+        url: apiUrl + `/Species`,
+        data: {
+            info: {
+                name: info.name,
+                classification: info.classification,
+                averageHeight: info.average_height,
+                skinColors: info.skin_colors,
+                hairColors: info.hair_colors,
+                eyeColors: info.eye_colors,
+                averageLifespan: info.average_lifespan,
+                language: info.language,
+            },
+        },
     })
-    .catch((error) => console.log(error))
 }

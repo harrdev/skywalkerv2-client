@@ -8,7 +8,6 @@ const FavePlanets = (props) => {
     useEffect(() => {
         getPlanets(user)
             .then(res => {
-                console.log("getPlanets res: ", res)
                 let favePlanetsArray = []
                 res.data.planet.map((planets) => {
                     favePlanetsArray.push(planets)
@@ -21,7 +20,6 @@ const FavePlanets = (props) => {
     }, [])
 
     const removePlanet = (s) => {
-        console.log("Planet state is: ", favePlanets)
         deletePlanets(s._id, user)
             .then(res => {
                 getPlanets(user)

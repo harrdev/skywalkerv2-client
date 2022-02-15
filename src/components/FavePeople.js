@@ -1,7 +1,7 @@
 import { getPeople, deletePerson } from '../api/favePeople'
 import { Link, useState, useEffect } from 'react'
 
-const Saved = (props) => {
+const FavePeople = (props) => {
     const { user } = props
     const [favePeople, setFavePeople] = useState([])
 
@@ -20,7 +20,6 @@ const Saved = (props) => {
     }, [])
 
     const removePerson = (s) => {
-        console.log("Person state is: ", favePeople)
         deletePerson(s._id, user)
             .then(res => {
                 getPeople(user)
@@ -62,4 +61,4 @@ const Saved = (props) => {
     )
 }
 
-export default Saved
+export default FavePeople

@@ -1,24 +1,24 @@
 import apiUrl from '../apiConfig'
 import axios from 'axios'
 
-export const getPeople = (res) => {
+export const getSpecies = (res) => {
     return axios({
     method: 'GET',
     headers: {
         "Authorization": `Bearer ${res.token}`
     },
-    url: apiUrl + '/saved'
+    url: apiUrl + '/FaveSpecies'
 })
     .then(res => {
-        console.log('favePeople GET called')
+        console.log('faveSpecies GET called')
         return res
     })
     .catch((error) => console.log(error))
 }
 
-export const deletePerson = (id, user) => {
+export const deleteSpecies = (id, user) => {
     return axios({
-        url: `${apiUrl}/saved/${id}`,
+        url: `${apiUrl}/FaveSpecies/${id}`,
         method: 'DELETE',
         headers: {
         	Authorization: `Token token=${user.token}`,

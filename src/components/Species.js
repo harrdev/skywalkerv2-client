@@ -1,18 +1,13 @@
 import { Link } from 'react-router-dom'
+import { addSpecies } from '../api/species'
 
 const Species = (props) => {
+	const { user } = props
+	
 	const addToFave = (info) => {
-		// createFollowedCoin(info, user)
-		//     .then(res => {
-		//         getFollowedCoins(user)
-		//             .then(res => {
-		//                 // console.log('This is our Res for GetFOllowedCoins ', res)
-		//                 res = Object.values(res.data.coins)
-		//                 // console.log('This is our Res for 2nd GetFOllowedCoins ', res)
-		//                 props.setSavedCoins(res)
-		//             })
-		//     })
-	}
+		addSpecies(info, user)
+    }
+
 	const speciesList = props.species.map((p, i) => {
 		return (
 			<li key={i}>

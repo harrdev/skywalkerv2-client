@@ -2,7 +2,6 @@ import apiUrl from '../apiConfig'
 import axios from 'axios'
 
 export const getPlanets = (res) => {
-    console.log("getPlanets res is: ", res)
     return axios({
     method: 'GET',
     headers: {

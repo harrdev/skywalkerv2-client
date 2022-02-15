@@ -11,7 +11,7 @@ import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import Dashboard from './components/Dashboard'
-import Saved from './components/Saved'
+import Saved from './components/Favorites'
 import People from './components/People'
 import Planets from './components/Planets'
 import Vehicles from './components/Vehicles'
@@ -25,7 +25,9 @@ import StarshipsDetails from './components/Details/StarshipDetails'
 import FilmDetails from './components/Details/FilmDetails'
 import SpeciesDetails from './components/Details/SpeciesDetails'
 import FavePlanets from './components/FavePlanets'
-
+import FavePeople from './components/FavePeople'
+import FaveSpecies from './components/FaveSpecies'
+import Favorites from './components/Favorites'
 const App = () => {
 
 	const [user, setUser] = useState(null)
@@ -189,16 +191,28 @@ const App = () => {
 							<Dashboard msgAlert={msgAlert} user={user} />
 						</RequireAuth>}
 				/>
-				<Route path='/Saved'
+				<Route path='/Favorites'
 					element={
 						<RequireAuth user={user}>
-							<Saved msgAlert={msgAlert} user={user} />
+							<Favorites msgAlert={msgAlert} user={user} />
 						</RequireAuth>}
 				/>
 				<Route path='/FavePlanets'
 					element={
 						<RequireAuth user={user}>
 							<FavePlanets msgAlert={msgAlert} user={user} />
+						</RequireAuth>}
+				/>
+				<Route path='/FaveSpecies'
+					element={
+						<RequireAuth user={user}>
+							<FaveSpecies msgAlert={msgAlert} user={user} />
+						</RequireAuth>}
+				/>
+				<Route path='/FavePeople'
+					element={
+						<RequireAuth user={user}>
+							<FavePeople msgAlert={msgAlert} user={user} />
 						</RequireAuth>}
 				/>
 				<Route path='/Dashboard/People'

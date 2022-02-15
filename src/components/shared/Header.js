@@ -14,8 +14,13 @@ const authenticatedOptions = (
 			</Link>
 		</Nav.Link>
 		<Nav.Link>
-			<Link to='saved' style={linkStyle}>
-				Favorites
+			<Link to='Favorites' style={linkStyle}>
+				Favorites Dashboard
+			</Link>
+		</Nav.Link>
+		<Nav.Link>
+			<Link to='FavePeople' style={linkStyle}>
+				Favorite People
 			</Link>
 		</Nav.Link>
 		<Nav.Link>
