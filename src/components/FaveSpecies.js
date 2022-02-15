@@ -52,7 +52,7 @@ const FaveSpecies = (props) => {
     return (
         <div className="saved">
             <div className="savedSpecies">
-                <h2>Saved Species</h2>
+                <h2>Favorite Species</h2>
                 <ul>
                     {faveSpeciesList}
                 </ul>

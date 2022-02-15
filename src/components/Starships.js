@@ -1,18 +1,12 @@
 import { Link } from 'react-router-dom'
+import { addStarships } from '../api/starships'
 
 const Starships = (props) => {
+	const { user } = props
+
 	const addToFave = (info) => {
-		// createFollowedCoin(info, user)
-		//     .then(res => {
-		//         getFollowedCoins(user)
-		//             .then(res => {
-		//                 // console.log('This is our Res for GetFOllowedCoins ', res)
-		//                 res = Object.values(res.data.coins)
-		//                 // console.log('This is our Res for 2nd GetFOllowedCoins ', res)
-		//                 props.setSavedCoins(res)
-		//             })
-		//     })
-	}
+		addStarships(info, user)
+    }
 	const starshipsList = props.starships.map((p, i) => {
 		return (
 			<li key={i}>

@@ -27,9 +27,12 @@ import SpeciesDetails from './components/Details/SpeciesDetails'
 import FavePlanets from './components/FavePlanets'
 import FavePeople from './components/FavePeople'
 import FaveSpecies from './components/FaveSpecies'
+import FaveVehicles from './components/FaveVehicles'
+import FaveStarships from './components/FaveStarships'
+import FaveFilms from './components/FaveFilms'
 import Favorites from './components/Favorites'
-const App = () => {
 
+const App = () => {
 	const [user, setUser] = useState(null)
 	const [msgAlerts, setMsgAlerts] = useState([])
 	const [people, setPeople] = useState([])
@@ -203,10 +206,28 @@ const App = () => {
 							<FavePlanets msgAlert={msgAlert} user={user} />
 						</RequireAuth>}
 				/>
+				<Route path='/FaveFilms'
+					element={
+						<RequireAuth user={user}>
+							<FaveFilms msgAlert={msgAlert} user={user} />
+						</RequireAuth>}
+				/>
+				<Route path='/FaveStarships'
+					element={
+						<RequireAuth user={user}>
+							<FaveStarships msgAlert={msgAlert} user={user} />
+						</RequireAuth>}
+				/>
 				<Route path='/FaveSpecies'
 					element={
 						<RequireAuth user={user}>
 							<FaveSpecies msgAlert={msgAlert} user={user} />
+						</RequireAuth>}
+				/>
+				<Route path='/FaveVehicles'
+					element={
+						<RequireAuth user={user}>
+							<FaveVehicles msgAlert={msgAlert} user={user} />
 						</RequireAuth>}
 				/>
 				<Route path='/FavePeople'

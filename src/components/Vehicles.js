@@ -1,18 +1,12 @@
 import { Link } from 'react-router-dom'
+import { addVehicles } from '../api/vehicles'
 
 const Vehicles = (props) => {
+	const { user } = props
+
 	const addToFave = (info) => {
-		// createFollowedCoin(info, user)
-		//     .then(res => {
-		//         getFollowedCoins(user)
-		//             .then(res => {
-		//                 // console.log('This is our Res for GetFOllowedCoins ', res)
-		//                 res = Object.values(res.data.coins)
-		//                 // console.log('This is our Res for 2nd GetFOllowedCoins ', res)
-		//                 props.setSavedCoins(res)
-		//             })
-		//     })
-	}
+		addVehicles(info, user)
+    }
 	const vehiclesList = props.vehicles.map((p, i) => {
 		return (
 			<li key={i}>

@@ -52,7 +52,7 @@ const FavePeople = (props) => {
     return (
         <div className="saved">
             <div className="savedPeople">
-                <h2>Saved People</h2>
+                <h2>Favorite People</h2>
                 <ul>
                     {favePeopleList}
                 </ul>

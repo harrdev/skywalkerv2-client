@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 import { addPerson } from '../api/people'
-import react from 'react'
+
 const People = (props) => {
-	
+
 	const { user } = props
 	const addToFave = (info) => {
 		addPerson(info, user)

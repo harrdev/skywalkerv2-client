@@ -51,7 +51,7 @@ const FavePlanets = (props) => {
 
     return (
         <div className="favePlanets">
-            <h2>Fave Planets</h2>
+            <h2>Favorite Planets</h2>
                 <ul>
                     {favePlanetList}
                 </ul>      
