@@ -13,16 +13,16 @@ export const addStarships = (info, user) => {
                 name: info.name,
                 model: info.model,
                 manufacturer: info.manufacturer,
-                costInCredits: info.cost_in_credits,
+                cost_in_credits: info.cost_in_credits,
                 length: info.length,
                 crew: info.crew,
-                maxSpeed: info.max_atmosphering_speed,
+                max_atmosphering_speed: info.max_atmosphering_speed,
                 passengers: info.passengers,
-                cargoCapacity: info.cargo_capacity,
+                cargo_capacity: info.cargo_capacity,
                 consumables: info.consumables,
-                starshipClass: info.starship_class,
-                mglt: info.mglt,
-                hyperdriveRating: info.hyperdrive_rating
+                starship_class: info.starship_class,
+                MGLT: info.MGLT,
+                hyperdrive_rating: info.hyperdrive_rating
 
             },
         },

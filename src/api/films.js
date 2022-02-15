@@ -11,11 +11,11 @@ export const addFilms = (info, user) => {
         data: {
             info: {
                 title: info.title,
-                episodeId: info.episode_id,
-                openingCrawl: info.openingCrawl,
+                episode_id: info.episode_id,
+                opening_crawl: info.opening_crawl,
                 director: info.director,
                 producer: info.producer,
-                releaseDate: info.release_date
+                release_date: info.release_date
             },
         },
     })

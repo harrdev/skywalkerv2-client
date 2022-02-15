@@ -1,5 +1,6 @@
 import { getVehicles, deleteVehicles } from '../api/vehicles'
-import { Link, useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 const FaveVehicles = (props) => {
     const { user } = props
@@ -39,7 +40,7 @@ const FaveVehicles = (props) => {
         return (
             <li key={i}>
                 <div className="faveVehicles">
-                    {p.name}
+                    <Link to={`/Vehicles/${p.name}`} style={{ fontSize: "25px", padding: "15px" }}>{p.name}</Link>
                 </div>
                 <div className="peopleRemoveButton">
                     <button className="removeButton" onClick={() => removeVehicles(p)}>Delete from Favorites</button>

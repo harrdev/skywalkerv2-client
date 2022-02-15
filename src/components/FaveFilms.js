@@ -1,5 +1,6 @@
 import { getFilms, deleteFilms } from '../api/films'
-import { Link, useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 const FaveFilms = (props) => {
     const { user } = props
@@ -39,7 +40,7 @@ const FaveFilms = (props) => {
         return (
             <li key={i}>
                 <div className="savedFilms">
-                    {p.title}
+                <Link to={`/Film/${p.title}`} style={{ fontSize: "25px", padding: "15px" }}>{p.title}</Link>
                 </div>
                 <div className="filmRemoveButton">
                     <button className="removeButton" onClick={() => removeFilm(p)}>Delete from Favorites</button>

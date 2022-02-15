@@ -20,7 +20,7 @@ const StarshipDetails = (props) => {
 			<h3>Cargo Capacity: {s.cargo_capacity}</h3>
 			<h3>Consumables: {s.consumables}</h3>
 			<h3>Hyperdrive Rating: {s.hyperdrive_rating}</h3>
-			<h3>MGLT: {s.mglt}</h3>
+			<h3>MGLT: {s.MGLT}</h3>
 			<h3>Starship Class: {s.starship_class}</h3>
 
 		</div>

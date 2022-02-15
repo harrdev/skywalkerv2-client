@@ -33,6 +33,9 @@ import FaveFilms from './components/FaveFilms'
 import Favorites from './components/Favorites'
 import FavePeopleDetails from './components/Details/FavePeopleDetails'
 import FavePlanetDetails from './components/Details/FavePlanetDetails'
+import FaveVehicleDetails from './components/Details/FaveVehicleDetails'
+import FaveStarshipDetails from './components/Details/FaveStarshipDetails'
+import FaveFilmDetails from './components/Details/FaveFilmDetails'
 
 const App = () => {
 	const [user, setUser] = useState(null)
@@ -238,6 +241,12 @@ const App = () => {
 							<FavePeople msgAlert={msgAlert} user={user} />
 						</RequireAuth>}
 				/>
+				<Route path='/Film/:id'
+					element={
+						<RequireAuth user={user}>
+							<FaveFilmDetails msgAlert={msgAlert} user={user} />
+						</RequireAuth>}
+				/>
 				<Route path='/People/:id'
 					element={
 						<RequireAuth user={user}>
@@ -248,6 +257,18 @@ const App = () => {
 					element={
 						<RequireAuth user={user}>
 							<FavePlanetDetails msgAlert={msgAlert} user={user} />
+						</RequireAuth>}
+				/>
+				<Route path='/Vehicles/:id'
+					element={
+						<RequireAuth user={user}>
+							<FaveVehicleDetails msgAlert={msgAlert} user={user} />
+						</RequireAuth>}
+				/>
+				<Route path='/Starships/:id'
+					element={
+						<RequireAuth user={user}>
+							<FaveStarshipDetails msgAlert={msgAlert} user={user} />
 						</RequireAuth>}
 				/>
 				<Route path='/Dashboard/People'
