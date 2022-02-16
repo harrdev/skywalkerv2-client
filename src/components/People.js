@@ -26,17 +26,17 @@ const People = (props) => {
 		<div className="container">
 			<div className="list">
 				<div className="uList">
-				<h2>People List</h2>
-				<ul>
-					{peopleList}
-				</ul>
+					<h2>People List</h2>
+					<ul>
+						{peopleList}
+					</ul>
 				</div>Ï
 			</div>
 			<div className="addForm">
 				<h2>Add new person</h2>
-				<AddPersonForm user={user} />
+				<AddPersonForm user={user} people={props.people}/>
 			</div>
-		</div>	
+		</div>
 	)
 }
 

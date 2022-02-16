@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { addVehicles } from '../api/vehicles'
-import AddNewVehicle from './AddVehicleForm'
+import AddVehicleForm from './AddVehicleForm'
 
 const Vehicles = (props) => {
 	const { user } = props
@@ -33,7 +33,7 @@ const Vehicles = (props) => {
 			</div>
 			<div className="addForm">
 				<h2>Add new Vehicle</h2>
-				<AddNewVehicle user={user} />
+				<AddVehicleForm user={user} />
 			</div>
 		</div>
 	)
