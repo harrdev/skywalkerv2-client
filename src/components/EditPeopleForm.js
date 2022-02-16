@@ -1,10 +1,11 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { editPerson } from '../api/forms';
 
 const EditPerson = (props) => {
     const { user } = props
-    const [inputs, setInputs] = useState({});
+    const navigate = useNavigate()
+    const [inputs, setInputs] = useState({})
     const id = props.props._id
     const p = props.props
     console.log("inputs state: ", inputs)
@@ -16,9 +17,10 @@ const EditPerson = (props) => {
     }
 
     const handleSubmit = (event) => {
-        event.preventDefault();
+        event.preventDefault()
         editPerson(inputs, user, id)
-        alert(inputs);
+        alert("Updates Made!")
+        navigate('/favorites')
     }
 
     return (

@@ -37,6 +37,7 @@ import FaveVehicleDetails from './components/Details/FaveVehicleDetails'
 import FaveStarshipDetails from './components/Details/FaveStarshipDetails'
 import FaveFilmDetails from './components/Details/FaveFilmDetails'
 import FaveSpeciesDetails from './components/Details/FaveSpeciesDetails'
+import EditPeopleForm from './components/EditPeopleForm'
 
 const App = () => {
 	const [user, setUser] = useState(null)
@@ -240,6 +241,12 @@ const App = () => {
 					element={
 						<RequireAuth user={user}>
 							<FavePeople msgAlert={msgAlert} user={user} />
+						</RequireAuth>}
+				/>
+				<Route path='/FavePeople/edit/:id'
+					element={
+						<RequireAuth user={user}>
+							<EditPeopleForm msgAlert={msgAlert} user={user} />
 						</RequireAuth>}
 				/>
 				<Route path='/Film/:id'
