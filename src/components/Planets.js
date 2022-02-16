@@ -23,14 +23,19 @@ const Planets = (props) => {
 	})
 
 	return (
-		<div className="planets">
-			<div className="addForm">
-				<AddPlanetForm user={user}/>
+		<div className="container">
+			<div className="list">
+				<div className="uList">
+				<h2>Planet List</h2>
+				<ul>
+					{planetsList}
+				</ul>
+				</div>Ï
 			</div>
-			<h2>Planets List</h2>
-			<ul>
-				{planetsList}
-			</ul>
+			<div className="addForm">
+				<h2>Add new Planet</h2>
+				<AddPlanetForm user={user} />
+			</div>
 		</div>
 	)
 }

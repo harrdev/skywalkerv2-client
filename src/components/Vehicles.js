@@ -22,14 +22,19 @@ const Vehicles = (props) => {
 	})
 
 	return (
-		<div className="vehicles">
-			<div className="addForm">
-				<AddNewVehicle user={user}/>
+		<div className="container">
+			<div className="list">
+				<div className="uList">
+				<h2>Vehicle List</h2>
+				<ul>
+					{vehiclesList}
+				</ul>
+				</div>Ï
 			</div>
-			<h2>Vehicles List</h2>
-			<ul>
-				{vehiclesList}
-			</ul>
+			<div className="addForm">
+				<h2>Add new Vehicle</h2>
+				<AddNewVehicle user={user} />
+			</div>
 		</div>
 	)
 }

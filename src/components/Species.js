@@ -24,14 +24,19 @@ const Species = (props) => {
 	})
 
 	return (
-		<div className="species">
-			<div className="addForm">
-				<AddSpeciesForm user={user}/>
+		<div className="container">
+			<div className="list">
+				<div className="uList">
+				<h2>Species List</h2>
+				<ul>
+					{speciesList}
+				</ul>
+				</div>Ï
 			</div>
-			<h2>Species List</h2>
-			<ul>
-				{speciesList}
-			</ul>
+			<div className="addForm">
+				<h2>Add new Species</h2>
+				<AddSpeciesForm user={user} />
+			</div>
 		</div>
 	)
 }

@@ -36,7 +36,7 @@ const People = (props) => {
 				<h2>Add new person</h2>
 				<AddPersonForm user={user} />
 			</div>
-		</div>
+		</div>	
 	)
 }
 

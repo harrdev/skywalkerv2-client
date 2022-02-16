@@ -22,14 +22,19 @@ const Starships = (props) => {
 	})
 
 	return (
-		<div className="starships">
-			<div className="addForm">
-				<AddStarshipForm user={user}/>
+		<div className="container">
+			<div className="list">
+				<div className="uList">
+				<h2>Starship List</h2>
+				<ul>
+					{starshipsList}
+				</ul>
+				</div>Ï
 			</div>
-			<h2>Starships List</h2>
-			<ul>
-				{starshipsList}
-			</ul>
+			<div className="addForm">
+				<h2>Add new Starship</h2>
+				<AddStarshipForm user={user} />
+			</div>
 		</div>
 	)
 }
