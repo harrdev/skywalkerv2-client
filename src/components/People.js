@@ -23,14 +23,19 @@ const People = (props) => {
 	})
 
 	return (
-		<div className="people">
-			<div className="addForm">
-				<AddPersonForm user={user}/>
+		<div className="container">
+			<div className="list">
+				<div className="uList">
+				<h2>People List</h2>
+				<ul>
+					{peopleList}
+				</ul>
+				</div>Ï
 			</div>
-			<h2>People List</h2>
-			<ul>
-				{peopleList}
-			</ul>
+			<div className="addForm">
+				<h2>Add new person</h2>
+				<AddPersonForm user={user} />
+			</div>
 		</div>
 	)
 }

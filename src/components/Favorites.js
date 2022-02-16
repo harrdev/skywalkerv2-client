@@ -8,23 +8,23 @@ import FaveFilms from './FaveFilms'
 const Favorites = (props) => {
     const { user } = props
     return (
-        <div className="saved">
-            <div>
+        <div className="container">
+            <div className="item">
                 <FavePeople user={user}/>
             </div>
-            <div>
+            <div className="item">
                 <FavePlanets user={user}/>
             </div>
-            <div>
+            <div className="item">
                 <FaveSpecies user={user} />
             </div>
-            <div>
+            <div className="item">
                 <FaveVehicles user={user} />
             </div>
-            <div>
+            <div className="item">
                 <FaveStarships user={user} />
             </div>
-            <div>
+            <div className="item">
                 <FaveFilms user={user} />
             </div>
         </div>
