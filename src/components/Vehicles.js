@@ -7,7 +7,7 @@ const Vehicles = (props) => {
 
 	const addToFave = (info) => {
 		addVehicles(info, user)
-    }
+	}
 	const vehiclesList = props.vehicles.map((p, i) => {
 		return (
 			<li key={i}>
@@ -23,17 +23,19 @@ const Vehicles = (props) => {
 
 	return (
 		<div className="container">
-			<div className="list">
+			<div className="listLeft">
 				<div className="uList">
-				<h2>Vehicle List</h2>
-				<ul>
-					{vehiclesList}
-				</ul>
+					<h2>Vehicle List</h2>
+					<ul>
+						{vehiclesList}
+					</ul>
 				</div>Ï
 			</div>
-			<div className="addForm">
-				<h2>Add new Vehicle</h2>
-				<AddVehicleForm user={user} />
+			<div className="listRight">
+				<div className="addForm">
+					<h2>Add new Vehicle</h2>
+					<AddVehicleForm user={user} />
+				</div>
 			</div>
 		</div>
 	)

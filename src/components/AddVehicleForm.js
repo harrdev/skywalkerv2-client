@@ -15,6 +15,7 @@ const AddVehicle = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         addNewVehicle(inputs, user)
+        alert("Vehicle added to your favorites")
     }
 
     return (

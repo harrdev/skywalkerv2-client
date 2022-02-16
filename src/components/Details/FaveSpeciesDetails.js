@@ -24,15 +24,24 @@ const FaveSpeciesDetails = (props) => {
 
     const s = usersSpecies
     return (
-        <div className="main">
-            <h1>{s.name} Details</h1>
-			<h3>Classification: {s.classification}</h3>
-			<h3>Average Height: {s.average_height}</h3>
-			<h3>Skin Colors: {s.skin_colors}</h3>
-			<h3>Hair Colors: {s.hair_colors}</h3>
-			<h3>Eye Colors: {s.eye_colors}</h3>
-			<h3>Average Lifespan: {s.average_lifespan}</h3>
-			<h3>Language: {s.language}</h3>
+        <div className="container">
+            <div className="listLeft">
+                <div className="items">
+                    <h1>{s.name} Details</h1>
+                    <h3>Classification: {s.classification}</h3>
+                    <h3>Average Height: {s.average_height}</h3>
+                    <h3>Skin Colors: {s.skin_colors}</h3>
+                    <h3>Hair Colors: {s.hair_colors}</h3>
+                    <h3>Eye Colors: {s.eye_colors}</h3>
+                    <h3>Average Lifespan: {s.average_lifespan}</h3>
+                    <h3>Language: {s.language}</h3>
+                </div>
+            </div>
+            <div className="listRight">
+                <div className="editForm">
+                    
+                </div>
+            </div>
         </div>
     )
 }

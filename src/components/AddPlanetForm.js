@@ -15,7 +15,7 @@ const AddPlanet = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         addNewPlanet(inputs, user)
-        alert(inputs);
+        alert("Planet added to your favorites")
     }
 
     return (

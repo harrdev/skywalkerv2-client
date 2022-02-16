@@ -2,8 +2,6 @@ import apiUrl from '../apiConfig'
 import axios from 'axios'
 
 export const addNewPerson = (info, user) => {
-    console.log("This is the data: ", info)
-    console.log("This is the user: ", user)
     return axios({
         method: 'POST',
         headers: {
@@ -34,8 +32,6 @@ export const addNewPerson = (info, user) => {
 }
 
 export const addNewPlanet = (info, user) => {
-    console.log("This is the data: ", info)
-    console.log("This is the user: ", user)
     return axios({
         method: 'POST',
         headers: {
@@ -59,8 +55,6 @@ export const addNewPlanet = (info, user) => {
 }
 
 export const addNewVehicle = (info, user) => {
-    console.log("This is the data: ", info)
-    console.log("This is the user: ", user)
     return axios({
         method: 'POST',
         headers: {
@@ -86,8 +80,6 @@ export const addNewVehicle = (info, user) => {
 }
 
 export const addNewSpecies = (info, user) => {
-    console.log("This is the data: ", info)
-    console.log("This is the user: ", user)
     return axios({
         method: 'POST',
         headers: {
@@ -110,8 +102,6 @@ export const addNewSpecies = (info, user) => {
 }
 
 export const addNewStarship = (info, user) => {
-    console.log("This is the data: ", info)
-    console.log("This is the user: ", user)
     return axios({
         method: 'POST',
         headers: {
@@ -139,8 +129,6 @@ export const addNewStarship = (info, user) => {
 }
 
 export const addNewFilm = (info, user) => {
-    console.log("This is the data: ", info)
-    console.log("This is the user: ", user)
     return axios({
         method: 'POST',
         headers: {
@@ -185,6 +173,29 @@ export const editPerson = (info, user, id) => {
                 wiki: info.wiki,
                 homeworld: info.homeworld,
                 gender: info.gender
+            },
+        },
+    })
+}
+
+export const editPlanet = (info, user, id) => {
+    return axios({
+        method: 'PATCH',
+        headers: {
+            "Authorization": `Bearer ${user.token}`
+        },
+        url: apiUrl + `/Planets/${id}`,
+        data: {
+            info: {
+                name: info.name,
+                rotation_period: info.rotation_period,
+                orbital_period: info.orbital_period,
+                diameter: info.diameter,
+                terrain: info.terrain,
+                climate: info.climate,
+                gravity: info.gravity,
+                surface_water: info.surface_water,
+                population: info.population,
             },
         },
     })

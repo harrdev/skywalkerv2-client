@@ -16,7 +16,7 @@ const AddFilm = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault()
         addNewFilm(inputs, user)
-        alert(inputs);
+        alert("Film added to your favorites")
     }
 
     return (

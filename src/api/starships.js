@@ -37,7 +37,6 @@ export const getStarships = (res) => {
     url: apiUrl + '/FaveStarships'
 })
     .then(res => {
-        console.log('faveStarships GET called')
         return res
     })
     .catch((error) => console.log(error))

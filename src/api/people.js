@@ -40,7 +40,6 @@ export const getPeople = (res) => {
     url: apiUrl + '/saved'
 })
     .then(res => {
-        console.log('favePeople GET called')
         return res
     })
     .catch((error) => console.log(error))

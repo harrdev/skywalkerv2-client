@@ -7,7 +7,7 @@ const Starships = (props) => {
 
 	const addToFave = (info) => {
 		addStarships(info, user)
-    }
+	}
 	const starshipsList = props.starships.map((p, i) => {
 		return (
 			<li key={i}>
@@ -23,17 +23,19 @@ const Starships = (props) => {
 
 	return (
 		<div className="container">
-			<div className="list">
+			<div className="listLeft">
 				<div className="uList">
-				<h2>Starship List</h2>
-				<ul>
-					{starshipsList}
-				</ul>
+					<h2>Starship List</h2>
+					<ul>
+						{starshipsList}
+					</ul>
 				</div>Ï
 			</div>
-			<div className="addForm">
-				<h2>Add new Starship</h2>
-				<AddStarshipForm user={user} />
+			<div className="listRight">
+				<div className="addForm">
+					<h2>Add new Starship</h2>
+					<AddStarshipForm user={user} />
+				</div>
 			</div>
 		</div>
 	)

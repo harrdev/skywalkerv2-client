@@ -33,7 +33,6 @@ export const getPlanets = (res) => {
     url: apiUrl + '/FavePlanets'
 })
     .then(res => {
-        console.log('favePlanets GET called')
         return res
     })
     .catch((error) => console.log(error))

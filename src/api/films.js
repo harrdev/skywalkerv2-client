@@ -30,7 +30,6 @@ export const getFilms = (res) => {
     url: apiUrl + '/FaveFilms'
 })
     .then(res => {
-        console.log('faveFilms GET called')
         return res
     })
     .catch((error) => console.log(error))

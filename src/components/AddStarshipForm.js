@@ -15,6 +15,7 @@ const AddStarship = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         addNewStarship(inputs, user)
+        alert("Starship added to your favorites")
     }
 
     return (

@@ -15,7 +15,7 @@ const AddPerson = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         addNewPerson(inputs, user)
-        alert(inputs);
+        alert("Person added to your favorites")
     }
 
     return (

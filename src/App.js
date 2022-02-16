@@ -38,6 +38,7 @@ import FaveStarshipDetails from './components/Details/FaveStarshipDetails'
 import FaveFilmDetails from './components/Details/FaveFilmDetails'
 import FaveSpeciesDetails from './components/Details/FaveSpeciesDetails'
 import EditPeopleForm from './components/EditPeopleForm'
+import EditPlanetForm from './components/EditPlanetsForm'
 
 const App = () => {
 	const [user, setUser] = useState(null)
@@ -56,7 +57,8 @@ const App = () => {
 		getAllSpecies()
 		getAllStarships()
 		getAllVehicles()
-	}, [])
+		console.log("SWAPI axios calls made")
+	}, [user])
 
 	const getAllVehicles = () => {
 		let endpoints = [
@@ -244,6 +246,12 @@ const App = () => {
 						</RequireAuth>}
 				/>
 				<Route path='/FavePeople/edit/:id'
+					element={
+						<RequireAuth user={user}>
+							<EditPeopleForm msgAlert={msgAlert} user={user} />
+						</RequireAuth>}
+				/>
+				<Route path='/FavePlanets/edit/:id'
 					element={
 						<RequireAuth user={user}>
 							<EditPeopleForm msgAlert={msgAlert} user={user} />

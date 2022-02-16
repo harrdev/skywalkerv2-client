@@ -7,7 +7,7 @@ const Species = (props) => {
 
 	const addToFave = (info) => {
 		addSpecies(info, user)
-    }
+	}
 
 	const speciesList = props.species.map((p, i) => {
 		return (
@@ -25,17 +25,19 @@ const Species = (props) => {
 
 	return (
 		<div className="container">
-			<div className="list">
+			<div className="listLeft">
 				<div className="uList">
-				<h2>Species List</h2>
-				<ul>
-					{speciesList}
-				</ul>
+					<h2>Species List</h2>
+					<ul>
+						{speciesList}
+					</ul>
 				</div>Ï
 			</div>
-			<div className="addForm">
-				<h2>Add new Species</h2>
-				<AddSpeciesForm user={user} />
+			<div className="listRight">
+				<div className="addForm">
+					<h2>Add new Species</h2>
+					<AddSpeciesForm user={user} />
+				</div>
 			</div>
 		</div>
 	)

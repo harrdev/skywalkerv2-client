@@ -32,7 +32,6 @@ export const getSpecies = (res) => {
     url: apiUrl + '/FaveSpecies'
 })
     .then(res => {
-        console.log('faveSpecies GET called')
         return res
     })
     .catch((error) => console.log(error))

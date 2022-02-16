@@ -7,8 +7,8 @@ const Planets = (props) => {
 
 	const addToFave = (info) => {
 		addPlanet(info, user)
-    }
-    
+	}
+
 	const planetsList = props.planets.map((p, i) => {
 		return (
 			<li key={i}>
@@ -24,17 +24,19 @@ const Planets = (props) => {
 
 	return (
 		<div className="container">
-			<div className="list">
+			<div className="listLeft">
 				<div className="uList">
-				<h2>Planet List</h2>
-				<ul>
-					{planetsList}
-				</ul>
+					<h2>Planet List</h2>
+					<ul>
+						{planetsList}
+					</ul>
 				</div>Ï
 			</div>
-			<div className="addForm">
-				<h2>Add new Planet</h2>
-				<AddPlanetForm user={user} />
+			<div className="listRight">
+				<div className="addForm">
+					<h2>Add new Planet</h2>
+					<AddPlanetForm user={user} />
+				</div>
 			</div>
 		</div>
 	)

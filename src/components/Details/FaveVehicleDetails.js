@@ -23,7 +23,9 @@ const FaveVehicleDetails = (props) => {
 
     const v = usersVehicles
     return (
-        <div className="main">
+        <div className="container">
+            <div className="listLeft">
+                <div className="items">
             <h1>{v.name} Details</h1>
 			<h3>Model: {v.model}</h3>
 			<h3>Manufacturer: {v.manufacturer}</h3>
@@ -35,6 +37,13 @@ const FaveVehicleDetails = (props) => {
 			<h3>Cargo Capacity: {v.cargo_capacity}</h3>
 			<h3>Consumables: {v.consumables}</h3>
 			<h3>Vehicle Class: {v.vehicle_class}</h3>
+                </div>
+            </div>
+            <div className="listRight">
+                <div className="editForm">
+                
+                </div>
+            </div>
         </div>
     )
 }

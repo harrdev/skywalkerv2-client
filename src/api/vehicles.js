@@ -35,7 +35,6 @@ export const getVehicles = (res) => {
     url: apiUrl + '/FaveVehicles'
 })
     .then(res => {
-        console.log('faveVehicles GET called')
         return res
     })
     .catch((error) => console.log(error))

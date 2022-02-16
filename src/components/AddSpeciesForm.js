@@ -15,6 +15,7 @@ const AddSpecies = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         addNewSpecies(inputs, user)
+        alert("Species added to your favorites")
     }
 
     return (
@@ -43,7 +44,7 @@ const AddSpecies = (props) => {
 
                 <label htmlFor="language">Language</label>
                 <input class="input" type="text" id="language" name="language" onChange={handleChange} /><br />
-                
+
                 <input type="submit" value="Add a Species" />
             </form>
         </div>

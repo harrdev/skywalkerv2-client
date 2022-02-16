@@ -24,7 +24,7 @@ const People = (props) => {
 
 	return (
 		<div className="container">
-			<div className="list">
+			<div className="listLeft">
 				<div className="uList">
 					<h2>People List</h2>
 					<ul>
@@ -32,10 +32,12 @@ const People = (props) => {
 					</ul>
 				</div>Ï
 			</div>
-			<div className="addForm">
-				<h2>Add new person</h2>
-				<AddPersonForm user={user} people={props.people}/>
-			</div>
+			<div className="listRight">
+				<div className="addForm">
+					<h2>Add new person</h2>
+					<AddPersonForm user={user} people={props.people} />
+				</div>
+			</div>Ï
 		</div>
 	)
 }
