@@ -23,7 +23,6 @@ export const addStarships = (info, user) => {
                 starship_class: info.starship_class,
                 MGLT: info.MGLT,
                 hyperdrive_rating: info.hyperdrive_rating
-
             },
         },
     })

@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom'
 import { addSpecies } from '../api/species'
+import AddSpeciesForm from './AddSpeciesForm'
 
 const Species = (props) => {
 	const { user } = props
-	
+
 	const addToFave = (info) => {
 		addSpecies(info, user)
     }
@@ -24,6 +25,9 @@ const Species = (props) => {
 
 	return (
 		<div className="species">
+			<div className="addForm">
+				<AddSpeciesForm user={user}/>
+			</div>
 			<h2>Species List</h2>
 			<ul>
 				{speciesList}

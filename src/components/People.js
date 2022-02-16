@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
 import { addPerson } from '../api/people'
 import AddPersonForm from './AddPersonForm'
+
 const People = (props) => {
-	
+
 	const { user } = props
 	const addToFave = (info) => {
 		addPerson(info, user)
@@ -23,7 +24,7 @@ const People = (props) => {
 
 	return (
 		<div className="people">
-			<div className="addPersonForm">
+			<div className="addForm">
 				<AddPersonForm user={user}/>
 			</div>
 			<h2>People List</h2>

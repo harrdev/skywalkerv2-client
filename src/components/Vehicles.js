@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { addVehicles } from '../api/vehicles'
+import AddNewVehicle from './AddVehicleForm'
 
 const Vehicles = (props) => {
 	const { user } = props
@@ -22,6 +23,9 @@ const Vehicles = (props) => {
 
 	return (
 		<div className="vehicles">
+			<div className="addForm">
+				<AddNewVehicle user={user}/>
+			</div>
 			<h2>Vehicles List</h2>
 			<ul>
 				{vehiclesList}

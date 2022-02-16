@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 import { addPlanet } from '../api/planets'
+import AddPlanetForm from './AddPlanetForm'
+
 const Planets = (props) => {
 	const { user } = props
 
@@ -22,6 +24,9 @@ const Planets = (props) => {
 
 	return (
 		<div className="planets">
+			<div className="addForm">
+				<AddPlanetForm user={user}/>
+			</div>
 			<h2>Planets List</h2>
 			<ul>
 				{planetsList}

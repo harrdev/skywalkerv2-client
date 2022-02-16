@@ -32,3 +32,130 @@ export const addNewPerson = (info, user) => {
         },
     })
 }
+
+export const addNewPlanet = (info, user) => {
+    console.log("This is the data: ", info)
+    console.log("This is the user: ", user)
+    return axios({
+        method: 'POST',
+        headers: {
+            "Authorization": `Bearer ${user.token}`
+        },
+        url: apiUrl + `/newPlanet/Planet`,
+        data: {
+            info: {
+                name: info.name,
+                rotation_period: info.rotation_period,
+                orbital_period: info.orbital_period,
+                diameter: info.diameter,
+                terrain: info.terrain,
+                climate: info.climate,
+                gravity: info.gravity,
+                surface_water: info.surface_water,
+                population: info.population,
+            },
+        },
+    })
+}
+
+export const addNewVehicle = (info, user) => {
+    console.log("This is the data: ", info)
+    console.log("This is the user: ", user)
+    return axios({
+        method: 'POST',
+        headers: {
+            "Authorization": `Bearer ${user.token}`
+        },
+        url: apiUrl + `/newVehicle/Vehicle`,
+        data: {
+            info: {
+                name: info.name,
+                model: info.model,
+                manufacturer: info.manufacturer,
+                cost_in_credits: info.cost_in_credits,
+                length: info.length,
+                crew: info.crew,
+                max_atmosphering_speed: info.max_atmosphering_speed,
+                passengers: info.passengers,
+                cargo_capacity: info.cargo_capacity,
+                consumables: info.consumables,
+                vehicle_class: info.vehicle_class,
+            },
+        },
+    })
+}
+
+export const addNewSpecies = (info, user) => {
+    console.log("This is the data: ", info)
+    console.log("This is the user: ", user)
+    return axios({
+        method: 'POST',
+        headers: {
+            "Authorization": `Bearer ${user.token}`
+        },
+        url: apiUrl + `/newSpecies/Species`,
+        data: {
+            info: {
+                name: info.name,
+                classification: info.classification,
+                average_height: info.average_height,
+                skin_colors: info.skin_colors,
+                hair_colors: info.hair_colors,
+                eye_colors: info.eye_colors,
+                average_lifespan: info.average_lifespan,
+                language: info.language,
+            },
+        },
+    })
+}
+
+export const addNewStarship = (info, user) => {
+    console.log("This is the data: ", info)
+    console.log("This is the user: ", user)
+    return axios({
+        method: 'POST',
+        headers: {
+            "Authorization": `Bearer ${user.token}`
+        },
+        url: apiUrl + `/newStarship/Starship`,
+        data: {
+            info: {
+                name: info.name,
+                model: info.model,
+                manufacturer: info.manufacturer,
+                cost_in_credits: info.cost_in_credits,
+                length: info.length,
+                crew: info.crew,
+                max_atmosphering_speed: info.max_atmosphering_speed,
+                passengers: info.passengers,
+                cargo_capacity: info.cargo_capacity,
+                consumables: info.consumables,
+                starship_class: info.starship_class,
+                MGLT: info.MGLT,
+                hyperdrive_rating: info.hyperdrive_rating
+            },
+        },
+    })
+}
+
+export const addNewFilm = (info, user) => {
+    console.log("This is the data: ", info)
+    console.log("This is the user: ", user)
+    return axios({
+        method: 'POST',
+        headers: {
+            "Authorization": `Bearer ${user.token}`
+        },
+        url: apiUrl + `/newFilm/Film`,
+        data: {
+            info: {
+                title: info.title,
+                episode_id: info.episode_id,
+                opening_crawl: info.opening_crawl,
+                director: info.director,
+                producer: info.producer,
+                release_date: info.release_date
+            },
+        },
+    })
+}

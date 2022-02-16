@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { addStarships } from '../api/starships'
+import AddStarshipForm from './AddStarshipForm'
 
 const Starships = (props) => {
 	const { user } = props
@@ -22,6 +23,9 @@ const Starships = (props) => {
 
 	return (
 		<div className="starships">
+			<div className="addForm">
+				<AddStarshipForm user={user}/>
+			</div>
 			<h2>Starships List</h2>
 			<ul>
 				{starshipsList}

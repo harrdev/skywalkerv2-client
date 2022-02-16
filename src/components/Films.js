@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { addFilms } from '../api/films'
+import AddFilmForm from './AddFilmForm'
 
 const Films = (props) => {
 	const { user } = props
@@ -23,6 +24,9 @@ const Films = (props) => {
 
 		return (
 			<div className="films">
+				<div className="addForm">
+				<AddFilmForm user={user}/>
+			</div>
 				<h2>Films List</h2>
 				<ul>
 					{filmsList}
