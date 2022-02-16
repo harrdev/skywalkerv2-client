@@ -5,6 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("https://www.xtrafondos.com/wallpapers/darth-vader-star-wars-the-clone-wars-7914.jpg");
+  background-position: center center;
+  background-size: cover;
 }
 
 code {
@@ -99,3 +102,82 @@ button {
 .list {
   text-align: center;
 }
+
+.containerMain {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+  gap: 20px;
+}
+
+.itemMain1, .itemMain2, .itemMain3, .itemMain4, .itemMain5, .itemMain6 {
+  height: 200px;
+  width: 300px;
+  overflow-y: auto;
+  background-color: yellow;
+  text-align: center;
+  border: 3px solid black;
+  border-radius: 100px / 70px;
+}
+
+.skywalkerH1 {
+  text-align: center;
+}
+
+.skywalkerH3 {
+  text-align: center;
+  margin-bottom: 75px;
+}
+
+.itemMain1 {
+  background-image: url("https://variety.com/wp-content/uploads/2020/12/Ashoka-Tano-Mandalorian-.jpg?w=681&h=383&crop=1");
+  background-size: cover;
+  background-position: center center;
+}
+
+.itemMain2 {
+  background-image: url("https://www.looper.com/img/gallery/the-history-of-tatooine-fully-explained/intro-1598632525.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+.itemMain3 {
+  background-image: url("https://cdn.drivingline.com/media/12943/dl-sw_10-09.jpg?quality=70&mode=pad&copymetadata=true&w=1322");
+  background-size: cover;
+  background-position: center center;
+}
+
+.itemMain4 {
+  background-image: url("https://lumiere-a.akamaihd.net/v1/images/ithorian-main_0cc7f24e.jpeg?region=0%2C0%2C1280%2C721");
+  background-size: cover;
+  background-position: center center;
+}
+
+.itemMain4 {
+  background-image: url("https://lumiere-a.akamaihd.net/v1/images/ithorian-main_0cc7f24e.jpeg?region=0%2C0%2C1280%2C721");
+  background-size: cover;
+  background-position: center center;
+}
+
+.itemMain5 {
+  background-image: url("https://golfdigest.sports.sndimg.com/content/dam/images/golfdigest/fullset/2018/04/16/5ad4e8c370e68e282f66ed87_falcon.png.rend.hgtvcom.966.690.suffix/1573241270725.png");
+  background-size: cover;
+  background-position: center center;
+}
+
+.itemMain6 {
+  background-image: url("https://www.denofgeek.com/wp-content/uploads/2019/11/star-wars-revenge-sith-hero_0.jpg?resize=768%2C432");
+  background-size: cover;
+  background-position: center center;
+}
+
+.mainLink {
+  color: purple;
+}
+
+
+
+
+
+
