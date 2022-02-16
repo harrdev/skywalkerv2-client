@@ -1,5 +1,6 @@
 import { getSpecies, deleteSpecies } from '../api/species'
-import { Link, useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 const FaveSpecies = (props) => {
     const { user } = props
@@ -39,7 +40,7 @@ const FaveSpecies = (props) => {
         return (
             <li key={i}>
                 <div className="faveSpecies">
-                    {p.name}
+                <Link to={`/Species/${p.name}`} style={{ fontSize: "25px", padding: "15px" }}>{p.name}</Link>
                 </div>
                 <div className="peopleRemoveButton">
                     <button className="removeButton" onClick={() => removeSpecies(p)}>Delete from Favorites</button>
