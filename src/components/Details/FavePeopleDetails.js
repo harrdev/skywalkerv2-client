@@ -16,7 +16,6 @@ const FavePeopleDetails = (props) => {
                     if (person === true) {
                         setUsersPeople(people)
                     }
-                    console.log("usersPeople is: ", usersPeople)
                 })
             })
             .catch((error) => {
@@ -34,23 +33,21 @@ const FavePeopleDetails = (props) => {
     //     )
     // })
     return (
-        <div className="details">
-            <h1>Favorite Person Details</h1>
-            <h3>Name: {p.name}</h3>
-            <h3>Gender: {p.gender}</h3>
-            <h3>Species: {p.species}</h3>
-            <h3>Birth Year {p.born}</h3>
-            <h3>Death Year: {p.died}</h3>
-            <h3>Death Location: {p.diedLocation}</h3>
-            <h3>Height: {p.height} m</h3>
-            <h3>Eye Color: {p.eyeColor}</h3>
-            <h3>Hair Color: {p.hairColor}</h3>
-            <h3>Weight: {p.mass} kg</h3>
-            <h3>Skin Color: {p.skinColor}</h3>
-            <h3>Born Location: {p.bornLocation}</h3>
+        <div className="main">
+            <h1>{p.name} Details</h1>
             <h3>Homeworld: {p.homeworld}</h3>
+			<h3>Gender: {p.gender}</h3>
+			<h3>Species: {p.species}</h3>
+			<h3>Height: {p.height} m</h3>
+			<h3>Hair Color: {p.hairColor}</h3>
+			<h3>Skin Color: {p.skinColor}</h3>
+			<h3>Eye Color: {p.eyeColor}</h3>
+			<h3>Weight: {p.mass} kg</h3>
+			<h3>Birth Year {p.born}</h3>
+			<h3>Born Location: {p.bornLocation}</h3>
+			<h3>Death Year: {p.died}</h3>
+			<h3>Death Location: {p.diedLocation}</h3>
             <div>
-                <h3>Affiliations:</h3>
                 <h3>Affiliations:</h3>
                 {/* <ul>
                     {affiliations}

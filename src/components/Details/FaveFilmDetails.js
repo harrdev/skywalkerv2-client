@@ -23,9 +23,8 @@ const FaveFilmDetails = (props) => {
 
     const f = usersFilms
     return (
-        <div className="details">
-            <h2>Favorite Film Details</h2>
-			<h3>Title: {f.title}</h3>
+        <div className="main">
+            <h1>{f.title} Details</h1>
 			<h3>Episode ID: {f.episode_id}</h3>
 			<h3>Opening Crawl: {f.opening_crawl}</h3>
 			<h3>Director: {f.director}</h3>

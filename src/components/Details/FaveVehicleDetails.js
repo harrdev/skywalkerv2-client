@@ -23,9 +23,8 @@ const FaveVehicleDetails = (props) => {
 
     const v = usersVehicles
     return (
-        <div className="details">
-            <h2>Favorite Vehicle Details</h2>
-			<h3>Name: {v.name}</h3>
+        <div className="main">
+            <h1>{v.name} Details</h1>
 			<h3>Model: {v.model}</h3>
 			<h3>Manufacturer: {v.manufacturer}</h3>
 			<h3>Cost in Credits: {v.cost_in_credits}</h3>

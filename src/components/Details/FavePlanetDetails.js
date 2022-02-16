@@ -24,9 +24,8 @@ const FavePlanetDetails = (props) => {
     const p = usersPlanets
 
     return (
-        <div className="details">
-            <h1>Favorite Planet Details</h1>
-			<h3>Name: {p.name}</h3>
+        <div className="main">
+            <h1>{p.name} Details</h1>
 			<h3>Rotation Period: {p.rotation_period}</h3>
 			<h3>Orbital Period: {p.orbital_period}</h3>
 			<h3>Diameter: {p.diameter}</h3>

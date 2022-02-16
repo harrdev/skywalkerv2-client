@@ -1,13 +1,15 @@
 import apiUrl from '../apiConfig'
 import axios from 'axios'
 
-export const addPerson = (info, user) => {
+export const addNewPerson = (info, user) => {
+    console.log("This is the data: ", info)
+    console.log("This is the user: ", user)
     return axios({
         method: 'POST',
         headers: {
             "Authorization": `Bearer ${user.token}`
         },
-        url: apiUrl + `/People`,
+        url: apiUrl + `/newPerson/People`,
         data: {
             info: {
                 name: info.name,
@@ -20,38 +22,13 @@ export const addPerson = (info, user) => {
                 born: info.born,
                 died: info.died,
                 species: info.species,
-                diedLocation: info.diedLocation,
+                deathLocation: info.deathLocation,
                 bornLocation: info.bornLocation,
                 image: info.image,
                 wiki: info.wiki,
                 homeworld: info.homeworld,
                 gender: info.gender
             },
-        },
-    })
-}
-
-export const getPeople = (res) => {
-    return axios({
-    method: 'GET',
-    headers: {
-        "Authorization": `Bearer ${res.token}`
-    },
-    url: apiUrl + '/saved'
-})
-    .then(res => {
-        console.log('favePeople GET called')
-        return res
-    })
-    .catch((error) => console.log(error))
-}
-
-export const deletePerson = (id, user) => {
-    return axios({
-        url: `${apiUrl}/saved/${id}`,
-        method: 'DELETE',
-        headers: {
-        	Authorization: `Token token=${user.token}`,
         },
     })
 }

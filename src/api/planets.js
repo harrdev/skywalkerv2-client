@@ -11,13 +11,13 @@ export const addPlanet = (info, user) => {
         data: {
             info: {
                 name: info.name,
-                rotationPeriod: info.rotation_period,
-                orbitalPeriod: info.orbitalPeriod,
+                rotation_period: info.rotation_period,
+                orbital_period: info.orbital_period,
                 diameter: info.diameter,
                 terrain: info.terrain,
                 climate: info.climate,
                 gravity: info.gravity,
-                surfaceWater: info.surface_water,
+                surface_water: info.surface_water,
                 population: info.population,
             },
         },

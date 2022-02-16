@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom'
 import { addPerson } from '../api/people'
-
+import AddPersonForm from './AddPersonForm'
 const People = (props) => {
-
+	
 	const { user } = props
 	const addToFave = (info) => {
 		addPerson(info, user)
-    }
+	}
 
 	const peopleList = props.people.map((p, i) => {
 		return (
@@ -15,7 +15,7 @@ const People = (props) => {
 					<Link to={`${p.name}`} style={{ fontSize: "25px", padding: "15px" }}>{p.name}</Link>
 				</div>
 				<div id="buttonDiv">
-				<button className="button" onClick={() => addToFave(p)}>Add To Favorites</button>
+					<button className="button" onClick={() => addToFave(p)}>Add To Favorites</button>
 				</div>
 			</li>
 		)
@@ -23,6 +23,9 @@ const People = (props) => {
 
 	return (
 		<div className="people">
+			<div className="addPersonForm">
+				<AddPersonForm user={user}/>
+			</div>
 			<h2>People List</h2>
 			<ul>
 				{peopleList}
