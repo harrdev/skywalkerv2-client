@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { getFilms } from '../../api/films'
 import { useState, useEffect } from 'react'
+import EditFilm from '../EditFilmForm'
 
 const FaveFilmDetails = (props) => {
     const [usersFilms, setUsersFilms] = useState([])
@@ -36,7 +37,8 @@ const FaveFilmDetails = (props) => {
             </div>
             <div className="listRight">
                 <div className="editForm">
-                    
+                    <h2>Edit Film</h2>
+                    <EditFilm user={user} props={f} />
                 </div>
             </div>
         </div>

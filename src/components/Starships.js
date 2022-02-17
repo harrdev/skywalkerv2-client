@@ -20,7 +20,7 @@ const Starships = (props) => {
 			</li>
 		)
 	})
-
+	
 	return (
 		<div className="container">
 			<div className="listLeft">

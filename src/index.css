@@ -5,11 +5,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size:5vw;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+    font-size:5vw;
 }
 
 form {
@@ -157,6 +159,7 @@ button {
 
 .skywalkerH1 {
   text-align: center;
+  font-size:10vw;
 }
 
 .skywalkerH3 {
@@ -168,4 +171,8 @@ button {
   color: black;
   font-size: 45px;
   text-decoration: none;
+}
+
+h1 {
+  font-size:10vw;
 }

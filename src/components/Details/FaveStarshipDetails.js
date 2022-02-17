@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { getStarships } from '../../api/starships'
 import { useState, useEffect } from 'react'
+import EditStarship from '../EditStarshipForm'
 
 const FaveStarshipDetails = (props) => {
     const [usersStarships, setUsersStarships] = useState([])
@@ -43,7 +44,8 @@ const FaveStarshipDetails = (props) => {
             </div>
             <div className="listRight">
                 <div className="editForm">
-                    
+                    <h2>Edit Starship</h2>
+                    <EditStarship user={user} props={s} />
                 </div>
             </div>
         </div>

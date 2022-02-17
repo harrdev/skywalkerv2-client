@@ -29,47 +29,35 @@ const EditVehicle = (props) => {
                 <label htmlFor="name">Name</label>
                 <input class="input" type="text" value={inputs.name} name="name" onChange={handleChange} /><br />
 
-                <label htmlFor="gender">Gender</label>
-                <input class="input" type="text" value={inputs.gender} name="gender" onChange={handleChange} /><br />
+                <label htmlFor="model">Model</label>
+                <input class="input" type="text" value={inputs.model} name="model" onChange={handleChange} /><br />
 
-                <label htmlFor="born">Birth Year</label>
-                <input class="input" type="text" value={inputs.born} name="born" onChange={handleChange} /><br />
+                <label htmlFor="manufacturer">Manufacturer</label>
+                <input class="input" type="text" value={inputs.manufacturer} name="manufacturer" onChange={handleChange} /><br />
 
-                <label htmlFor="bornLocation">Birth Location</label>
-                <input class="input" type="text" value={inputs.bornLocation} name="bornLocation" onChange={handleChange} /><br />
+                <label htmlFor="cost_in_credits">Cost in Credits</label>
+                <input class="input" type="text" value={inputs.cost_in_credits} name="cost_in_credits" onChange={handleChange} /><br />
 
-                <label htmlFor="died">Death Year</label>
-                <input class="input" type="text" value={inputs.died} name="died" onChange={handleChange} /><br />
+                <label htmlFor="length">Length</label>
+                <input class="input" type="text" value={inputs.length} name="length" onChange={handleChange} /><br />
 
-                <label htmlFor="diedLocation">Death Location</label>
-                <input class="input" type="text" value={inputs.diedLocation} name="diedLocation" onChange={handleChange} /><br />
+                <label htmlFor="crew">Crew</label>
+                <input class="input" type="text" value={inputs.crew} name="crew" onChange={handleChange} /><br />
 
-                <label htmlFor="height">Height</label>
-                <input class="input" type="text" value={inputs.height} name="height" onChange={handleChange} /><br />
+                <label htmlFor="max_atmosphering_speed">Max Speed</label>
+                <input class="input" type="text" value={inputs.max_atmosphering_speed} name="max_atmosphering_speed" onChange={handleChange} /><br />
 
-                <label htmlFor="mass">Mass</label>
-                <input class="input" type="text" value={inputs.mass} name="mass" onChange={handleChange} /><br />
+                <label htmlFor="passengers">Passengers</label>
+                <input class="input" type="text" value={inputs.passengers} name="passengers" onChange={handleChange} /><br />
 
-                <label htmlFor="hairColor">Hair Color</label>
-                <input class="input" type="text" value={inputs.hairColor} name="hairColor" onChange={handleChange} /><br />
+                <label htmlFor="cargo_capacity">Cargo Capacity</label>
+                <input class="input" type="text" value={inputs.cargo_capacity} name="cargo_capacity" onChange={handleChange} /><br />
 
-                <label htmlFor="eyeColor">Eye Color</label>
-                <input class="input" type="text" value={inputs.eyeColor} name="eyeColor" onChange={handleChange} /><br />
+                <label htmlFor="consumables">Consumables</label>
+                <input class="input" type="text" value={inputs.consumables} name="consumables" onChange={handleChange} /><br />
 
-                <label htmlFor="species">Species</label>
-                <input class="input" type="text" value={inputs.species} name="species" onChange={handleChange} /><br />
-
-                <label htmlFor="skinColor">Skin Color</label>
-                <input class="input" type="text" value={inputs.skinColor} name="skinColor" onChange={handleChange} /><br />
-
-                <label htmlFor="homeworld">Homeworld</label>
-                <input class="input" type="text" value={inputs.homeworld} name="homeworld" onChange={handleChange} /><br />
-
-                <label htmlFor="wiki">Wiki</label>
-                <input class="input" type="text" value={inputs.wiki} name="wiki" onChange={handleChange} /><br />
-
-                <label htmlFor="image">Image URL</label>
-                <input class="input" type="text" value={inputs.image} name="image" onChange={handleChange} /><br />
+                <label htmlFor="vehicle_class">Vehicle Class</label>
+                <input class="input" type="text" value={inputs.vehicle_class} name="vehicle_class" onChange={handleChange} /><br />
 
                 <input type="submit" value="Submit Changes" />
             </form>

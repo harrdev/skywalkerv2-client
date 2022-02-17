@@ -225,3 +225,50 @@ export const editVehicle = (info, user, id) => {
         },
     })
 }
+
+export const editStarship = (info, user, id) => {
+    return axios({
+        method: 'PATCH',
+        headers: {
+            "Authorization": `Bearer ${user.token}`
+        },
+        url: apiUrl + `/Starships/${id}`,
+        data: {
+            info: {
+                name: info.name,
+                model: info.model,
+                manufacturer: info.manufacturer,
+                cost_in_credits: info.cost_in_credits,
+                length: info.length,
+                crew: info.crew,
+                max_atmosphering_speed: info.max_atmosphering_speed,
+                passengers: info.passengers,
+                cargo_capacity: info.cargo_capacity,
+                consumables: info.consumables,
+                starship_class: info.starship_class,
+                MGLT: info.MGLT,
+                hyperdrive_rating: info.hyperdrive_rating
+            },
+        },
+    })
+}
+
+export const editFilm = (info, user, id) => {
+    return axios({
+        method: 'PATCH',
+        headers: {
+            "Authorization": `Bearer ${user.token}`
+        },
+        url: apiUrl + `/Films/${id}`,
+        data: {
+            info: {
+                title: info.title,
+                episode_id: info.episode_id,
+                opening_crawl: info.opening_crawl,
+                director: info.director,
+                producer: info.producer,
+                release_date: info.release_date
+            },
+        },
+    })
+}
