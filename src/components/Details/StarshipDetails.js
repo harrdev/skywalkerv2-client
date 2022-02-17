@@ -7,7 +7,7 @@ const StarshipDetails = (props) => {
 	const s = starshipData[0]
 
 	return (
-		<div className="details">
+		<div className="container2">
 			<h2>Starship Details Page</h2>
 			<h3>Name: {s.name}</h3>
 			<h3>Model: {s.model}</h3>

@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 
 const FilmDetails = (props) => {
-	
+
     const filmName = useParams()
 	console.log("filmName params: ", filmName.name)
 	const filmData = props.films.filter(films=> 
@@ -9,7 +9,7 @@ const FilmDetails = (props) => {
 	const f = filmData[0]
 
 	return (
-		<div className="details">
+		<div className="container2">
 			<h2>Film Details Page</h2>
 			<h3>Title: {f.title}</h3>
 			<h3>Episode ID: {f.episode_id}</h3>

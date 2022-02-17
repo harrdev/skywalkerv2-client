@@ -15,7 +15,7 @@ const SpeciesDetails = (props) => {
 	})
 
 	return (
-		<div className="details">
+		<div className="container2">
 			<h2>Species Details Page</h2>
 			<h3>Name: {s.name}</h3>
 			<h3>Classification: {s.classification}</h3>

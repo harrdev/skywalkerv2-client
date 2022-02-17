@@ -24,11 +24,17 @@ label {
 }
 
 .container {
+  margin-top: 65px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-content: space-around;
+  align-content: space-between;
   gap: 40px;
+}
+
+.container2 {
+  margin-top: 65px;
+  text-align: center;
 }
 
 .item {
@@ -97,6 +103,23 @@ li {
   display: inline;
 }
 
+.affLi {
+  display: block;
+}
+
+.affUl {
+  margin-left: 15px;
+  text-align: left;
+  list-style-type: disc;
+  display: block;
+}
+
+.affiliations {
+  width: 200px;
+  text-align: center;
+  margin: 0 auto;
+}
+
 button {
   background-color: #4CAF50;
   border: none;
@@ -112,7 +135,6 @@ button {
 
 .list {
   text-align: center;
-  font-family: 'Poller One', cursive;
 }
 
 .containerMain {

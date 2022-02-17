@@ -1,13 +1,13 @@
 import { useParams } from "react-router-dom";
 
 const VehicleDetails = (props) => {
-	
+
     const vehicleName = useParams()
 	const vehicleData = props.vehicles.filter(vehicle => vehicle.name === vehicleName.name)
 	const v = vehicleData[0]
 
 	return (
-		<div className="details">
+		<div className="container2">
 			<h2>Vehicle Details Page</h2>
 			<h3>Name: {v.name}</h3>
 			<h3>Model: {v.model}</h3>
