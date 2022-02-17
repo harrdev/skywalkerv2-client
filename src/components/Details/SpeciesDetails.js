@@ -16,8 +16,7 @@ const SpeciesDetails = (props) => {
 
 	return (
 		<div className="container2">
-			<h2>Species Details Page</h2>
-			<h3>Name: {s.name}</h3>
+			<h1>Name: {s.name}</h1>
 			<h3>Classification: {s.classification}</h3>
 			<h3>Average Height: {s.average_height}</h3>
 			<h3>Skin Colors: {s.skin_colors}</h3>

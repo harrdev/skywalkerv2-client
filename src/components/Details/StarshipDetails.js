@@ -8,8 +8,7 @@ const StarshipDetails = (props) => {
 
 	return (
 		<div className="container2">
-			<h2>Starship Details Page</h2>
-			<h3>Name: {s.name}</h3>
+			<h1>Name: {s.name}</h1>
 			<h3>Model: {s.model}</h3>
 			<h3>Manufacturer: {s.manufacturer}</h3>
 			<h3>Cost in Credits: {s.cost_in_credits}</h3>

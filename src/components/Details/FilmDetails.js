@@ -10,8 +10,7 @@ const FilmDetails = (props) => {
 
 	return (
 		<div className="container2">
-			<h2>Film Details Page</h2>
-			<h3>Title: {f.title}</h3>
+			<h1>Title: {f.title}</h1>
 			<h3>Episode ID: {f.episode_id}</h3>
 			<h3>Opening Crawl:<br /> {f.opening_crawl}</h3>
 			<h3>Director: {f.director}</h3>

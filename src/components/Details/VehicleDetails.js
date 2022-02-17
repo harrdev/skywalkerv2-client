@@ -8,8 +8,7 @@ const VehicleDetails = (props) => {
 
 	return (
 		<div className="container2">
-			<h2>Vehicle Details Page</h2>
-			<h3>Name: {v.name}</h3>
+			<h1>Name: {v.name}</h1>
 			<h3>Model: {v.model}</h3>
 			<h3>Manufacturer: {v.manufacturer}</h3>
 			<h3>Cost in Credits: {v.cost_in_credits}</h3>

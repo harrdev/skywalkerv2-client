@@ -17,8 +17,7 @@ const PlanetDetails = (props) => {
 
 	return (
 		<div className="container2">
-			<h2>Planet Details Page</h2>
-			<h3>Name: {p.name}</h3>
+			<h1>Name: {p.name}</h1>
 			<h3>Rotation Period: {p.rotation_period}</h3>
 			<h3>Orbital Period: {p.orbital_period}</h3>
 			<h3>Diameter: {p.diameter}</h3>

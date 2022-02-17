@@ -85,14 +85,12 @@ input[type=submit]:hover {
   overflow-y: auto;
   text-align: center;
   max-height: 100vh;
-  background-color: orange;
 }
 
 .listRight {
   overflow-y: auto;
   text-align: center;
   max-height: 100vh;
-  background-color: orange;
 }
 
 ul {

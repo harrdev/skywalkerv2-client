@@ -18,8 +18,7 @@ const PeopleDetails = (props) => {
 		<div className="container">
 			<div className="listLeft">
 				<div className="items">
-					<h2>People Details Page</h2>
-					<h3>Name: {p.name}</h3>
+					<h1>Name: {p.name}</h1>
 					<h3>Homeworld: {p.homeworld}</h3>
 					<h3>Gender: {p.gender}</h3>
 					<h3>Species: {p.species}</h3>
