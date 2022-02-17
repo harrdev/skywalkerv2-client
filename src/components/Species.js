@@ -31,7 +31,7 @@ const Species = (props) => {
 					<ul>
 						{speciesList}
 					</ul>
-				</div>Ï
+				</div>
 			</div>
 			<div className="listRight">
 				<div className="addForm">

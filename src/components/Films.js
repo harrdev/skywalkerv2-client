@@ -30,7 +30,7 @@ const Films = (props) => {
 				<ul>
 					{filmsList}
 				</ul>
-				</div>Ï
+				</div>
 			</div>
 			<div className="addForm">
 				<h2>Add new Film</h2>

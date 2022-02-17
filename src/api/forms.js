@@ -200,3 +200,28 @@ export const editPlanet = (info, user, id) => {
         },
     })
 }
+
+export const editVehicle = (info, user, id) => {
+    return axios({
+        method: 'PATCH',
+        headers: {
+            "Authorization": `Bearer ${user.token}`
+        },
+        url: apiUrl + `/Vehicles/${id}`,
+        data: {
+            info: {
+                name: info.name,
+                model: info.model,
+                manufacturer: info.manufacturer,
+                cost_in_credits: info.cost_in_credits,
+                length: info.length,
+                crew: info.crew,
+                max_atmosphering_speed: info.max_atmosphering_speed,
+                passengers: info.passengers,
+                cargo_capacity: info.cargo_capacity,
+                consumables: info.consumables,
+                vehicle_class: info.vehicle_class
+            },
+        },
+    })
+}

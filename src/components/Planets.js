@@ -30,7 +30,7 @@ const Planets = (props) => {
 					<ul>
 						{planetsList}
 					</ul>
-				</div>Ï
+				</div>
 			</div>
 			<div className="listRight">
 				<div className="addForm">

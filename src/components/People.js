@@ -30,14 +30,14 @@ const People = (props) => {
 					<ul>
 						{peopleList}
 					</ul>
-				</div>Ï
+				</div>
 			</div>
 			<div className="listRight">
 				<div className="addForm">
 					<h2>Add new person</h2>
 					<AddPersonForm user={user} people={props.people} />
 				</div>
-			</div>Ï
+			</div>
 		</div>
 	)
 }

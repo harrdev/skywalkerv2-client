@@ -4,7 +4,7 @@ import AddVehicleForm from './AddVehicleForm'
 
 const Vehicles = (props) => {
 	const { user } = props
-
+	
 	const addToFave = (info) => {
 		addVehicles(info, user)
 	}
@@ -29,7 +29,7 @@ const Vehicles = (props) => {
 					<ul>
 						{vehiclesList}
 					</ul>
-				</div>Ï
+				</div>
 			</div>
 			<div className="listRight">
 				<div className="addForm">

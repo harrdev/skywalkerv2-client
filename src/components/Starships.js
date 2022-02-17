@@ -29,7 +29,7 @@ const Starships = (props) => {
 					<ul>
 						{starshipsList}
 					</ul>
-				</div>Ï
+				</div>
 			</div>
 			<div className="listRight">
 				<div className="addForm">
