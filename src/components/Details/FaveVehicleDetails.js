@@ -44,7 +44,7 @@ const FaveVehicleDetails = (props) => {
             </div>
             <div className="listRight">
                 <div className="editForm">
-                    <h2>Edit Planet</h2>
+                    <h2>Edit Vehicle</h2>
                     <EditVehicle user={user} props={v} />
                 </div>
             </div>

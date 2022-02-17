@@ -272,3 +272,25 @@ export const editFilm = (info, user, id) => {
         },
     })
 }
+
+export const editSpecies = (info, user, id) => {
+    return axios({
+        method: 'PATCH',
+        headers: {
+            "Authorization": `Bearer ${user.token}`
+        },
+        url: apiUrl + `/Species/${id}`,
+        data: {
+            info: {
+                name: info.name,
+                classification: info.classification,
+                average_height: info.average_height,
+                skin_colors: info.skin_colors,
+                hair_colors: info.hair_colors,
+                eye_colors: info.eye_colors,
+                average_lifespan: info.average_lifespan,
+                language: info.language
+            },
+        },
+    })
+}

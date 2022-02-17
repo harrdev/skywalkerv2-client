@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { getSpecies } from '../../api/species'
 import { useState, useEffect } from 'react'
+import EditSpecies from '../EditSpeciesForm'
 
 const FaveSpeciesDetails = (props) => {
     const [usersSpecies, setUsersSpecies] = useState([])
@@ -39,7 +40,8 @@ const FaveSpeciesDetails = (props) => {
             </div>
             <div className="listRight">
                 <div className="editForm">
-                    
+                    <h2>Edit Species</h2>
+                    <EditSpecies user={user} props={s} />
                 </div>
             </div>
         </div>
