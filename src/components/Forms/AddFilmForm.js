@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-import { addNewFilm } from '../api/forms';
+import { addNewFilm } from '../../api/forms';
 
 const AddFilm = (props) => {
     const { user } = props

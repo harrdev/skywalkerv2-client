@@ -1,4 +1,4 @@
-import { getPeople, deletePerson } from '../api/people'
+import { getPeople, deletePerson } from '../../api/people'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -51,13 +51,11 @@ const FavePeople = (props) => {
 
 
     return (
-        <div className="saved">
-            <div className="savedPeople">
-                <h2>Favorite People</h2>
-                <ul>
-                    {favePeopleList}
-                </ul>
-            </div>
+        <div className="faveContainer">
+            <h2>Favorite People</h2>
+            <ul>
+                {favePeopleList}
+            </ul>
         </div>
     )
 }

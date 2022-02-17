@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { getPeople } from '../../api/people'
 import { useState, useEffect } from 'react'
-import EditPerson from '../EditPeopleForm'
+import EditPerson from '../Forms/EditPeopleForm'
 
 const FavePeopleDetails = (props) => {
     const [usersPeople, setUsersPeople] = useState([])

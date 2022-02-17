@@ -1,4 +1,4 @@
-import { getStarships, deleteStarships } from '../api/starships'
+import { getStarships, deleteStarships } from '../../api/starships'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -40,7 +40,7 @@ const FaveStarships = (props) => {
         return (
             <li key={i}>
                 <div className="faveStarships">
-                <Link to={`/Starships/${p.name}`} style={{ fontSize: "25px", padding: "15px" }}>{p.name}</Link>
+                    <Link to={`/Starships/${p.name}`} style={{ fontSize: "25px", padding: "15px" }}>{p.name}</Link>
                 </div>
                 <div className="starshipsRemoveButton">
                     <button className="removeButton" onClick={() => removeStarships(p)}>Delete from Favorites</button>
@@ -51,13 +51,11 @@ const FaveStarships = (props) => {
 
 
     return (
-        <div className="saved">
-            <div className="savedStarships">
-                <h2>Favorite Starships</h2>
-                <ul>
-                    {faveStarshipsList}
-                </ul>
-            </div>
+        <div className="faveContainer">
+            <h2>Favorite Starships</h2>
+            <ul>
+                {faveStarshipsList}
+            </ul>
         </div>
     )
 }

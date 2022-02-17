@@ -1,15 +1,14 @@
 import { Link } from 'react-router-dom'
-import { addPerson } from '../api/people'
-import AddPersonForm from './AddPersonForm'
+import { addVehicles } from '../../api/vehicles'
+import AddVehicleForm from '../Forms/AddVehicleForm'
 
-const People = (props) => {
-
+const Vehicles = (props) => {
 	const { user } = props
+	
 	const addToFave = (info) => {
-		addPerson(info, user)
+		addVehicles(info, user)
 	}
-
-	const peopleList = props.people.map((p, i) => {
+	const vehiclesList = props.vehicles.map((p, i) => {
 		return (
 			<li key={i}>
 				<div>
@@ -26,20 +25,20 @@ const People = (props) => {
 		<div className="container">
 			<div className="listLeft">
 				<div className="uList">
-					<h2>People List</h2>
+					<h2>Vehicle List</h2>
 					<ul>
-						{peopleList}
+						{vehiclesList}
 					</ul>
 				</div>
 			</div>
 			<div className="listRight">
 				<div className="addForm">
-					<h2>Add new person</h2>
-					<AddPersonForm user={user} people={props.people} />
+					<h2>Add new Vehicle</h2>
+					<AddVehicleForm user={user} />
 				</div>
 			</div>
 		</div>
 	)
 }
 
-export default People
+export default Vehicles

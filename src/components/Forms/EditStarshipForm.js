@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-import { editStarship } from '../api/forms';
+import { editStarship } from '../../api/forms';
 
 const EditStarship = (props) => {
     const { user } = props

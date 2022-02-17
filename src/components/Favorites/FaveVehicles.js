@@ -1,4 +1,4 @@
-import { getVehicles, deleteVehicles } from '../api/vehicles'
+import { getVehicles, deleteVehicles } from '../../api/vehicles'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -51,13 +51,11 @@ const FaveVehicles = (props) => {
 
 
     return (
-        <div className="saved">
-            <div className="savedVehicles">
-                <h2>Favorite Vehicles</h2>
-                <ul>
-                    {faveVehiclesList}
-                </ul>
-            </div>
+        <div className="faveContainer">
+            <h2>Favorite Vehicles</h2>
+            <ul>
+                {faveVehiclesList}
+            </ul>
         </div>
     )
 }

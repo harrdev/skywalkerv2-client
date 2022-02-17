@@ -18,7 +18,7 @@ form {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
-  width: 400px;
+  max-width: 400px;
 }
 
 label {
@@ -84,14 +84,14 @@ input[type=submit]:hover {
 .listLeft {
   overflow-y: auto;
   text-align: center;
-  height: 100vh;
+  max-height: 100vh;
   background-color: orange;
 }
 
 .listRight {
   overflow-y: auto;
   text-align: center;
-  height: 100vh;
+  max-height: 100vh;
   background-color: orange;
 }
 
@@ -117,7 +117,7 @@ li {
 }
 
 .affiliations {
-  width: 200px;
+  max-width: 200px;
   text-align: center;
   margin: 0 auto;
 }

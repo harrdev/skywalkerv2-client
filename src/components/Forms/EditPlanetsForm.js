@@ -1,8 +1,8 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-import { editPerson } from '../api/forms';
+import { editPlanet } from '../../api/forms';
 
-const EditPerson = (props) => {
+const EditPlanet = (props) => {
     const { user } = props
     const navigate = useNavigate()
     const [inputs, setInputs] = useState({})
@@ -18,7 +18,7 @@ const EditPerson = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        editPerson(inputs, user, id)
+        editPlanet(inputs, user, id)
         alert("Updates Made!")
         navigate('/favorites')
     }
@@ -77,4 +77,4 @@ const EditPerson = (props) => {
     )
 }
 
-export default EditPerson
+export default EditPlanet

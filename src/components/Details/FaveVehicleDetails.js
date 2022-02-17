@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { getVehicles } from '../../api/vehicles'
 import { useState, useEffect } from 'react'
-import EditVehicle from '../EditVehicleForm'
+import EditVehicle from '../Forms/EditVehicleForm'
 
 const FaveVehicleDetails = (props) => {
     const [usersVehicles, setUsersVehicles] = useState([])

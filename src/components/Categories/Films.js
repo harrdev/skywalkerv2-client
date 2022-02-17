@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import { addFilms } from '../api/films'
-import AddFilmForm from './AddFilmForm'
+import { addFilms } from '../../api/films'
+import AddFilmForm from '../Forms/AddFilmForm'
 
 const Films = (props) => {
 	const { user } = props

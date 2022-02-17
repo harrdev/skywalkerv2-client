@@ -1,14 +1,15 @@
 import { Link } from 'react-router-dom'
-import { addVehicles } from '../api/vehicles'
-import AddVehicleForm from './AddVehicleForm'
+import { addSpecies } from '../../api/species'
+import AddSpeciesForm from '../Forms/AddSpeciesForm'
 
-const Vehicles = (props) => {
+const Species = (props) => {
 	const { user } = props
-	
+
 	const addToFave = (info) => {
-		addVehicles(info, user)
+		addSpecies(info, user)
 	}
-	const vehiclesList = props.vehicles.map((p, i) => {
+
+	const speciesList = props.species.map((p, i) => {
 		return (
 			<li key={i}>
 				<div>
@@ -17,6 +18,7 @@ const Vehicles = (props) => {
 				<div id="buttonDiv">
 					<button className="button" onClick={() => addToFave(p)}>Add To Favorites</button>
 				</div>
+
 			</li>
 		)
 	})
@@ -25,20 +27,20 @@ const Vehicles = (props) => {
 		<div className="container">
 			<div className="listLeft">
 				<div className="uList">
-					<h2>Vehicle List</h2>
+					<h2>Species List</h2>
 					<ul>
-						{vehiclesList}
+						{speciesList}
 					</ul>
 				</div>
 			</div>
 			<div className="listRight">
 				<div className="addForm">
-					<h2>Add new Vehicle</h2>
-					<AddVehicleForm user={user} />
+					<h2>Add new Species</h2>
+					<AddSpeciesForm user={user} />
 				</div>
 			</div>
 		</div>
 	)
 }
 
-export default Vehicles
+export default Species

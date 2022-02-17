@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { getSpecies } from '../../api/species'
 import { useState, useEffect } from 'react'
-import EditSpecies from '../EditSpeciesForm'
+import EditSpecies from '../Forms/EditSpeciesForm'
 
 const FaveSpeciesDetails = (props) => {
     const [usersSpecies, setUsersSpecies] = useState([])

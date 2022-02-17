@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-import { addNewPlanet } from '../api/forms';
+import { addNewPlanet } from '../../api/forms';
 
 const AddPlanet = (props) => {
     const { user } = props

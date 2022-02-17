@@ -1,15 +1,14 @@
 import { Link } from 'react-router-dom'
-import { addPlanet } from '../api/planets'
-import AddPlanetForm from './AddPlanetForm'
+import { addStarships } from '../../api/starships'
+import AddStarshipForm from '../Forms/AddStarshipForm'
 
-const Planets = (props) => {
+const Starships = (props) => {
 	const { user } = props
 
 	const addToFave = (info) => {
-		addPlanet(info, user)
+		addStarships(info, user)
 	}
-
-	const planetsList = props.planets.map((p, i) => {
+	const starshipsList = props.starships.map((p, i) => {
 		return (
 			<li key={i}>
 				<div>
@@ -21,25 +20,25 @@ const Planets = (props) => {
 			</li>
 		)
 	})
-
+	
 	return (
 		<div className="container">
 			<div className="listLeft">
 				<div className="uList">
-					<h2>Planet List</h2>
+					<h2>Starship List</h2>
 					<ul>
-						{planetsList}
+						{starshipsList}
 					</ul>
 				</div>
 			</div>
 			<div className="listRight">
 				<div className="addForm">
-					<h2>Add new Planet</h2>
-					<AddPlanetForm user={user} />
+					<h2>Add new Starship</h2>
+					<AddStarshipForm user={user} />
 				</div>
 			</div>
 		</div>
 	)
 }
 
-export default Planets
+export default Starships

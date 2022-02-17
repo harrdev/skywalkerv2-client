@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-import { editSpecies } from '../api/forms';
+import { editSpecies } from '../../api/forms';
 
 const EditSpecies = (props) => {
     const { user } = props

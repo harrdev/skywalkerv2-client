@@ -1,4 +1,4 @@
-import { getSpecies, deleteSpecies } from '../api/species'
+import { getSpecies, deleteSpecies } from '../../api/species'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -40,7 +40,7 @@ const FaveSpecies = (props) => {
         return (
             <li key={i}>
                 <div className="faveSpecies">
-                <Link to={`/Species/${p.name}`} style={{ fontSize: "25px", padding: "15px" }}>{p.name}</Link>
+                    <Link to={`/Species/${p.name}`} style={{ fontSize: "25px", padding: "15px" }}>{p.name}</Link>
                 </div>
                 <div className="peopleRemoveButton">
                     <button className="removeButton" onClick={() => removeSpecies(p)}>Delete from Favorites</button>
@@ -51,13 +51,11 @@ const FaveSpecies = (props) => {
 
 
     return (
-        <div className="saved">
-            <div className="savedSpecies">
-                <h2>Favorite Species</h2>
-                <ul>
-                    {faveSpeciesList}
-                </ul>
-            </div>
+        <div className="faveContainer">
+            <h2>Favorite Species</h2>
+            <ul>
+                {faveSpeciesList}
+            </ul>
         </div>
     )
 }

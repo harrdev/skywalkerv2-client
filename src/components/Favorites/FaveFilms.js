@@ -1,4 +1,4 @@
-import { getFilms, deleteFilms } from '../api/films'
+import { getFilms, deleteFilms } from '../../api/films'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -39,8 +39,8 @@ const FaveFilms = (props) => {
     const faveFilmList = faveFilms.map((p, i) => {
         return (
             <li key={i}>
-                <div className="savedFilms">
-                <Link to={`/Film/${p.title}`} style={{ fontSize: "25px", padding: "15px" }}>{p.title}</Link>
+                <div className="faveContainer">
+                    <Link to={`/Film/${p.title}`} style={{ fontSize: "25px", padding: "15px" }}>{p.title}</Link>
                 </div>
                 <div className="filmRemoveButton">
                     <button className="removeButton" onClick={() => removeFilm(p)}>Delete from Favorites</button>
@@ -51,11 +51,11 @@ const FaveFilms = (props) => {
 
 
     return (
-        <div className="faveFilms">
+        <div className="faveContainer">
             <h2>Favorite Films</h2>
-                <ul>
-                    {faveFilmList}
-                </ul>      
+            <ul>
+                {faveFilmList}
+            </ul>
         </div>
     )
 }

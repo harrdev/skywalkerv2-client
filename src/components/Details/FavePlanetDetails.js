@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { getPlanets } from '../../api/planets'
 import { useState, useEffect } from 'react'
-import EditPlanet from '../EditPlanetsForm'
+import EditPlanet from '../Forms/EditPlanetsForm'
 
 const FavePlanetDetails = (props) => {
     const [usersPlanets, setUsersPlanets] = useState([])

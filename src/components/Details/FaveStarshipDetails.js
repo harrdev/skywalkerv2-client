@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { getStarships } from '../../api/starships'
 import { useState, useEffect } from 'react'
-import EditStarship from '../EditStarshipForm'
+import EditStarship from '../Forms/EditStarshipForm'
 
 const FaveStarshipDetails = (props) => {
     const [usersStarships, setUsersStarships] = useState([])

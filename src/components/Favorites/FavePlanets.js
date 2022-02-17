@@ -1,4 +1,4 @@
-import { getPlanets, deletePlanets } from '../api/planets'
+import { getPlanets, deletePlanets } from '../../api/planets'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -51,7 +51,7 @@ const FavePlanets = (props) => {
 
 
     return (
-        <div className="favePlanets">
+        <div className="faveContainer">
             <h2>Favorite Planets</h2>
             <ul>
                 {favePlanetList}

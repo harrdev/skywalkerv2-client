@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { getFilms } from '../../api/films'
 import { useState, useEffect } from 'react'
-import EditFilm from '../EditFilmForm'
+import EditFilm from '../Forms/EditFilmForm'
 
 const FaveFilmDetails = (props) => {
     const [usersFilms, setUsersFilms] = useState([])
