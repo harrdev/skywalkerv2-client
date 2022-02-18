@@ -12,9 +12,7 @@ const FavePeopleDetails = (props) => {
         getPeople(user)
             .then(res => {
                 res.data.people.filter((people) => {
-                    console.log("passed person is: ", favePerson.id)
                     const person = people.name === favePerson.id
-                    console.log("Matched person is: ", person)
                     if (person === true) {
                         setUsersPeople(people)
                     }
@@ -26,14 +24,7 @@ const FavePeopleDetails = (props) => {
     }, [])
 
     const p = usersPeople
-    //******* Affiliations not working, data not set before initialized ****************/
-    // const affiliations = p.affiliations.map((a, i) => {
-    //     return (
-    //         <li key={i}>
-    //             {a}
-    //         </li>
-    //     )
-    // })
+
     return (
         <div className="container">
             <div className="listLeft">
@@ -53,9 +44,15 @@ const FavePeopleDetails = (props) => {
                     <h3>Death Location: {p.diedLocation}</h3>
                     <div>
                         <h3>Affiliations:</h3>
-                        {/* <ul>
-                    {affiliations}
-                </ul> */}
+                        {p.affiliations
+                        ? p.affiliations.map((a, i) => {
+                            return (
+                                <li key={i}>
+                                    {a}
+                                </li>
+                            )
+                        })
+                        : "Loading..."}
                     </div>
                     <h3>Wiki: <a rel="noreferrer" target="_blank" href={p.wiki}>{p.name}</a></h3>
                     <div>
