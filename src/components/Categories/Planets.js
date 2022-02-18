@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom'
 import { addPlanet } from '../../api/planets'
 import AddPlanetForm from '../Forms/AddPlanetForm'
+import { useState } from 'react'
 
 const Planets = (props) => {
+	const [addButtonClick, setAddButtonClick] = useState(false)
 	const { user } = props
 
 	const addToFave = (info) => {
@@ -22,9 +24,18 @@ const Planets = (props) => {
 		)
 	})
 
+	const addClick = () => {
+		if (!addButtonClick) {
+			setAddButtonClick(true)
+		} else {
+			setAddButtonClick(false)
+		}
+	}
+
 	return (
 		<div className="container">
 			<div className="listLeft">
+				<button onClick={addClick}>Add Planet</button>
 				<div className="uList">
 					<h2>Planet List</h2>
 					<ul>
@@ -33,10 +44,15 @@ const Planets = (props) => {
 				</div>
 			</div>
 			<div className="listRight">
-				<div className="addForm">
-					<h2>Add new Planet</h2>
-					<AddPlanetForm user={user} />
-				</div>
+				{addButtonClick
+					?
+					<div className="listRight">
+						<div className="editForm">
+							<h2>Add Planet</h2>
+							<AddPlanetForm user={user} />
+						</div>
+					</div>
+					: ""}
 			</div>
 		</div>
 	)

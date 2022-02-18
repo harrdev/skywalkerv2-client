@@ -5,6 +5,7 @@ import EditPerson from '../Forms/EditPeopleForm'
 
 const FavePeopleDetails = (props) => {
     const [usersPeople, setUsersPeople] = useState([])
+    const [editButtonClick, setEditButtonClick] = useState(false)
     const { user } = props
     const favePerson = useParams()
 
@@ -25,9 +26,18 @@ const FavePeopleDetails = (props) => {
 
     const p = usersPeople
 
+    const editClick = () => {
+        if (!editButtonClick) {
+            setEditButtonClick(true)
+        } else {
+            setEditButtonClick(false)
+        }
+    }
+
     return (
         <div className="container">
             <div className="listLeft">
+                <button onClick={editClick}>Edit Person</button>
                 <div className="items">
                     <h1>{p.name} Details</h1>
                     <h3>Homeworld: {p.homeworld}</h3>
@@ -45,14 +55,14 @@ const FavePeopleDetails = (props) => {
                     <div>
                         <h3>Affiliations:</h3>
                         {p.affiliations
-                        ? p.affiliations.map((a, i) => {
-                            return (
-                                <li key={i}>
-                                    {a}
-                                </li>
-                            )
-                        })
-                        : "Loading..."}
+                            ? p.affiliations.map((a, i) => {
+                                return (
+                                    <li key={i}>
+                                        {a}
+                                    </li>
+                                )
+                            })
+                            : "Loading..."}
                     </div>
                     <h3>Wiki: <a rel="noreferrer" target="_blank" href={p.wiki}>{p.name}</a></h3>
                     <div>
@@ -61,10 +71,15 @@ const FavePeopleDetails = (props) => {
                 </div>
             </div>
             <div className="listRight">
-                <div className="editForm">
-                    <h2>Edit Person</h2>
-                    <EditPerson user={user} props={p} />
-                </div>
+                {editButtonClick
+                    ?
+                    <div className="listRight">
+                        <div className="editForm">
+                            <h2>Edit Person</h2>
+                            <EditPerson user={user} people={p} />
+                        </div>
+                    </div>
+                    : ""}
             </div>
         </div>
     )

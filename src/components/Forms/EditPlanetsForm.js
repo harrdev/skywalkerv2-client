@@ -6,8 +6,8 @@ const EditPlanet = (props) => {
     const { user } = props
     const navigate = useNavigate()
     const [inputs, setInputs] = useState({})
-    const id = props.people._id
-    
+    const id = props.planet._id
+
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
@@ -22,52 +22,34 @@ const EditPlanet = (props) => {
     }
 
     return (
-        <div className="addForm">
+        <div class="addForm">
             <form onSubmit={handleSubmit}>
                 <label htmlFor="name">Name</label>
                 <input class="input" type="text" value={inputs.name} name="name" onChange={handleChange} /><br />
 
-                <label htmlFor="gender">Gender</label>
-                <input class="input" type="text" value={inputs.gender} name="gender" onChange={handleChange} /><br />
+                <label htmlFor="rotation_period">Rotation Period</label>
+                <input class="input" type="text" value={inputs.rotation_period} name="rotation_period" onChange={handleChange} /><br />
 
-                <label htmlFor="born">Birth Year</label>
-                <input class="input" type="text" value={inputs.born} name="born" onChange={handleChange} /><br />
+                <label htmlFor="orbital_period">Orbital Period</label>
+                <input class="input" type="text" value={inputs.orbital_period} name="orbital_period" onChange={handleChange} /><br />
 
-                <label htmlFor="bornLocation">Birth Location</label>
-                <input class="input" type="text" value={inputs.bornLocation} name="bornLocation" onChange={handleChange} /><br />
+                <label htmlFor="diameter">Diameter</label>
+                <input class="input" type="text" value={inputs.diameter} name="diameter" onChange={handleChange} /><br />
 
-                <label htmlFor="died">Death Year</label>
-                <input class="input" type="text" value={inputs.died} name="died" onChange={handleChange} /><br />
+                <label htmlFor="climate">Climate</label>
+                <input class="input" type="text" value={inputs.climate} name="climate" onChange={handleChange} /><br />
 
-                <label htmlFor="diedLocation">Death Location</label>
-                <input class="input" type="text" value={inputs.diedLocation} name="diedLocation" onChange={handleChange} /><br />
+                <label htmlFor="gravity">Gravity</label>
+                <input class="input" type="text" value={inputs.gravity} name="gravity" onChange={handleChange} /><br />
 
-                <label htmlFor="height">Height</label>
-                <input class="input" type="text" value={inputs.height} name="height" onChange={handleChange} /><br />
+                <label htmlFor="terrain">Terrain</label>
+                <input class="input" type="text" value={inputs.terrain} name="terrain" onChange={handleChange} /><br />
 
-                <label htmlFor="mass">Mass</label>
-                <input class="input" type="text" value={inputs.mass} name="mass" onChange={handleChange} /><br />
+                <label htmlFor="surface_water">Surface Water</label>
+                <input class="input" type="text" value={inputs.surface_water} name="surface_water" onChange={handleChange} /><br />
 
-                <label htmlFor="hairColor">Hair Color</label>
-                <input class="input" type="text" value={inputs.hairColor} name="hairColor" onChange={handleChange} /><br />
-
-                <label htmlFor="eyeColor">Eye Color</label>
-                <input class="input" type="text" value={inputs.eyeColor} name="eyeColor" onChange={handleChange} /><br />
-
-                <label htmlFor="species">Species</label>
-                <input class="input" type="text" value={inputs.species} name="species" onChange={handleChange} /><br />
-
-                <label htmlFor="skinColor">Skin Color</label>
-                <input class="input" type="text" value={inputs.skinColor} name="skinColor" onChange={handleChange} /><br />
-
-                <label htmlFor="homeworld">Homeworld</label>
-                <input class="input" type="text" value={inputs.homeworld} name="homeworld" onChange={handleChange} /><br />
-
-                <label htmlFor="wiki">Wiki</label>
-                <input class="input" type="text" value={inputs.wiki} name="wiki" onChange={handleChange} /><br />
-
-                <label htmlFor="image">Image URL</label>
-                <input class="input" type="text" value={inputs.image} name="image" onChange={handleChange} /><br />
+                <label htmlFor="population">Population</label>
+                <input class="input" type="text" value={inputs.population} name="population" onChange={handleChange} /><br />
 
                 <input type="submit" value="Submit Changes" />
             </form>
