@@ -49,6 +49,8 @@ export const addNewPlanet = (info, user) => {
                 gravity: info.gravity,
                 surface_water: info.surface_water,
                 population: info.population,
+                films: info.films,
+                residents: info.residents
             },
         },
     })
@@ -196,6 +198,8 @@ export const editPlanet = (info, user, id) => {
                 gravity: info.gravity,
                 surface_water: info.surface_water,
                 population: info.population,
+                films: info.films,
+                residents: info.residents
             },
         },
     })

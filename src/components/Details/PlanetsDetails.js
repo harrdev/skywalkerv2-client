@@ -1,19 +1,28 @@
 import { useParams } from 'react-router-dom'
 
 const PlanetDetails = (props) => {
+
 	const planetName = useParams()
 	// Filters planets to match passed useparams to display correct information
 	const planet = props.planets.filter(planet => planet.name === planetName.name)
 	const p = planet[0]
-	// Filters and maps planet resident URLS to match and display
-	// const planetResidents = props.people.filter(person => p.residents.includes(person.homeworld))
-	// .map((person, i) =>  {
-	// 	return ( 
-	// 	<li key={i}>
-	// 		{person.name}
-	// 	</li>
-	// 	)
-	// })
+	// Filters and maps planet films URLS to match and display
+	const planetFilms = props.films.filter(film =>
+		p.films.includes(film.url)).map((film, i) => {
+			return (
+				<li key={i}>
+					{film.title}
+				</li>
+			)
+		})
+	// Filters and maps planet's residents URLS to match
+	const planetResidents = props.swapiPeople.filter(people => p.residents.includes(people.url)).map((people, i) => {
+		return (
+			<li key={i}>
+				{people.name}
+			</li>
+		)
+	})
 
 	return (
 		<div className="container2">
@@ -26,11 +35,14 @@ const PlanetDetails = (props) => {
 			<h3>Terrain: {p.terrain}</h3>
 			<h3>Surface Water: {p.surface_water}</h3>
 			<h3>Population: {p.population}</h3>
-			{/* <h3>Residents: 
-				<ul>
-					{planetResidents}
-				</ul>
-			</h3> */}
+			<h3>Featured in Films:</h3>
+			<ul>
+				{planetFilms}
+			</ul>
+			<h3>Residents:</h3>
+			<ul>
+				{planetResidents}
+			</ul>
 		</div>
 	)
 }

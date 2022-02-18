@@ -19,6 +19,8 @@ export const addPlanet = (info, user) => {
                 gravity: info.gravity,
                 surface_water: info.surface_water,
                 population: info.population,
+                films: info.films,
+                residents: info.residents
             },
         },
     })

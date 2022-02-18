@@ -37,8 +37,6 @@ import FaveVehicleDetails from './components/Details/FaveVehicleDetails'
 import FaveStarshipDetails from './components/Details/FaveStarshipDetails'
 import FaveFilmDetails from './components/Details/FaveFilmDetails'
 import FaveSpeciesDetails from './components/Details/FaveSpeciesDetails'
-// import EditPeopleForm from './components/EditPeopleForm'
-// import EditPlanetForm from './components/EditPlanetsForm'
 
 const App = () => {
 	const [user, setUser] = useState(null)
@@ -49,8 +47,10 @@ const App = () => {
 	const [species, setSpecies] = useState([])
 	const [starships, setStarships] = useState([])
 	const [vehicles, setVehicles] = useState([])
+	const [swapiPeople, setSwapiPeople] = useState([])
 
 	useEffect(() => {
+		getSwapiPeople()
 		getAllPeople()
 		getAllPlanets()
 		getAllFilms()
@@ -117,23 +117,37 @@ const App = () => {
 			})
 	}
 
-	// const getAllfilms = () => {
-	// 	getFilms()
-	// 		.then((films) => {
-	// 			const swfilms = films.data.results.map((title) => {
-	// 				return title
-	// 			})
-	// 			setFilms(swfilms)
-	// 		})
-	// 		.catch(err => console.log(err))
-	// }
 	const getAllFilms = () => {
 		let endpoints = [
-			'http://swapi.dev/api/films/?page=1',
+			'http://swapi.dev/api/films/?page=1'
 		];
 		Promise.all(endpoints.map((endpoint) => axios.get(endpoint)))
 			.then((res) => {
 				setFilms(res[0].data.results)
+			})
+	}
+
+	const getSwapiPeople = () => {
+		let endpoints = [
+			'http://swapi.dev/api/people/?page=1',
+			'http://swapi.dev/api/people/?page=2',
+			'http://swapi.dev/api/people/?page=3',
+			'http://swapi.dev/api/people/?page=4',
+			'http://swapi.dev/api/people/?page=5',
+			'http://swapi.dev/api/people/?page=6',
+			'http://swapi.dev/api/people/?page=7',
+			'http://swapi.dev/api/people/?page=8',
+			'http://swapi.dev/api/people/?page=9',
+		];
+		Promise.all(endpoints.map((endpoint) => axios.get(endpoint)))
+			.then((res) => {
+				let peopleArray = []
+				res.map((people) => {
+					people.data.results.map(p => {
+						peopleArray.push(p)
+					})
+				})
+				setSwapiPeople(peopleArray)
 			})
 	}
 
@@ -191,7 +205,7 @@ const App = () => {
 			)
 		})
 	}
-
+	
 	return (
 		<Fragment>
 			<Header user={user} />
@@ -245,18 +259,6 @@ const App = () => {
 							<FavePeople msgAlert={msgAlert} user={user} />
 						</RequireAuth>}
 				/>
-				{/* <Route path='/FavePeople/edit/:id'
-					element={
-						<RequireAuth user={user}>
-							<EditPeopleForm msgAlert={msgAlert} user={user} />
-						</RequireAuth>}
-				/>
-				<Route path='/FavePlanets/edit/:id'
-					element={
-						<RequireAuth user={user}>
-							<EditPeopleForm msgAlert={msgAlert} user={user} />
-						</RequireAuth>}
-				/> */}
 				<Route path='/Film/:id'
 					element={
 						<RequireAuth user={user}>
@@ -278,7 +280,7 @@ const App = () => {
 				<Route path='/Planets/:id'
 					element={
 						<RequireAuth user={user}>
-							<FavePlanetDetails msgAlert={msgAlert} user={user} />
+							<FavePlanetDetails msgAlert={msgAlert} user={user} films={films} swapiPeople={swapiPeople} />
 						</RequireAuth>}
 				/>
 				<Route path='/Vehicles/:id'
@@ -330,7 +332,13 @@ const App = () => {
 				/>
 				<Route path='/Dashboard/Planets/:name'
 					element={
-						<RequireAuth user={user}><PlanetsDetails msgAlert={msgAlert} user={user} people={people} planets={planets} />
+						<RequireAuth user={user}><PlanetsDetails 
+						msgAlert={msgAlert}
+						user={user} 
+						people={people} 
+						planets={planets} 
+						films={films}  
+						swapiPeople={swapiPeople} />
 						</RequireAuth>}
 				/>
 				<Route path='/Dashboard/Vehicles/:name'
@@ -345,7 +353,7 @@ const App = () => {
 				/>
 				<Route path='/Dashboard/Species/:name'
 					element={
-						<RequireAuth user={user}><SpeciesDetails msgAlert={msgAlert} user={user} people={people} species={species} />
+						<RequireAuth user={user}><SpeciesDetails msgAlert={msgAlert} user={user} people={people} species={species}  swapiPeople={swapiPeople} />
 						</RequireAuth>}
 				/>
 				<Route path='/Dashboard/Starships/:name'
