@@ -6,9 +6,7 @@ const EditPlanet = (props) => {
     const { user } = props
     const navigate = useNavigate()
     const [inputs, setInputs] = useState({})
-    const id = props.props._id
-    const p = props.props
-    console.log("inputs state: ", inputs)
+    const id = props.people._id
     
     const handleChange = (event) => {
         const name = event.target.name;

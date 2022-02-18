@@ -25,27 +25,6 @@ const FavePlanetDetails = (props) => {
 
     const p = usersPlanets
 
-    // const planetFilms = props.films.filter(film =>
-    //     p.films.includes(film.url)).map((film, i) => {
-    //         return (
-    //             <li key={i}>
-    //                 {film.title}
-    //             </li>
-    //         )
-    //     })
-    console.log("props.films is: ", props.films)
-    console.log("p.films is: ", p.films)
-
-    // const planetResidents = props.swapiPeople.filter(people => p.residents.includes(people.url)).map((people, i) => {
-    //     return (
-    //         <li key={i}>
-    //             {people.name}
-    //         </li>
-    //     )
-    // })
-    console.log("p.residents: ", p.residents)
-    console.log("props.swapiPeople: ", props.swapiPeople)
-
     return (
         <div className="container">
             <div className="listLeft">
@@ -60,19 +39,35 @@ const FavePlanetDetails = (props) => {
                     <h3>Surface Water: {p.surface_water}</h3>
                     <h3>Population: {p.population}</h3>
                     <h3>Featured in Films:</h3>
-                    <ul>
-                        {/* {planetFilms} */}
-                    </ul>
+                    {p.films
+                        ? props.films.filter(film =>
+                            p.films.includes(film.url)).map((film, i) => {
+                                return (
+                                    <ul>
+                                        <li key={i}>
+                                            {film.title}
+                                        </li></ul>
+                                )
+                            })
+                        : "Loading..."}
                     <h3>Residents:</h3>
-                    <ul>
-                        {/* {planetResidents} */}
-                    </ul>
+                    {p.residents
+                        ? props.swapiPeople.filter(people => p.residents.includes(people.url)).map((people, i) => {
+                            return (
+                                <ul>
+                                    <li key={i}>
+                                        {people.name}
+                                    </li>
+                                </ul>
+                            )
+                        })
+                        : "Loading..."}
                 </div>
             </div>
             <div className="listRight">
                 <div className="editForm">
                     <h2>Edit Planet</h2>
-                    <EditPlanet user={user} props={p} />
+                    <EditPlanet user={user} people={p} />
                 </div>
             </div>
         </div>

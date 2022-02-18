@@ -205,7 +205,7 @@ const App = () => {
 			)
 		})
 	}
-	
+
 	return (
 		<Fragment>
 			<Header user={user} />
@@ -280,7 +280,7 @@ const App = () => {
 				<Route path='/Planets/:id'
 					element={
 						<RequireAuth user={user}>
-							<FavePlanetDetails msgAlert={msgAlert} user={user} films={films} swapiPeople={swapiPeople} />
+							<FavePlanetDetails msgAlert={msgAlert} user={user} films={films} swapiPeople={swapiPeople} planets={planets}/>
 						</RequireAuth>}
 				/>
 				<Route path='/Vehicles/:id'

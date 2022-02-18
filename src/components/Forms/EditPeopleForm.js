@@ -7,6 +7,7 @@ const EditPerson = (props) => {
     const navigate = useNavigate()
     const [inputs, setInputs] = useState({})
     const id = props.props._id
+    console.log("edit form id prop: ", props)
     const p = props.props
     console.log("inputs state: ", inputs)
     
