@@ -271,43 +271,43 @@ const App = () => {
 				<Route path='/Film/:id'
 					element={
 						<RequireAuth user={user}>
-							<FaveFilmDetails msgAlert={msgAlert} user={user} />
+							<FaveFilmDetails msgAlert={msgAlert} user={user} addButtonClick={addButtonClick} setAddButtonClick={setAddButtonClick}/>
 						</RequireAuth>}
 				/>
 				<Route path='/People/:id'
 					element={
 						<RequireAuth user={user}>
-							<FavePeopleDetails msgAlert={msgAlert} user={user} />
+							<FavePeopleDetails msgAlert={msgAlert} user={user} addClick={addClick} addButtonClick={addButtonClick} setAddButtonClick={setAddButtonClick} />
 						</RequireAuth>}
 				/>
 				<Route path='/Species/:id'
 					element={
 						<RequireAuth user={user}>
-							<FaveSpeciesDetails msgAlert={msgAlert} user={user} />
+							<FaveSpeciesDetails msgAlert={msgAlert} user={user} addClick={addClick}addButtonClick={addButtonClick} setAddButtonClick={setAddButtonClick} />
 						</RequireAuth>}
 				/>
 				<Route path='/Planets/:id'
 					element={
 						<RequireAuth user={user}>
-							<FavePlanetDetails msgAlert={msgAlert} user={user} films={films} swapiPeople={swapiPeople} planets={planets}/>
+							<FavePlanetDetails msgAlert={msgAlert} user={user} films={films} swapiPeople={swapiPeople} planets={planets}addClick={addClick} addButtonClick={addButtonClick} setAddButtonClick={setAddButtonClick}/>
 						</RequireAuth>}
 				/>
 				<Route path='/Vehicles/:id'
 					element={
 						<RequireAuth user={user}>
-							<FaveVehicleDetails msgAlert={msgAlert} user={user} />
+							<FaveVehicleDetails msgAlert={msgAlert} user={user} addClick={addClick} addButtonClick={addButtonClick} setAddButtonClick={setAddButtonClick}/>
 						</RequireAuth>}
 				/>
 				<Route path='/Starships/:id'
 					element={
 						<RequireAuth user={user}>
-							<FaveStarshipDetails msgAlert={msgAlert} user={user} />
+							<FaveStarshipDetails msgAlert={msgAlert} user={user} addClick={addClick} addButtonClick={addButtonClick} setAddButtonClick={setAddButtonClick}/>
 						</RequireAuth>}
 				/>
 				<Route path='/Dashboard/People'
 					element={
 						<RequireAuth user={user}>
-							<People msgAlert={msgAlert} user={user} people={people} addClick={addClick} addButtonClick={addButtonClick} setAddButtonClick={setAddButtonClick}/>
+							<People msgAlert={msgAlert} user={user} people={people} addClick={addClick} addButtonClick={addButtonClick} setAddButtonClick={setAddButtonClick} />
 						</RequireAuth>}
 				/>
 				<Route path='/Dashboard/Planets'

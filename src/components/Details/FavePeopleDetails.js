@@ -5,10 +5,9 @@ import EditPerson from '../Forms/EditPeopleForm'
 
 const FavePeopleDetails = (props) => {
     const [usersPeople, setUsersPeople] = useState([])
-    const [editButtonClick, setEditButtonClick] = useState(false)
     const { user } = props
     const favePerson = useParams()
-
+    console.log("Props are: ", props)
     useEffect(() => {
         getPeople(user)
             .then(res => {
@@ -26,18 +25,23 @@ const FavePeopleDetails = (props) => {
 
     const p = usersPeople
 
-    const editClick = () => {
-        if (!editButtonClick) {
-            setEditButtonClick(true)
-        } else {
-            setEditButtonClick(false)
-        }
-    }
-
     return (
         <div className="container">
             <div className="listLeft">
-                <button onClick={editClick}>Edit Person</button>
+                {props.addButtonClick
+                    ?
+                    <div className="listRight">
+                        <button onClick={props.addClick}>Cancel</button>
+                        <div className="editForm">
+                            <h2>Edit Person</h2>
+                            <EditPerson user={user} people={p} />
+                        </div>
+                    </div>
+                    : ""}
+
+            </div>
+            <div className="listRight">
+                <button onClick={props.addClick}>Edit Person</button>
                 <div className="items">
                     <h1>{p.name} Details</h1>
                     <h3>Homeworld: {p.homeworld}</h3>
@@ -69,17 +73,6 @@ const FavePeopleDetails = (props) => {
                         <img src={p.image} height="320" width="250" alt={p.name}></img>
                     </div>
                 </div>
-            </div>
-            <div className="listRight">
-                {editButtonClick
-                    ?
-                    <div className="listRight">
-                        <div className="editForm">
-                            <h2>Edit Person</h2>
-                            <EditPerson user={user} people={p} />
-                        </div>
-                    </div>
-                    : ""}
             </div>
         </div>
     )

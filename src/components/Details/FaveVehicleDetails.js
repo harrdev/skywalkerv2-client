@@ -28,6 +28,19 @@ const FaveVehicleDetails = (props) => {
     return (
         <div className="container">
             <div className="listLeft">
+                {props.addButtonClick
+                    ?
+                    <div className="listRight">
+                        <button onClick={props.addClick}>Cancel</button>
+                        <div className="editForm">
+                            <h2>Edit Vehicle</h2>
+                            <EditVehicle user={user} props={v} />
+                        </div>
+                    </div>
+                    : ""}
+            </div>
+            <div className="listRight">
+                <button onClick={props.addClick}>Edit Vehicle</button>
                 <div className="items">
                     <h1>{v.name} Details</h1>
                     <h3>Model: {v.model}</h3>
@@ -40,12 +53,6 @@ const FaveVehicleDetails = (props) => {
                     <h3>Cargo Capacity: {v.cargo_capacity}</h3>
                     <h3>Consumables: {v.consumables}</h3>
                     <h3>Vehicle Class: {v.vehicle_class}</h3>
-                </div>
-            </div>
-            <div className="listRight">
-                <div className="editForm">
-                    <h2>Edit Vehicle</h2>
-                    <EditVehicle user={user} props={v} />
                 </div>
             </div>
         </div>

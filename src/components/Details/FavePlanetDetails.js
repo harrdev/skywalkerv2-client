@@ -5,7 +5,6 @@ import EditPlanet from '../Forms/EditPlanetsForm'
 
 const FavePlanetDetails = (props) => {
     const [usersPlanets, setUsersPlanets] = useState([])
-    const [editButtonClick, setEditButtonClick] = useState(false)
     const { user } = props
     const favePlanet = useParams()
 
@@ -24,20 +23,25 @@ const FavePlanetDetails = (props) => {
             })
     }, [])
 
-    const editClick = () => {
-        if (!editButtonClick) {
-            setEditButtonClick(true)
-        } else {
-            setEditButtonClick(false)
-        }
-    }
-
     const p = usersPlanets
 
     return (
         <div className="container">
             <div className="listLeft">
-                <button onClick={editClick}>Edit Planet</button>
+                {props.addButtonClick
+                    ?
+                    <div className="listRight">
+                        <button onClick={props.addClick}>Cancel</button>
+                        <div className="editForm">
+                            <h2>Edit Planet</h2>
+                            <EditPlanet user={user} planet={p} />
+                        </div>
+                    </div>
+                    : ""}
+
+            </div>
+            <div className="listRight">
+                <button onClick={props.addClick}>Edit Planet</button>
                 <div className="items">
                     <h1>{p.name} Details</h1>
                     <h3>Rotation Period: {p.rotation_period}</h3>
@@ -73,17 +77,6 @@ const FavePlanetDetails = (props) => {
                         })
                         : "Loading..."}
                 </div>
-            </div>
-            <div className="listRight">
-                {editButtonClick
-                    ?
-                    <div className="listRight">
-                        <div className="editForm">
-                            <h2>Edit Planet</h2>
-                            <EditPlanet user={user} planet={p} />
-                        </div>
-                    </div>
-                    : ""}
             </div>
         </div>
     )

@@ -26,6 +26,19 @@ const FaveStarshipDetails = (props) => {
     return (
         <div className="container">
             <div className="listLeft">
+                {props.addButtonClick
+                    ?
+                    <div className="listRight">
+                        <button onClick={props.addClick}>Cancel</button>
+                        <div className="editForm">
+                            <h2>Edit Starship</h2>
+                            <EditStarship user={user} props={s} />
+                        </div>
+                    </div>
+                    : ""}
+            </div>
+            <div className="listRight">
+                <button onClick={props.addClick}>Edit Starship</button>
                 <div className="items">
                     <h1>{s.name} Details</h1>
                     <h3>Model: {s.model}</h3>
@@ -40,12 +53,6 @@ const FaveStarshipDetails = (props) => {
                     <h3>Hyperdrive Rating: {s.hyperdrive_rating}</h3>
                     <h3>MGLT: {s.MGLT}</h3>
                     <h3>Starship Class: {s.starship_class}</h3>
-                </div>
-            </div>
-            <div className="listRight">
-                <div className="editForm">
-                    <h2>Edit Starship</h2>
-                    <EditStarship user={user} props={s} />
                 </div>
             </div>
         </div>

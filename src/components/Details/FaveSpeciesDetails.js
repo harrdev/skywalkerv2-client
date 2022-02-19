@@ -27,6 +27,19 @@ const FaveSpeciesDetails = (props) => {
     return (
         <div className="container">
             <div className="listLeft">
+                {props.addButtonClick
+                    ?
+                    <div className="listRight">
+                        <button onClick={props.addClick}>Cancel</button>
+                        <div className="editForm">
+                            <h2>Edit Species</h2>
+                            <EditSpecies user={user} props={s} />
+                        </div>
+                    </div>
+                    : ""}
+            </div>
+            <div className="listRight">
+                <button onClick={props.addClick}>Edit Species</button>
                 <div className="items">
                     <h1>{s.name} Details</h1>
                     <h3>Classification: {s.classification}</h3>
@@ -36,12 +49,6 @@ const FaveSpeciesDetails = (props) => {
                     <h3>Eye Colors: {s.eye_colors}</h3>
                     <h3>Average Lifespan: {s.average_lifespan}</h3>
                     <h3>Language: {s.language}</h3>
-                </div>
-            </div>
-            <div className="listRight">
-                <div className="editForm">
-                    <h2>Edit Species</h2>
-                    <EditSpecies user={user} props={s} />
                 </div>
             </div>
         </div>
