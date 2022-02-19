@@ -271,7 +271,7 @@ const App = () => {
 				<Route path='/Film/:id'
 					element={
 						<RequireAuth user={user}>
-							<FaveFilmDetails msgAlert={msgAlert} user={user} addButtonClick={addButtonClick} setAddButtonClick={setAddButtonClick} swapiPeople={swapiPeople} />
+							<FaveFilmDetails msgAlert={msgAlert} user={user}  addClick={addClick} addButtonClick={addButtonClick} setAddButtonClick={setAddButtonClick} swapiPeople={swapiPeople} />
 						</RequireAuth>}
 				/>
 				<Route path='/People/:id'

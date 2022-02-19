@@ -27,6 +27,19 @@ const FaveFilmDetails = (props) => {
     return (
         <div className="container">
             <div className="listLeft">
+                {props.addButtonClick
+                    ?
+                    <div className="listRight">
+                        <button onClick={props.addClick}>Cancel</button>
+                        <div className="editForm">
+                            <h2>Edit Film</h2>
+                            <EditFilm user={user} film={f} />
+                        </div>
+                    </div>
+                    : ""}
+            </div>
+            <div className="listRight">
+                <button onClick={props.addClick}>Edit Film</button>
                 <div className="items">
                     <h1>{f.title} Details</h1>
                     <h3>Episode ID: {f.episode_id}</h3>
@@ -34,22 +47,18 @@ const FaveFilmDetails = (props) => {
                     <h3>Director: {f.director}</h3>
                     <h3>Producer: {f.producer}</h3>
                     <h3>Release Date: {f.release_date}</h3>
-                    {f.characters
-                        ? props.swapiPeople.filter(character => f.characters.includes(character.url)).map((person, i) => {
-                            return (
-                                <ul>
-                                    <li key={i}>
-                                        {person.name}
-                                    </li></ul>
-                            )
-                        })
-                        : "Loading..."}
-                </div>
-            </div>
-            <div className="listRight">
-                <div className="editForm">
-                    <h2>Edit Film</h2>
-                    <EditFilm user={user} props={f} />
+                    <h3>Characters in film:
+                        {f.characters
+                            ? props.swapiPeople.filter(character => f.characters.includes(character.url)).map((person, i) => {
+                                return (
+                                    <ul>
+                                        <li key={i}>
+                                            {person.name}
+                                        </li></ul>
+                                )
+                            })
+                            : "Loading..."}
+                    </h3>
                 </div>
             </div>
         </div>

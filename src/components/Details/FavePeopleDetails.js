@@ -38,7 +38,6 @@ const FavePeopleDetails = (props) => {
                         </div>
                     </div>
                     : ""}
-
             </div>
             <div className="listRight">
                 <button onClick={props.addClick}>Edit Person</button>
@@ -57,16 +56,17 @@ const FavePeopleDetails = (props) => {
                     <h3>Death Year: {p.died}</h3>
                     <h3>Death Location: {p.diedLocation}</h3>
                     <div>
-                        <h3>Affiliations:</h3>
-                        {p.affiliations
-                            ? p.affiliations.map((a, i) => {
-                                return (
-                                    <li key={i}>
-                                        {a}
-                                    </li>
-                                )
-                            })
-                            : "Loading..."}
+                        <h3>Affiliations:
+                            {p.affiliations
+                                ? p.affiliations.map((a, i) => {
+                                    return (
+                                        <li key={i}>
+                                            {a}
+                                        </li>
+                                    )
+                                })
+                                : "Loading..."}
+                        </h3>
                     </div>
                     <h3>Wiki: <a rel="noreferrer" target="_blank" href={p.wiki}>{p.name}</a></h3>
                     <div>

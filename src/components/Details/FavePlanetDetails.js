@@ -52,30 +52,32 @@ const FavePlanetDetails = (props) => {
                     <h3>Terrain: {p.terrain}</h3>
                     <h3>Surface Water: {p.surface_water}</h3>
                     <h3>Population: {p.population}</h3>
-                    <h3>Featured in Films:</h3>
-                    {p.films
-                        ? props.films.filter(film =>
-                            p.films.includes(film.url)).map((film, i) => {
+                    <h3>Featured in Films:
+                        {p.films
+                            ? props.films.filter(film =>
+                                p.films.includes(film.url)).map((film, i) => {
+                                    return (
+                                        <ul>
+                                            <li key={i}>
+                                                {film.title}
+                                            </li></ul>
+                                    )
+                                })
+                            : "Loading..."}
+                    </h3>
+                    <h3>Residents:
+                        {p.residents
+                            ? props.swapiPeople.filter(people => p.residents.includes(people.url)).map((people, i) => {
                                 return (
                                     <ul>
                                         <li key={i}>
-                                            {film.title}
-                                        </li></ul>
+                                            {people.name}
+                                        </li>
+                                    </ul>
                                 )
                             })
-                        : "Loading..."}
-                    <h3>Residents:</h3>
-                    {p.residents
-                        ? props.swapiPeople.filter(people => p.residents.includes(people.url)).map((people, i) => {
-                            return (
-                                <ul>
-                                    <li key={i}>
-                                        {people.name}
-                                    </li>
-                                </ul>
-                            )
-                        })
-                        : "Loading..."}
+                            : "Loading..."}
+                    </h3>
                 </div>
             </div>
         </div>
