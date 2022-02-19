@@ -18,6 +18,7 @@ export const addSpecies = (info, user) => {
                 eye_colors: info.eye_colors,
                 average_lifespan: info.average_lifespan,
                 language: info.language,
+                people: info.people
             },
         },
     })

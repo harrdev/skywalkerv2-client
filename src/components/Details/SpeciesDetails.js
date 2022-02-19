@@ -5,7 +5,7 @@ const SpeciesDetails = (props) => {
 	const speciesData = props.species.filter(speciesData => speciesData.name === species.name)
 	const s = speciesData[0]
 
-	const speciesPeople = props.people.filter(person => s.people.includes(person.url))
+	const speciesPeople = props.swapiPeople.filter(person => s.people.includes(person.url))
 	.map((person, i) =>  {
 		return ( 
 		<li key={i}>
@@ -13,7 +13,7 @@ const SpeciesDetails = (props) => {
 		</li>
 		)
 	})
-
+	
 	return (
 		<div className="container2">
 			<h1>Name: {s.name}</h1>

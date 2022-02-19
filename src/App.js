@@ -283,7 +283,8 @@ const App = () => {
 				<Route path='/Species/:id'
 					element={
 						<RequireAuth user={user}>
-							<FaveSpeciesDetails msgAlert={msgAlert} user={user} addClick={addClick}addButtonClick={addButtonClick} setAddButtonClick={setAddButtonClick} />
+							<FaveSpeciesDetails msgAlert={msgAlert} user={user} swapiPeople={swapiPeople}
+							addClick={addClick}addButtonClick={addButtonClick} setAddButtonClick={setAddButtonClick} />
 						</RequireAuth>}
 				/>
 				<Route path='/Planets/:id'
@@ -321,7 +322,7 @@ const App = () => {
 				/>
 				<Route path='/Dashboard/Species'
 					element={
-						<RequireAuth user={user}><Species msgAlert={msgAlert} user={user} species={species} addClick={addClick} addButtonClick={addButtonClick}/>
+						<RequireAuth user={user}><Species msgAlert={msgAlert} user={user} species={species} addClick={addClick} addButtonClick={addButtonClick} swapiPeople={swapiPeople} />
 						</RequireAuth>}
 				/>
 				<Route path='/Dashboard/Starships'

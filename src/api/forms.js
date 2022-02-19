@@ -98,6 +98,7 @@ export const addNewSpecies = (info, user) => {
                 eye_colors: info.eye_colors,
                 average_lifespan: info.average_lifespan,
                 language: info.language,
+                people: info.people
             },
         },
     })
@@ -293,7 +294,8 @@ export const editSpecies = (info, user, id) => {
                 hair_colors: info.hair_colors,
                 eye_colors: info.eye_colors,
                 average_lifespan: info.average_lifespan,
-                language: info.language
+                language: info.language,
+                people: info.people
             },
         },
     })

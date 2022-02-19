@@ -24,6 +24,8 @@ const FaveSpeciesDetails = (props) => {
     }, [])
 
     const s = usersSpecies
+    console.log("s.people is: ", s)
+    console.log("props.swapiPeople is: ", props.swapiPeople)
     return (
         <div className="container">
             <div className="listLeft">
@@ -49,6 +51,28 @@ const FaveSpeciesDetails = (props) => {
                     <h3>Eye Colors: {s.eye_colors}</h3>
                     <h3>Average Lifespan: {s.average_lifespan}</h3>
                     <h3>Language: {s.language}</h3>
+                    <h3>People of this species:</h3>
+                    {s.people
+                        ? props.swapiPeople.filter(person => s.people.includes(person.url)).map((person, i) => {
+                            return (
+                                <ul>
+                                    <li key={i}>
+                                        {person.name}
+                                    </li></ul>
+                            )
+                        })
+                        : "Loading..."}
+                    {/* {s.people ?
+                                props.swapiPeople.filter(person => s.people.includes(person.url))
+                                    .map((person, i) => {
+                                        return (
+                                            <li key={i}>
+                                                {person.name}
+                                            </li>
+                                        )
+                                    })
+                                : ""
+                            } */}
                 </div>
             </div>
         </div>
