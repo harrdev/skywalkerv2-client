@@ -62,17 +62,6 @@ const FaveSpeciesDetails = (props) => {
                             )
                         })
                         : "Loading..."}
-                    {/* {s.people ?
-                                props.swapiPeople.filter(person => s.people.includes(person.url))
-                                    .map((person, i) => {
-                                        return (
-                                            <li key={i}>
-                                                {person.name}
-                                            </li>
-                                        )
-                                    })
-                                : ""
-                            } */}
                 </div>
             </div>
         </div>

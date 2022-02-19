@@ -145,7 +145,8 @@ export const addNewFilm = (info, user) => {
                 opening_crawl: info.opening_crawl,
                 director: info.director,
                 producer: info.producer,
-                release_date: info.release_date
+                release_date: info.release_date,
+                characters: info.characters
             },
         },
     })
@@ -272,7 +273,8 @@ export const editFilm = (info, user, id) => {
                 opening_crawl: info.opening_crawl,
                 director: info.director,
                 producer: info.producer,
-                release_date: info.release_date
+                release_date: info.release_date,
+                characters: info.characters
             },
         },
     })

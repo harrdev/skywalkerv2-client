@@ -2,11 +2,20 @@ import { useParams } from "react-router-dom";
 
 const FilmDetails = (props) => {
 
-    const filmName = useParams()
+	const filmName = useParams()
 	console.log("filmName params: ", filmName.name)
-	const filmData = props.films.filter(films=> 
+	const filmData = props.films.filter(films =>
 		films.title === filmName.name)
 	const f = filmData[0]
+
+	const filmCharacters = props.swapiPeople.filter(character => f.characters.includes(character.url))
+		.map((person, i) => {
+			return (
+				<li key={i}>
+					{person.name}
+				</li>
+			)
+		})
 
 	return (
 		<div className="container2">
@@ -16,6 +25,11 @@ const FilmDetails = (props) => {
 			<h3>Director: {f.director}</h3>
 			<h3>Producer: {f.producer}</h3>
 			<h3>Release Date: {f.release_date}</h3>
+			<h3>Characters in film:
+				<ul>
+					{filmCharacters}
+				</ul>
+			</h3>
 		</div>
 	)
 }

@@ -271,7 +271,7 @@ const App = () => {
 				<Route path='/Film/:id'
 					element={
 						<RequireAuth user={user}>
-							<FaveFilmDetails msgAlert={msgAlert} user={user} addButtonClick={addButtonClick} setAddButtonClick={setAddButtonClick}/>
+							<FaveFilmDetails msgAlert={msgAlert} user={user} addButtonClick={addButtonClick} setAddButtonClick={setAddButtonClick} swapiPeople={swapiPeople} />
 						</RequireAuth>}
 				/>
 				<Route path='/People/:id'
@@ -332,7 +332,7 @@ const App = () => {
 				/>
 				<Route path='/Dashboard/Films'
 					element={
-						<RequireAuth user={user}><Films msgAlert={msgAlert} user={user} films={films} addClick={addClick} addButtonClick={addButtonClick}/>
+						<RequireAuth user={user}><Films msgAlert={msgAlert} user={user} films={films} addClick={addClick} addButtonClick={addButtonClick} />
 						</RequireAuth>}
 				/>
 				<Route path='/Dashboard/People/:name'
@@ -358,7 +358,7 @@ const App = () => {
 				/>
 				<Route path='/Dashboard/Films/:name'
 					element={
-						<RequireAuth user={user}><FilmDetails msgAlert={msgAlert} user={user} films={films} />
+						<RequireAuth user={user}><FilmDetails msgAlert={msgAlert} user={user} films={films} swapiPeople={swapiPeople} />
 						</RequireAuth>}
 				/>
 				<Route path='/Dashboard/Species/:name'
