@@ -25,6 +25,7 @@ const People = (props) => {
 	return (
 		<div className="container">
 			<div className="listLeft">
+			<button onClick={props.addClick}>Add Person</button>
 				<div className="uList">
 					<h2>People List</h2>
 					<ul>
@@ -33,10 +34,15 @@ const People = (props) => {
 				</div>
 			</div>
 			<div className="listRight">
-				<div className="addForm">
-					<h2>Add new person</h2>
-					<AddPersonForm user={user} people={props.people} />
-				</div>
+			{props.addButtonClick
+					?
+					<div className="listRight">
+						<div className="addForm">
+							<h2>Add Person</h2>
+							<AddPersonForm user={user} />
+						</div>
+					</div>
+					: ""}
 			</div>
 		</div>
 	)

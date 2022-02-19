@@ -48,7 +48,8 @@ const App = () => {
 	const [starships, setStarships] = useState([])
 	const [vehicles, setVehicles] = useState([])
 	const [swapiPeople, setSwapiPeople] = useState([])
-
+	const [addButtonClick, setAddButtonClick] = useState(false)
+	
 	useEffect(() => {
 		getSwapiPeople()
 		getAllPeople()
@@ -206,6 +207,14 @@ const App = () => {
 		})
 	}
 
+	const addClick = () => {
+		if (!addButtonClick) {
+			setAddButtonClick(true)
+		} else {
+			setAddButtonClick(false)
+		}
+	}
+
 	return (
 		<Fragment>
 			<Header user={user} />
@@ -298,31 +307,31 @@ const App = () => {
 				<Route path='/Dashboard/People'
 					element={
 						<RequireAuth user={user}>
-							<People msgAlert={msgAlert} user={user} people={people} />
+							<People msgAlert={msgAlert} user={user} people={people} addClick={addClick} addButtonClick={addButtonClick} setAddButtonClick={setAddButtonClick}/>
 						</RequireAuth>}
 				/>
 				<Route path='/Dashboard/Planets'
 					element={
-						<RequireAuth user={user}><Planets msgAlert={msgAlert} user={user} planets={planets} /> </RequireAuth>}
+						<RequireAuth user={user}><Planets msgAlert={msgAlert} user={user} planets={planets} addClick={addClick} addButtonClick={addButtonClick}/> </RequireAuth>}
 				/>
 				<Route path='/Dashboard/Vehicles'
 					element={
-						<RequireAuth user={user}><Vehicles msgAlert={msgAlert} user={user} vehicles={vehicles} />
+						<RequireAuth user={user}><Vehicles msgAlert={msgAlert} user={user} vehicles={vehicles} addClick={addClick} addButtonClick={addButtonClick}/>
 						</RequireAuth>}
 				/>
 				<Route path='/Dashboard/Species'
 					element={
-						<RequireAuth user={user}><Species msgAlert={msgAlert} user={user} species={species} />
+						<RequireAuth user={user}><Species msgAlert={msgAlert} user={user} species={species} addClick={addClick} addButtonClick={addButtonClick}/>
 						</RequireAuth>}
 				/>
 				<Route path='/Dashboard/Starships'
 					element={
-						<RequireAuth user={user}><Starships msgAlert={msgAlert} user={user} starships={starships} />
+						<RequireAuth user={user}><Starships msgAlert={msgAlert} user={user} starships={starships} addClick={addClick} addButtonClick={addButtonClick}/>
 						</RequireAuth>}
 				/>
 				<Route path='/Dashboard/Films'
 					element={
-						<RequireAuth user={user}><Films msgAlert={msgAlert} user={user} films={films} />
+						<RequireAuth user={user}><Films msgAlert={msgAlert} user={user} films={films} addClick={addClick} addButtonClick={addButtonClick}/>
 						</RequireAuth>}
 				/>
 				<Route path='/Dashboard/People/:name'

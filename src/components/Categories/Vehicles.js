@@ -4,7 +4,7 @@ import AddVehicleForm from '../Forms/AddVehicleForm'
 
 const Vehicles = (props) => {
 	const { user } = props
-	
+
 	const addToFave = (info) => {
 		addVehicles(info, user)
 	}
@@ -24,6 +24,7 @@ const Vehicles = (props) => {
 	return (
 		<div className="container">
 			<div className="listLeft">
+				<button onClick={props.addClick}>Add Vehicle</button>
 				<div className="uList">
 					<h2>Vehicle List</h2>
 					<ul>
@@ -32,10 +33,15 @@ const Vehicles = (props) => {
 				</div>
 			</div>
 			<div className="listRight">
-				<div className="addForm">
-					<h2>Add new Vehicle</h2>
-					<AddVehicleForm user={user} />
-				</div>
+				{props.addButtonClick
+					?
+					<div className="listRight">
+						<div className="addForm">
+							<h2>Add Vehicle</h2>
+							<AddVehicleForm user={user} />
+						</div>
+					</div>
+					: ""}
 			</div>
 		</div>
 	)

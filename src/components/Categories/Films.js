@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom'
 import { addFilms } from '../../api/films'
 import AddFilmForm from '../Forms/AddFilmForm'
+import { useState } from 'react'
 
 const Films = (props) => {
+	
 	const { user } = props
 
 	const addToFave = (info) => {
@@ -24,7 +26,8 @@ const Films = (props) => {
 
 	return (
 		<div className="container">
-			<div className="list">
+			<div className="listLeft">
+			<button onClick={props.addClick}>Add Film</button>
 				<div className="uList">
 				<h2>Films List</h2>
 				<ul>
@@ -33,8 +36,15 @@ const Films = (props) => {
 				</div>
 			</div>
 			<div className="addForm">
-				<h2>Add new Film</h2>
-				<AddFilmForm user={user} />
+			{props.addButtonClick
+					?
+					<div className="listRight">
+						<div className="addForm">
+							<h2>Add Film</h2>
+							<AddFilmForm user={user} />
+						</div>
+					</div>
+					: ""}
 			</div>
 		</div>
 	)

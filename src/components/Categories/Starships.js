@@ -20,10 +20,11 @@ const Starships = (props) => {
 			</li>
 		)
 	})
-	
+
 	return (
 		<div className="container">
 			<div className="listLeft">
+				<button onClick={props.addClick}>Add Starship</button>
 				<div className="uList">
 					<h2>Starship List</h2>
 					<ul>
@@ -32,10 +33,15 @@ const Starships = (props) => {
 				</div>
 			</div>
 			<div className="listRight">
-				<div className="addForm">
-					<h2>Add new Starship</h2>
-					<AddStarshipForm user={user} />
-				</div>
+				{props.addButtonClick
+					?
+					<div className="listRight">
+						<div className="addForm">
+							<h2>Add Starship</h2>
+							<AddStarshipForm user={user} />
+						</div>
+					</div>
+					: ""}
 			</div>
 		</div>
 	)
