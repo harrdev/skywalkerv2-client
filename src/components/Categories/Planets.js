@@ -25,6 +25,18 @@ const Planets = (props) => {
 	return (
 		<div className="container">
 			<div className="listLeft">
+				{props.addButtonClick
+					?
+					<div className="listRight">
+						<button onClick={props.addClick}>Cancel</button>
+						<div className="addForm">
+							<h2>Add Planet</h2>
+							<AddPlanetForm user={user} />
+						</div>
+					</div>
+					: ""}
+			</div>
+			<div className="listRight">
 				<button onClick={props.addClick}>Add Planet</button>
 				<div className="uList">
 					<h2>Planet List</h2>
@@ -32,17 +44,6 @@ const Planets = (props) => {
 						{planetsList}
 					</ul>
 				</div>
-			</div>
-			<div className="listRight">
-				{props.addButtonClick
-					?
-					<div className="listRight">
-						<div className="addForm">
-							<h2>Add Planet</h2>
-							<AddPlanetForm user={user} />
-						</div>
-					</div>
-					: ""}
 			</div>
 		</div>
 	)

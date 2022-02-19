@@ -24,6 +24,18 @@ const Vehicles = (props) => {
 	return (
 		<div className="container">
 			<div className="listLeft">
+				{props.addButtonClick
+					?
+					<div className="listRight">
+						<button onClick={props.addClick}>Cancel</button>
+						<div className="addForm">
+							<h2>Add Vehicle</h2>
+							<AddVehicleForm user={user} />
+						</div>
+					</div>
+					: ""}
+			</div>
+			<div className="listRight">
 				<button onClick={props.addClick}>Add Vehicle</button>
 				<div className="uList">
 					<h2>Vehicle List</h2>
@@ -31,17 +43,6 @@ const Vehicles = (props) => {
 						{vehiclesList}
 					</ul>
 				</div>
-			</div>
-			<div className="listRight">
-				{props.addButtonClick
-					?
-					<div className="listRight">
-						<div className="addForm">
-							<h2>Add Vehicle</h2>
-							<AddVehicleForm user={user} />
-						</div>
-					</div>
-					: ""}
 			</div>
 		</div>
 	)

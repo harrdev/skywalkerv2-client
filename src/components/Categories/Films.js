@@ -4,7 +4,7 @@ import AddFilmForm from '../Forms/AddFilmForm'
 import { useState } from 'react'
 
 const Films = (props) => {
-	
+
 	const { user } = props
 
 	const addToFave = (info) => {
@@ -27,24 +27,25 @@ const Films = (props) => {
 	return (
 		<div className="container">
 			<div className="listLeft">
-			<button onClick={props.addClick}>Add Film</button>
-				<div className="uList">
-				<h2>Films List</h2>
-				<ul>
-					{filmsList}
-				</ul>
-				</div>
-			</div>
-			<div className="addForm">
-			{props.addButtonClick
+				{props.addButtonClick
 					?
 					<div className="listRight">
+						<button onClick={props.addClick}>Cancel</button>
 						<div className="addForm">
 							<h2>Add Film</h2>
 							<AddFilmForm user={user} />
 						</div>
 					</div>
 					: ""}
+			</div>
+			<div className="addForm">
+				<button onClick={props.addClick}>Add Film</button>
+				<div className="uList">
+					<h2>Films List</h2>
+					<ul>
+						{filmsList}
+					</ul>
+				</div>
 			</div>
 		</div>
 	)

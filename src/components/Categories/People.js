@@ -25,24 +25,25 @@ const People = (props) => {
 	return (
 		<div className="container">
 			<div className="listLeft">
-			<button onClick={props.addClick}>Add Person</button>
-				<div className="uList">
-					<h2>People List</h2>
-					<ul>
-						{peopleList}
-					</ul>
-				</div>
-			</div>
-			<div className="listRight">
-			{props.addButtonClick
+				{props.addButtonClick
 					?
 					<div className="listRight">
+						<button onClick={props.addClick}>Cancel</button>
 						<div className="addForm">
 							<h2>Add Person</h2>
 							<AddPersonForm user={user} />
 						</div>
 					</div>
 					: ""}
+			</div>
+			<div className="listRight">
+				<button onClick={props.addClick}>Add New Person</button>
+				<div className="uList">
+					<h2>People List</h2>
+					<ul>
+						{peopleList}
+					</ul>
+				</div>
 			</div>
 		</div>
 	)
