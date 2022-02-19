@@ -35,14 +35,16 @@ const PlanetDetails = (props) => {
 			<h3>Terrain: {p.terrain}</h3>
 			<h3>Surface Water: {p.surface_water}</h3>
 			<h3>Population: {p.population}</h3>
-			<h3>Featured in Films:</h3>
-			<ul>
-				{planetFilms}
-			</ul>
-			<h3>Residents:</h3>
-			<ul>
-				{planetResidents}
-			</ul>
+			<h3>Featured in Films:
+				<ul>
+					{planetFilms}
+				</ul>
+			</h3>
+			<h3>Residents:
+				<ul>
+					{planetResidents}
+				</ul>
+			</h3>
 		</div>
 	)
 }

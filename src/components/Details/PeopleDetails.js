@@ -32,10 +32,11 @@ const PeopleDetails = (props) => {
 					<h3>Death Year: {p.died}</h3>
 					<h3>Death Location: {p.diedLocation}</h3>
 					<div className="affiliations">
-						<h3>Affiliations:</h3>
-						<ul className="affUl">
-							{affiliations}
-						</ul>
+						<h3>Affiliations:
+							<ul className="affUl">
+								{affiliations}
+							</ul>
+						</h3>
 					</div>
 				</div>
 			</div>

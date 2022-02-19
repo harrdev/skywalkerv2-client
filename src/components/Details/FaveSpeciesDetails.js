@@ -51,17 +51,18 @@ const FaveSpeciesDetails = (props) => {
                     <h3>Eye Colors: {s.eye_colors}</h3>
                     <h3>Average Lifespan: {s.average_lifespan}</h3>
                     <h3>Language: {s.language}</h3>
-                    <h3>People of this species:</h3>
-                    {s.people
-                        ? props.swapiPeople.filter(person => s.people.includes(person.url)).map((person, i) => {
-                            return (
-                                <ul>
-                                    <li key={i}>
-                                        {person.name}
-                                    </li></ul>
-                            )
-                        })
-                        : "Loading..."}
+                    <h3>People of this species:
+                        {s.people
+                            ? props.swapiPeople.filter(person => s.people.includes(person.url)).map((person, i) => {
+                                return (
+                                    <ul>
+                                        <li key={i}>
+                                            {person.name}
+                                        </li></ul>
+                                )
+                            })
+                            : "Loading..."}
+                    </h3>
                 </div>
             </div>
         </div>

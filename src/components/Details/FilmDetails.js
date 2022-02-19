@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 const FilmDetails = (props) => {
 
 	const filmName = useParams()
-	console.log("filmName params: ", filmName.name)
 	const filmData = props.films.filter(films =>
 		films.title === filmName.name)
 	const f = filmData[0]

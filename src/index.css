@@ -6,10 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 5vw;
-  background-image: url("https://mymodernmet.com/wp/wp-content/uploads/2020/04/star-wars-video-call-backgrounds-5.jpg");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  background-color: #a5c1f0;
 }
 
 code {
@@ -49,6 +46,8 @@ label {
   width: 400px;
   overflow-y: auto;
   text-align: center;
+  background-color: #6ca9cc;
+  border-radius: 10px;
 }
 
 .input[type=text], select {
@@ -149,17 +148,15 @@ button {
 
 .itemMain1, .itemMain2, .itemMain3, .itemMain4, .itemMain5, .itemMain6 {
   align-content: center;
-  height: 200px;
+  height: 150px;
   width: 300px;
   overflow-y: auto;
   background-color: yellow;
   text-align: center;
   border: 3px solid black;
-  border-radius: 100px / 70px;
-  background-image: url("https://mymodernmet.com/wp/wp-content/uploads/2020/04/star-wars-video-call-backgrounds-4.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  line-height: 175px;
+  border-radius: 20px;
+  background-color: #5d83c2;
+  line-height: 135px;
 }
 
 .skywalkerH1 {
