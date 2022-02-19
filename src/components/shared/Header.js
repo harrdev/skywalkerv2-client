@@ -15,7 +15,7 @@ const authenticatedOptions = (
 		</Nav.Link>
 		<Nav.Link>
 			<Link to='Favorites' style={linkStyle}>
-				Favorites Dashboard
+				Favorites
 			</Link>
 		</Nav.Link>
 		<Nav.Link>
@@ -42,16 +42,6 @@ const unauthenticatedOptions = (
 	</>
 )
 
-const alwaysOptions = (
-	<>
-		<Nav.Link>
-			<Link to='/' style={linkStyle}>
-				Home
-			</Link>
-		</Nav.Link>
-	</>
-)
-
 const Header = ({ user }) => (
 	<Navbar bg='primary' variant='dark' expand='md'>
 		<Navbar.Brand>
@@ -62,7 +52,6 @@ const Header = ({ user }) => (
 		<Navbar.Toggle aria-controls='basic-navbar-nav' />
 		<Navbar.Collapse id='basic-navbar-nav'>
 			<Nav className='ml-auto'>
-				{alwaysOptions}
 				{user ? authenticatedOptions : unauthenticatedOptions}
 			</Nav>
 		</Navbar.Collapse>
