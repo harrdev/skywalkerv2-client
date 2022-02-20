@@ -23,7 +23,7 @@ const FaveFilmDetails = (props) => {
     }, [])
 
     const f = usersFilms
-    console.log("This is f: ", f)
+    
     return (
         <div className="container">
             <div className="listLeft">
@@ -51,10 +51,9 @@ const FaveFilmDetails = (props) => {
                         {f.characters
                             ? props.swapiPeople.filter(character => f.characters.includes(character.url)).map((person, i) => {
                                 return (
-                                    <ul>
-                                        <li key={i}>
-                                            {person.name}
-                                        </li></ul>
+                                    <li key={i}>
+                                        {person.name}
+                                    </li>
                                 )
                             })
                             : "Loading..."}

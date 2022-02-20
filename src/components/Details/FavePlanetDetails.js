@@ -57,10 +57,9 @@ const FavePlanetDetails = (props) => {
                             ? props.films.filter(film =>
                                 p.films.includes(film.url)).map((film, i) => {
                                     return (
-                                        <ul>
-                                            <li key={i}>
-                                                {film.title}
-                                            </li></ul>
+                                        <li key={i}>
+                                            {film.title}
+                                        </li>
                                     )
                                 })
                             : "Loading..."}
@@ -69,11 +68,9 @@ const FavePlanetDetails = (props) => {
                         {p.residents
                             ? props.swapiPeople.filter(people => p.residents.includes(people.url)).map((people, i) => {
                                 return (
-                                    <ul>
-                                        <li key={i}>
-                                            {people.name}
-                                        </li>
-                                    </ul>
+                                    <li key={i}>
+                                        {people.name}
+                                    </li>
                                 )
                             })
                             : "Loading..."}
