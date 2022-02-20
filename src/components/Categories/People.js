@@ -42,9 +42,9 @@ const People = (props) => {
 			</div>
 			<div className="listRight">
 				<button onClick={props.addClick}>Add New Person</button>
+				<input onChange={inputHandler} type="search" value={inputText} placeholder="Search for person" />
 				<div className="uList">
 					<h2>People List</h2>
-					<input onChange={inputHandler} type="search" value={inputText} placeholder="Search for person" />
 					<ul>
 						{filteredData.map((person, i) => (
 							<li key={i}>

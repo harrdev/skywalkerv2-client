@@ -1,25 +1,29 @@
 import { Link } from 'react-router-dom'
 import { addVehicles } from '../../api/vehicles'
 import AddVehicleForm from '../Forms/AddVehicleForm'
+import { useState } from 'react'
 
 const Vehicles = (props) => {
 	const { user } = props
+	const [inputText, setInputText] = useState("")
+
+	let inputHandler = (e) => {
+		var lowerCase = e.target.value.toLowerCase()
+		setInputText(lowerCase)
+	}
+
+	const filteredData = props.vehicles.filter((el) => {
+		if (inputText === '') {
+			return el;
+		}
+		else {
+			return el.name.toLowerCase().includes(inputText)
+		}
+	})
 
 	const addToFave = (info) => {
 		addVehicles(info, user)
 	}
-	const vehiclesList = props.vehicles.map((p, i) => {
-		return (
-			<li key={i}>
-				<div>
-					<Link to={`${p.name}`} style={{ fontSize: "25px", padding: "15px" }}>{p.name}</Link>
-				</div>
-				<div id="buttonDiv">
-					<button className="button" onClick={() => addToFave(p)}>Add To Favorites</button>
-				</div>
-			</li>
-		)
-	})
 
 	return (
 		<div className="container">
@@ -37,10 +41,20 @@ const Vehicles = (props) => {
 			</div>
 			<div className="listRight">
 				<button onClick={props.addClick}>Add Vehicle</button>
+				<input onChange={inputHandler} type="search" value={inputText} placeholder="Search for vehicle" />
 				<div className="uList">
 					<h2>Vehicle List</h2>
 					<ul>
-						{vehiclesList}
+						{filteredData.map((vehicle, i) => (
+							<li key={i}>
+								<div>
+									<Link to={`${vehicle.name}`} style={{ fontSize: "25px", padding: "15px" }}>{vehicle.name}</Link>
+								</div>
+								<div id="buttonDiv">
+									<button className="button" onClick={() => addToFave(vehicle)}>Add To Favorites</button>
+								</div>
+							</li>
+						))}
 					</ul>
 				</div>
 			</div>
