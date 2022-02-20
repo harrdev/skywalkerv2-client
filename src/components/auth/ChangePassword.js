@@ -1,21 +1,12 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-
 import { changePassword } from '../../api/auth'
 import messages from '../shared/AutoDismissAlert/messages'
-
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
 const ChangePassword = (props) => {
-	// constructor(props) {
-	// 	super(props)
 
-	// 	this.state = {
-	// 		oldPassword: '',
-	// 		newPassword: '',
-	// 	}
-	// }
     const [oldPassword, setOldPassword] = useState('')
     const [newPassword, setNewPassword] = useState('')
 
@@ -49,8 +40,6 @@ const ChangePassword = (props) => {
 				})
 			})
 	}
-
-
 
     return (
         <div className='row'>

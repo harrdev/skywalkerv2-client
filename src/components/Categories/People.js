@@ -1,26 +1,30 @@
 import { Link } from 'react-router-dom'
 import { addPerson } from '../../api/people'
 import AddPersonForm from '../Forms/AddPersonForm'
+import { useState } from 'react'
 
 const People = (props) => {
 
 	const { user } = props
+	const [inputText, setInputText] = useState("")
+
+	let inputHandler = (e) => {
+		var lowerCase = e.target.value.toLowerCase()
+		setInputText(lowerCase)
+	}
+
+	const filteredData = props.people.filter((el) => {
+		if (inputText === '') {
+			return el;
+		}
+		else {
+			return el.name.toLowerCase().includes(inputText)
+		}
+	})
+
 	const addToFave = (info) => {
 		addPerson(info, user)
 	}
-
-	const peopleList = props.people.map((p, i) => {
-		return (
-			<li key={i}>
-				<div>
-					<Link to={`${p.name}`} style={{ fontSize: "25px", padding: "15px" }}>{p.name}</Link>
-				</div>
-				<div id="buttonDiv">
-					<button className="button" onClick={() => addToFave(p)}>Add To Favorites</button>
-				</div>
-			</li>
-		)
-	})
 
 	return (
 		<div className="container">
@@ -40,8 +44,18 @@ const People = (props) => {
 				<button onClick={props.addClick}>Add New Person</button>
 				<div className="uList">
 					<h2>People List</h2>
+					<input onChange={inputHandler} type="search" value={inputText} placeholder="Search for person" />
 					<ul>
-						{peopleList}
+						{filteredData.map((person, i) => (
+							<li key={i}>
+								<div>
+									<Link to={`${person.name}`} style={{ fontSize: "25px", padding: "15px" }}>{person.name}</Link>
+								</div>
+								<div id="buttonDiv">
+									<button className="button" onClick={() => addToFave(person)}>Add To Favorites</button>
+								</div>
+							</li>
+						))}
 					</ul>
 				</div>
 			</div>

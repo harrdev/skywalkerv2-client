@@ -7,7 +7,7 @@ const FavePeopleDetails = (props) => {
     const [usersPeople, setUsersPeople] = useState([])
     const { user } = props
     const favePerson = useParams()
-    console.log("Props are: ", props)
+    
     useEffect(() => {
         getPeople(user)
             .then(res => {
