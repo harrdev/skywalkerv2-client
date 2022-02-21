@@ -8,8 +8,8 @@ const PeopleDetails = (props) => {
 
 	const affiliations = p.affiliations.map((a, i) => {
 		return (
-			<li className="affLi" key={i}>
-				* {a}
+			<li key={i}>
+				{a}
 			</li>
 		)
 	})
@@ -33,9 +33,7 @@ const PeopleDetails = (props) => {
 					<h3>Death Location: {p.diedLocation}</h3>
 					<div className="affiliations">
 						<h3>Affiliations:
-							<ul className="affUl">
-								{affiliations}
-							</ul>
+							{affiliations}
 						</h3>
 					</div>
 				</div>

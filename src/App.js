@@ -214,6 +214,10 @@ const App = () => {
 		}
 	}
 
+	const removeForm = () => {
+		setAddButtonClick(false)
+	}
+
 	return (
 		<Fragment>
 			<Header user={user} />
@@ -222,7 +226,7 @@ const App = () => {
 				<Route path='/Dashboard'
 					element={
 						<RequireAuth user={user}>
-							<Dashboard msgAlert={msgAlert} user={user} />
+							<Dashboard msgAlert={msgAlert} user={user} removeForm={removeForm} addButtonClick={addButtonClick} setAddButtonClick={setAddButtonClick} />
 						</RequireAuth>}
 				/>
 				<Route path='/Favorites'

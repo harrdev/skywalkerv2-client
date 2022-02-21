@@ -103,18 +103,7 @@ ul {
 
 li {
   color: blue;
-  text-align: left;
-}
-
-.affLi {
-  display: block;
-}
-
-.affUl {
-  margin-left: 15px;
-  text-align: left;
-  list-style-type: disc;
-  display: block;
+  text-align: center;
 }
 
 .affiliations {
@@ -141,6 +130,8 @@ button {
 }
 
 .containerMain {
+  text-align: center;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
