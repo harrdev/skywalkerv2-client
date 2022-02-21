@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 const StarshipDetails = (props) => {
 
     const starshipName = useParams()
-	const starshipData = props.starships.filter(starship => starship.name === starshipName.name)
+	const starshipData = props.starships.filter(starship => starship.name === starshipName.id)
 	const s = starshipData[0]
 
 	return (

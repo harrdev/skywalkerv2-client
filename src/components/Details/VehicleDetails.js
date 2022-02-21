@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 const VehicleDetails = (props) => {
 
     const vehicleName = useParams()
-	const vehicleData = props.vehicles.filter(vehicle => vehicle.name === vehicleName.name)
+	const vehicleData = props.vehicles.filter(vehicle => vehicle.name === vehicleName.id)
 	const v = vehicleData[0]
 
 	return (

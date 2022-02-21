@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 const PeopleDetails = (props) => {
 
 	const personName = useParams()
-	const person = props.people.filter(person => person.name === personName.name)
+	const person = props.people.filter(person => person.name === personName.id)
 	const p = person[0]
 
 	const affiliations = p.affiliations.map((a, i) => {

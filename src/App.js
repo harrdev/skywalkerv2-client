@@ -338,12 +338,12 @@ const App = () => {
 						<RequireAuth user={user}><Films msgAlert={msgAlert} user={user} films={films} addClick={addClick} addButtonClick={addButtonClick} />
 						</RequireAuth>}
 				/>
-				<Route path='/Dashboard/People/:name'
+				<Route path='/Dashboard/People/:id'
 					element={
 						<RequireAuth user={user}><PeopleDetails msgAlert={msgAlert} user={user} planets={planets} people={people} />
 						</RequireAuth>}
 				/>
-				<Route path='/Dashboard/Planets/:name'
+				<Route path='/Dashboard/Planets/:id'
 					element={
 						<RequireAuth user={user}><PlanetsDetails
 							msgAlert={msgAlert}
@@ -354,22 +354,22 @@ const App = () => {
 							swapiPeople={swapiPeople} />
 						</RequireAuth>}
 				/>
-				<Route path='/Dashboard/Vehicles/:name'
+				<Route path='/Dashboard/Vehicles/:id'
 					element={
 						<RequireAuth user={user}><VehicleDetails msgAlert={msgAlert} user={user} vehicles={vehicles} />
 						</RequireAuth>}
 				/>
-				<Route path='/Dashboard/Films/:name'
+				<Route path='/Dashboard/Films/:id'
 					element={
 						<RequireAuth user={user}><FilmDetails msgAlert={msgAlert} user={user} films={films} swapiPeople={swapiPeople} />
 						</RequireAuth>}
 				/>
-				<Route path='/Dashboard/Species/:name'
+				<Route path='/Dashboard/Species/:id'
 					element={
 						<RequireAuth user={user}><SpeciesDetails msgAlert={msgAlert} user={user} people={people} species={species} swapiPeople={swapiPeople} />
 						</RequireAuth>}
 				/>
-				<Route path='/Dashboard/Starships/:name'
+				<Route path='/Dashboard/Starships/:id'
 					element={
 						<RequireAuth user={user}><StarshipsDetails msgAlert={msgAlert} user={user} starships={starships} />
 						</RequireAuth>}

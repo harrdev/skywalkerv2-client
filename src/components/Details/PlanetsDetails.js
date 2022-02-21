@@ -4,7 +4,7 @@ const PlanetDetails = (props) => {
 
 	const planetName = useParams()
 	// Filters planets to match passed useparams to display correct information
-	const planet = props.planets.filter(planet => planet.name === planetName.name)
+	const planet = props.planets.filter(planet => planet.name === planetName.id)
 	const p = planet[0]
 	// Filters and maps planet films URLS to match and display
 	const planetFilms = props.films.filter(film =>

@@ -4,7 +4,7 @@ const FilmDetails = (props) => {
 
 	const filmName = useParams()
 	const filmData = props.films.filter(films =>
-		films.title === filmName.name)
+		films.title === filmName.id)
 	const f = filmData[0]
 
 	const filmCharacters = props.swapiPeople.filter(character => f.characters.includes(character.url))

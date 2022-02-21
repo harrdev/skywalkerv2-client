@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 
 const SpeciesDetails = (props) => {
 	const species = useParams()
-	const speciesData = props.species.filter(speciesData => speciesData.name === species.name)
+	const speciesData = props.species.filter(speciesData => speciesData.name === species.id)
 	const s = speciesData[0]
 
 	const speciesPeople = props.swapiPeople.filter(person => s.people.includes(person.url))
