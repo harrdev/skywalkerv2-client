@@ -4,9 +4,11 @@ import { useState, useEffect } from 'react'
 import EditSpecies from '../Forms/EditSpeciesForm'
 
 const FaveSpeciesDetails = (props) => {
+
     const [usersSpecies, setUsersSpecies] = useState([])
     const { user } = props
     const faveSpecies = useParams()
+
     useEffect(() => {
         getSpecies(user)
             .then(res => {
@@ -24,8 +26,7 @@ const FaveSpeciesDetails = (props) => {
     }, [])
 
     const s = usersSpecies
-    console.log("s.people is: ", s)
-    console.log("props.swapiPeople is: ", props.swapiPeople)
+
     return (
         <div className="container">
             <div className="listLeft">
