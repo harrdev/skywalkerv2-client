@@ -62,10 +62,10 @@ const App = () => {
 
 	const getAllVehicles = () => {
 		let endpoints = [
-			'http://swapi.dev/api/vehicles/?page=1',
-			'http://swapi.dev/api/vehicles/?page=2',
-			'http://swapi.dev/api/vehicles/?page=3',
-			'http://swapi.dev/api/vehicles/?page=4'
+			'http://swapi.py4e.com/api/vehicles/?page=1',
+			'http://swapi.py4e.com/api/vehicles/?page=2',
+			'http://swapi.py4e.com/api/vehicles/?page=3',
+			'http://swapi.py4e.com/api/vehicles/?page=4'
 		];
 		Promise.all(endpoints.map((endpoint) => axios.get(endpoint)))
 			.then((res) => {
@@ -81,10 +81,10 @@ const App = () => {
 
 	const getAllStarships = () => {
 		let endpoints = [
-			'http://swapi.dev/api/starships/?page=1',
-			'http://swapi.dev/api/starships/?page=2',
-			'http://swapi.dev/api/starships/?page=3',
-			'http://swapi.dev/api/starships/?page=4'
+			'http://swapi.py4e.com/api/starships/?page=1',
+			'http://swapi.py4e.com/api/starships/?page=2',
+			'http://swapi.py4e.com/api/starships/?page=3',
+			'http://swapi.py4e.com/api/starships/?page=4'
 		];
 		Promise.all(endpoints.map((endpoint) => axios.get(endpoint)))
 			.then((res) => {
@@ -100,10 +100,10 @@ const App = () => {
 
 	const getAllSpecies = () => {
 		let endpoints = [
-			'http://swapi.dev/api/species/?page=1',
-			'http://swapi.dev/api/species/?page=2',
-			'http://swapi.dev/api/species/?page=3',
-			'http://swapi.dev/api/species/?page=4'
+			'http://swapi.py4e.com/api/species/?page=1',
+			'http://swapi.py4e.com/api/species/?page=2',
+			'http://swapi.py4e.com/api/species/?page=3',
+			'http://swapi.py4e.com/api/species/?page=4'
 		];
 		Promise.all(endpoints.map((endpoint) => axios.get(endpoint)))
 			.then((res) => {
@@ -119,7 +119,7 @@ const App = () => {
 
 	const getAllFilms = () => {
 		let endpoints = [
-			'http://swapi.dev/api/films/?page=1'
+			'http://swapi.py4e.com/api/films/?page=1'
 		];
 		Promise.all(endpoints.map((endpoint) => axios.get(endpoint)))
 			.then((res) => {
@@ -129,15 +129,15 @@ const App = () => {
 
 	const getSwapiPeople = () => {
 		let endpoints = [
-			'http://swapi.dev/api/people/?page=1',
-			'http://swapi.dev/api/people/?page=2',
-			'http://swapi.dev/api/people/?page=3',
-			'http://swapi.dev/api/people/?page=4',
-			'http://swapi.dev/api/people/?page=5',
-			'http://swapi.dev/api/people/?page=6',
-			'http://swapi.dev/api/people/?page=7',
-			'http://swapi.dev/api/people/?page=8',
-			'http://swapi.dev/api/people/?page=9',
+			'http://swapi.py4e.com/api/people/?page=1',
+			'http://swapi.py4e.com/api/people/?page=2',
+			'http://swapi.py4e.com/api/people/?page=3',
+			'http://swapi.py4e.com/api/people/?page=4',
+			'http://swapi.py4e.com/api/people/?page=5',
+			'http://swapi.py4e.com/api/people/?page=6',
+			'http://swapi.py4e.com/api/people/?page=7',
+			'http://swapi.py4e.com/api/people/?page=8',
+			'http://swapi.py4e.com/api/people/?page=9',
 		];
 		Promise.all(endpoints.map((endpoint) => axios.get(endpoint)))
 			.then((res) => {
@@ -167,12 +167,12 @@ const App = () => {
 
 	const getAllPlanets = () => {
 		let endpoints = [
-			'http://swapi.dev/api/planets/?page=1',
-			'http://swapi.dev/api/planets/?page=2',
-			'http://swapi.dev/api/planets/?page=3',
-			'http://swapi.dev/api/planets/?page=4',
-			'http://swapi.dev/api/planets/?page=5',
-			'http://swapi.dev/api/planets/?page=6'
+			'http://swapi.py4e.com/api/planets/?page=1',
+			'http://swapi.py4e.com/api/planets/?page=2',
+			'http://swapi.py4e.com/api/planets/?page=3',
+			'http://swapi.py4e.com/api/planets/?page=4',
+			'http://swapi.py4e.com/api/planets/?page=5',
+			'http://swapi.py4e.com/api/planets/?page=6'
 		];
 		Promise.all(endpoints.map((endpoint) => axios.get(endpoint)))
 			.then((res) => {
