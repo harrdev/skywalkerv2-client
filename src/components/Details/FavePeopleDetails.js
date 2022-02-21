@@ -7,7 +7,7 @@ const FavePeopleDetails = (props) => {
     const [usersPeople, setUsersPeople] = useState([])
     const { user } = props
     const favePerson = useParams()
-    
+
     useEffect(() => {
         getPeople(user)
             .then(res => {
@@ -16,12 +16,13 @@ const FavePeopleDetails = (props) => {
                     if (person === true) {
                         setUsersPeople(people)
                     }
+                    return people
                 })
             })
             .catch((error) => {
                 console.log(error)
             })
-    }, [])
+    }, [user, favePerson.id])
 
     const p = usersPeople
 

@@ -16,12 +16,13 @@ const FavePlanetDetails = (props) => {
                     if (planet === true) {
                         setUsersPlanets(planets)
                     }
+                    return planets
                 })
             })
             .catch((error) => {
                 console.log(error)
             })
-    }, [])
+    }, [user, favePlanet.id])
 
     const p = usersPlanets
 

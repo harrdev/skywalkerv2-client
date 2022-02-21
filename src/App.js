@@ -11,7 +11,6 @@ import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import Dashboard from './components/Dashboard'
-import Saved from './components/Favorites/Favorites'
 import People from './components/Categories/People'
 import Planets from './components/Categories/Planets'
 import Vehicles from './components/Categories/Vehicles'
@@ -49,7 +48,7 @@ const App = () => {
 	const [vehicles, setVehicles] = useState([])
 	const [swapiPeople, setSwapiPeople] = useState([])
 	const [addButtonClick, setAddButtonClick] = useState(false)
-	
+
 	useEffect(() => {
 		getSwapiPeople()
 		getAllPeople()
@@ -71,11 +70,11 @@ const App = () => {
 		Promise.all(endpoints.map((endpoint) => axios.get(endpoint)))
 			.then((res) => {
 				let vehicleArray = []
-				res.map((vehicle) => {
-					vehicle.data.results.map(p => {
+				res.map((vehicle) => (
+					vehicle.data.results.map(p => (
 						vehicleArray.push(p)
-					})
-				})
+					))
+				))
 				setVehicles(vehicleArray)
 			})
 	}
@@ -90,11 +89,11 @@ const App = () => {
 		Promise.all(endpoints.map((endpoint) => axios.get(endpoint)))
 			.then((res) => {
 				let starshipArray = []
-				res.map((starship) => {
-					starship.data.results.map(p => {
+				res.map((starship) => (
+					starship.data.results.map(p => (
 						starshipArray.push(p)
-					})
-				})
+					))
+				))
 				setStarships(starshipArray)
 			})
 	}
@@ -109,11 +108,11 @@ const App = () => {
 		Promise.all(endpoints.map((endpoint) => axios.get(endpoint)))
 			.then((res) => {
 				let speciesArray = []
-				res.map((species) => {
-					species.data.results.map(s => {
+				res.map((species) => (
+					species.data.results.map(s => (
 						speciesArray.push(s)
-					})
-				})
+					))
+				))
 				setSpecies(speciesArray)
 			})
 	}
@@ -143,11 +142,11 @@ const App = () => {
 		Promise.all(endpoints.map((endpoint) => axios.get(endpoint)))
 			.then((res) => {
 				let peopleArray = []
-				res.map((people) => {
-					people.data.results.map(p => {
+				res.map((people) => (
+					people.data.results.map(p => (
 						peopleArray.push(p)
-					})
-				})
+					))
+				))
 				setSwapiPeople(peopleArray)
 			})
 	}
@@ -159,9 +158,9 @@ const App = () => {
 		Promise.all(endpoints.map((endpoint) => axios.get(endpoint)))
 			.then((res) => {
 				let peopleArray = []
-				res[0].data.map((people) => {
+				res[0].data.map((people) => (
 					peopleArray.push(people)
-				})
+				))
 				setPeople(peopleArray)
 			})
 	}
@@ -178,11 +177,11 @@ const App = () => {
 		Promise.all(endpoints.map((endpoint) => axios.get(endpoint)))
 			.then((res) => {
 				let planetArray = []
-				res.map((planet) => {
-					planet.data.results.map(p => {
+				res.map((planet) => (
+					planet.data.results.map(p => (
 						planetArray.push(p)
-					})
-				})
+					))
+				))
 				setPlanets(planetArray)
 			})
 	}
@@ -271,7 +270,7 @@ const App = () => {
 				<Route path='/Film/:id'
 					element={
 						<RequireAuth user={user}>
-							<FaveFilmDetails msgAlert={msgAlert} user={user}  addClick={addClick} addButtonClick={addButtonClick} setAddButtonClick={setAddButtonClick} swapiPeople={swapiPeople} />
+							<FaveFilmDetails msgAlert={msgAlert} user={user} addClick={addClick} addButtonClick={addButtonClick} setAddButtonClick={setAddButtonClick} swapiPeople={swapiPeople} />
 						</RequireAuth>}
 				/>
 				<Route path='/People/:id'
@@ -284,25 +283,25 @@ const App = () => {
 					element={
 						<RequireAuth user={user}>
 							<FaveSpeciesDetails msgAlert={msgAlert} user={user} swapiPeople={swapiPeople}
-							addClick={addClick}addButtonClick={addButtonClick} setAddButtonClick={setAddButtonClick} />
+								addClick={addClick} addButtonClick={addButtonClick} setAddButtonClick={setAddButtonClick} />
 						</RequireAuth>}
 				/>
 				<Route path='/Planets/:id'
 					element={
 						<RequireAuth user={user}>
-							<FavePlanetDetails msgAlert={msgAlert} user={user} films={films} swapiPeople={swapiPeople} planets={planets}addClick={addClick} addButtonClick={addButtonClick} setAddButtonClick={setAddButtonClick}/>
+							<FavePlanetDetails msgAlert={msgAlert} user={user} films={films} swapiPeople={swapiPeople} planets={planets} addClick={addClick} addButtonClick={addButtonClick} setAddButtonClick={setAddButtonClick} />
 						</RequireAuth>}
 				/>
 				<Route path='/Vehicles/:id'
 					element={
 						<RequireAuth user={user}>
-							<FaveVehicleDetails msgAlert={msgAlert} user={user} addClick={addClick} addButtonClick={addButtonClick} setAddButtonClick={setAddButtonClick}/>
+							<FaveVehicleDetails msgAlert={msgAlert} user={user} addClick={addClick} addButtonClick={addButtonClick} setAddButtonClick={setAddButtonClick} />
 						</RequireAuth>}
 				/>
 				<Route path='/Starships/:id'
 					element={
 						<RequireAuth user={user}>
-							<FaveStarshipDetails msgAlert={msgAlert} user={user} addClick={addClick} addButtonClick={addButtonClick} setAddButtonClick={setAddButtonClick}/>
+							<FaveStarshipDetails msgAlert={msgAlert} user={user} addClick={addClick} addButtonClick={addButtonClick} setAddButtonClick={setAddButtonClick} />
 						</RequireAuth>}
 				/>
 				<Route path='/Dashboard/People'
@@ -313,11 +312,11 @@ const App = () => {
 				/>
 				<Route path='/Dashboard/Planets'
 					element={
-						<RequireAuth user={user}><Planets msgAlert={msgAlert} user={user} planets={planets} addClick={addClick} addButtonClick={addButtonClick}/> </RequireAuth>}
+						<RequireAuth user={user}><Planets msgAlert={msgAlert} user={user} planets={planets} addClick={addClick} addButtonClick={addButtonClick} /> </RequireAuth>}
 				/>
 				<Route path='/Dashboard/Vehicles'
 					element={
-						<RequireAuth user={user}><Vehicles msgAlert={msgAlert} user={user} vehicles={vehicles} addClick={addClick} addButtonClick={addButtonClick}/>
+						<RequireAuth user={user}><Vehicles msgAlert={msgAlert} user={user} vehicles={vehicles} addClick={addClick} addButtonClick={addButtonClick} />
 						</RequireAuth>}
 				/>
 				<Route path='/Dashboard/Species'
@@ -327,7 +326,7 @@ const App = () => {
 				/>
 				<Route path='/Dashboard/Starships'
 					element={
-						<RequireAuth user={user}><Starships msgAlert={msgAlert} user={user} starships={starships} addClick={addClick} addButtonClick={addButtonClick}/>
+						<RequireAuth user={user}><Starships msgAlert={msgAlert} user={user} starships={starships} addClick={addClick} addButtonClick={addButtonClick} />
 						</RequireAuth>}
 				/>
 				<Route path='/Dashboard/Films'
@@ -342,13 +341,13 @@ const App = () => {
 				/>
 				<Route path='/Dashboard/Planets/:name'
 					element={
-						<RequireAuth user={user}><PlanetsDetails 
-						msgAlert={msgAlert}
-						user={user} 
-						people={people} 
-						planets={planets} 
-						films={films}  
-						swapiPeople={swapiPeople} />
+						<RequireAuth user={user}><PlanetsDetails
+							msgAlert={msgAlert}
+							user={user}
+							people={people}
+							planets={planets}
+							films={films}
+							swapiPeople={swapiPeople} />
 						</RequireAuth>}
 				/>
 				<Route path='/Dashboard/Vehicles/:name'
@@ -363,7 +362,7 @@ const App = () => {
 				/>
 				<Route path='/Dashboard/Species/:name'
 					element={
-						<RequireAuth user={user}><SpeciesDetails msgAlert={msgAlert} user={user} people={people} species={species}  swapiPeople={swapiPeople} />
+						<RequireAuth user={user}><SpeciesDetails msgAlert={msgAlert} user={user} people={people} species={species} swapiPeople={swapiPeople} />
 						</RequireAuth>}
 				/>
 				<Route path='/Dashboard/Starships/:name'

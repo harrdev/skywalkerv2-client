@@ -16,12 +16,13 @@ const FaveVehicleDetails = (props) => {
                     if (vehicle === true) {
                         setUsersVehicles(vehicles)
                     }
+                    return vehicles
                 })
             })
             .catch((error) => {
                 console.log(error)
             })
-    }, [])
+    }, [user, faveVehicle.id])
 
     const v = usersVehicles
 

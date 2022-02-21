@@ -11,14 +11,14 @@ const FaveStarships = (props) => {
             .then(res => {
                 let faveStarshipsArray = []
                 res.data.starships.map((starships) => {
-                    faveStarshipsArray.push(starships)
+                    return faveStarshipsArray.push(starships)
                 })
                 setFaveStarships(faveStarshipsArray)
             })
             .catch((error) => {
                 console.log(error)
             })
-    }, [])
+    }, [user])
 
     const removeStarships = (s) => {
         deleteStarships(s._id, user)
@@ -27,7 +27,7 @@ const FaveStarships = (props) => {
                     .then(res => {
                         let faveStarshipsArray = []
                         res.data.starships.map((starships) => {
-                            faveStarshipsArray.push(starships)
+                            return faveStarshipsArray.push(starships)
                         })
                         setFaveStarships(faveStarshipsArray)
                     })

@@ -11,14 +11,14 @@ const FaveSpecies = (props) => {
             .then(res => {
                 let faveSpeciesArray = []
                 res.data.species.map((species) => {
-                    faveSpeciesArray.push(species)
+                    return faveSpeciesArray.push(species)
                 })
                 setFaveSpecies(faveSpeciesArray)
             })
             .catch((error) => {
                 console.log("getPeople and setting state errored out: ", error)
             })
-    }, [])
+    }, [user])
 
     const removeSpecies = (s) => {
         deleteSpecies(s._id, user)
@@ -27,7 +27,7 @@ const FaveSpecies = (props) => {
                     .then(res => {
                         let faveSpeciesArray = []
                         res.data.species.map((species) => {
-                            faveSpeciesArray.push(species)
+                            return faveSpeciesArray.push(species)
                         })
                         setFaveSpecies(faveSpeciesArray)
                     })

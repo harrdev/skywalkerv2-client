@@ -11,14 +11,14 @@ const FavePeople = (props) => {
             .then(res => {
                 let favePeopleArray = []
                 res.data.people.map((people) => {
-                    favePeopleArray.push(people)
+                    return favePeopleArray.push(people)
                 })
                 setFavePeople(favePeopleArray)
             })
             .catch((error) => {
                 console.log("getPeople and setting state errored out: ", error)
             })
-    }, [])
+    }, [user])
 
     const removePerson = (s) => {
         deletePerson(s._id, user)
@@ -27,7 +27,7 @@ const FavePeople = (props) => {
                     .then(res => {
                         let favePeopleArray = []
                         res.data.people.map((people) => {
-                            favePeopleArray.push(people)
+                            return favePeopleArray.push(people)
                         })
                         setFavePeople(favePeopleArray)
                     })

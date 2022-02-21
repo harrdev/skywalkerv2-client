@@ -11,14 +11,14 @@ const FaveFilms = (props) => {
             .then(res => {
                 let faveFilmsArray = []
                 res.data.film.map((films) => {
-                    faveFilmsArray.push(films)
+                    return faveFilmsArray.push(films)
                 })
                 setFaveFilms(faveFilmsArray)
             })
             .catch((error) => {
                 console.log(error)
             })
-    }, [])
+    }, [user])
 
     const removeFilm = (s) => {
         deleteFilms(s._id, user)
@@ -27,7 +27,7 @@ const FaveFilms = (props) => {
                     .then(res => {
                         let faveFilmsArray = []
                         res.data.film.map((films) => {
-                            faveFilmsArray.push(films)
+                            return faveFilmsArray.push(films)
                         })
                         setFaveFilms(faveFilmsArray)
                     })

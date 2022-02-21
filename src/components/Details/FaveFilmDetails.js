@@ -15,12 +15,13 @@ const FaveFilmDetails = (props) => {
                     if (film === true) {
                         setUsersFilms(films)
                     }
+                    return films
                 })
             })
             .catch((error) => {
                 console.log(error)
             })
-    }, [])
+    }, [user, faveFilm.id])
 
     const f = usersFilms
     

@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { editFilm } from '../../api/forms';
 
@@ -25,22 +25,22 @@ const EditFilm = (props) => {
         <div className="addForm">
             <form onSubmit={handleSubmit}>
                 <label htmlFor="title">Title</label>
-                <input class="input" type="text" value={inputs.title} name="title" onChange={handleChange} /><br />
+                <input className="input" type="text" value={inputs.title} name="title" onChange={handleChange} /><br />
 
                 <label htmlFor="episode_id">Episode ID</label>
-                <input class="input" type="text" value={inputs.episode_id} name="episode_id" onChange={handleChange} /><br />
+                <input className="input" type="text" value={inputs.episode_id} name="episode_id" onChange={handleChange} /><br />
 
                 <label htmlFor="opening_crawl">Opening Crawl</label>
-                <textarea class="input" type="text" value={inputs.opening_crawl} name="opening_crawl" onChange={handleChange} /><br />
+                <textarea className="input" type="text" value={inputs.opening_crawl} name="opening_crawl" onChange={handleChange} /><br />
 
                 <label htmlFor="director">Director</label>
-                <input class="input" type="text" value={inputs.director} name="director" onChange={handleChange} /><br />
+                <input className="input" type="text" value={inputs.director} name="director" onChange={handleChange} /><br />
 
                 <label htmlFor="producer">Producer</label>
-                <input class="input" type="text" value={inputs.producer} name="producer" onChange={handleChange} /><br />
+                <input className="input" type="text" value={inputs.producer} name="producer" onChange={handleChange} /><br />
 
                 <label htmlFor="release_date">Release Date</label>
-                <input class="input" type="text" value={inputs.release_date} name="release_date" onChange={handleChange} /><br />
+                <input className="input" type="text" value={inputs.release_date} name="release_date" onChange={handleChange} /><br />
 
                 <input type="submit" value="Edit Film" />
             </form>

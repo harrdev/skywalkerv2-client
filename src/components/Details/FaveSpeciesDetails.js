@@ -18,12 +18,13 @@ const FaveSpeciesDetails = (props) => {
                     if (species === true) {
                         setUsersSpecies(specie)
                     }
+                    return specie
                 })
             })
             .catch((error) => {
                 console.log(error)
             })
-    }, [])
+    }, [user, faveSpecies.id])
 
     const s = usersSpecies
 

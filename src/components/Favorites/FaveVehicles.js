@@ -11,14 +11,14 @@ const FaveVehicles = (props) => {
             .then(res => {
                 let faveVehiclesArray = []
                 res.data.vehicles.map((vehicles) => {
-                    faveVehiclesArray.push(vehicles)
+                    return faveVehiclesArray.push(vehicles)
                 })
                 setFaveVehicles(faveVehiclesArray)
             })
             .catch((error) => {
                 console.log(error)
             })
-    }, [])
+    }, [user])
 
     const removeVehicles = (s) => {
         deleteVehicles(s._id, user)
@@ -27,7 +27,7 @@ const FaveVehicles = (props) => {
                     .then(res => {
                         let faveVehiclesArray = []
                         res.data.vehicles.map((vehicles) => {
-                            faveVehiclesArray.push(vehicles)
+                            return faveVehiclesArray.push(vehicles)
                         })
                         setFaveVehicles(faveVehiclesArray)
                     })

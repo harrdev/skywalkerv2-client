@@ -11,14 +11,14 @@ const FavePlanets = (props) => {
             .then(res => {
                 let favePlanetsArray = []
                 res.data.planet.map((planets) => {
-                    favePlanetsArray.push(planets)
+                    return favePlanetsArray.push(planets)
                 })
                 setFavePlanets(favePlanetsArray)
             })
             .catch((error) => {
                 console.log("getPeople and setting state errored out: ", error)
             })
-    }, [])
+    }, [user])
 
     const removePlanet = (s) => {
         deletePlanets(s._id, user)
@@ -27,7 +27,7 @@ const FavePlanets = (props) => {
                     .then(res => {
                         let favePlanetsArray = []
                         res.data.planet.map((planets) => {
-                            favePlanetsArray.push(planets)
+                            return favePlanetsArray.push(planets)
                         })
                         setFavePlanets(favePlanetsArray)
                     })

@@ -15,12 +15,13 @@ const FaveStarshipDetails = (props) => {
                     if (starship === true) {
                         setUsersStarships(starships)
                     }
+                    return starships
                 })
             })
             .catch((error) => {
                 console.log(error)
             })
-    }, [])
+    }, [user, faveStarship.id])
 
     const s = usersStarships
     return (
