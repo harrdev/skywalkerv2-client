@@ -1,7 +1,7 @@
 let apiUrl
 const apiUrls = {
     // YOU MUST CHANGE PRODUCTION URL WHEN DEPLOYING
-	production: 'https://skywalkeracademy.herokuapp.com/',
+	production: 'https://skywalkeracademy.herokuapp.com',
 	development: 'http://localhost:8000',
 }
 
