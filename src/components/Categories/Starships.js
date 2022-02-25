@@ -23,6 +23,7 @@ const Starships = (props) => {
 
 	const addToFave = (info) => {
 		addStarships(info, user)
+		console.log("Add to fave button clicked")
 		alert("Starship added to your favorites")
 	}
 
