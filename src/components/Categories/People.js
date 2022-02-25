@@ -24,6 +24,7 @@ const People = (props) => {
 
 	const addToFave = (info) => {
 		addPerson(info, user)
+		alert("Person added to your favorites")
 	}
 
 	return (

@@ -23,6 +23,7 @@ const Species = (props) => {
 
 	const addToFave = (info) => {
 		addSpecies(info, user)
+		alert("Species added to your favorites")
 	}
 
 	return (

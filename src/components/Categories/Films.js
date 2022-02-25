@@ -24,6 +24,7 @@ const Films = (props) => {
 
 	const addToFave = (info) => {
 		addFilms(info, user)
+		alert("Film added to your favorites")
 	}
 
 	return (

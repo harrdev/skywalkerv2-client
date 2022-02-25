@@ -23,6 +23,7 @@ const Planets = (props) => {
 
 	const addToFave = (info) => {
 		addPlanet(info, user)
+		alert("Planet added to your favorites")
 	}
 
 	return (

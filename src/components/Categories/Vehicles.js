@@ -23,6 +23,7 @@ const Vehicles = (props) => {
 
 	const addToFave = (info) => {
 		addVehicles(info, user)
+		alert("Vehicle added to your favorites")
 	}
 
 	return (
