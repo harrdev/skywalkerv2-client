@@ -8,6 +8,7 @@ const FaveSpeciesDetails = (props) => {
     const [usersSpecies, setUsersSpecies] = useState([])
     const { user } = props
     const faveSpecies = useParams()
+    const { setAddButtonClick } = props
 
     useEffect(() => {
         getSpecies(user)
@@ -18,13 +19,14 @@ const FaveSpeciesDetails = (props) => {
                     if (species === true) {
                         setUsersSpecies(specie)
                     }
+                    setAddButtonClick(false)
                     return specie
                 })
             })
             .catch((error) => {
                 console.log(error)
             })
-    }, [user, faveSpecies.id])
+    }, [user, faveSpecies.id, setAddButtonClick])
 
     const s = usersSpecies
 

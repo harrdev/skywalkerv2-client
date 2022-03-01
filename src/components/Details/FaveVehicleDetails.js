@@ -7,6 +7,7 @@ const FaveVehicleDetails = (props) => {
     const [usersVehicles, setUsersVehicles] = useState([])
     const { user } = props
     const faveVehicle = useParams()
+    const { setAddButtonClick } = props
 
     useEffect(() => {
         getVehicles(user)
@@ -16,13 +17,14 @@ const FaveVehicleDetails = (props) => {
                     if (vehicle === true) {
                         setUsersVehicles(vehicles)
                     }
+                    setAddButtonClick(false)
                     return vehicles
                 })
             })
             .catch((error) => {
                 console.log(error)
             })
-    }, [user, faveVehicle.id])
+    }, [user, faveVehicle.id, setAddButtonClick])
 
     const v = usersVehicles
 

@@ -7,6 +7,8 @@ const FaveStarshipDetails = (props) => {
     const [usersStarships, setUsersStarships] = useState([])
     const { user } = props
     const faveStarship = useParams()
+    const { setAddButtonClick } = props
+
     useEffect(() => {
         getStarships(user)
             .then(res => {
@@ -15,13 +17,14 @@ const FaveStarshipDetails = (props) => {
                     if (starship === true) {
                         setUsersStarships(starships)
                     }
+                    setAddButtonClick(false)
                     return starships
                 })
             })
             .catch((error) => {
                 console.log(error)
             })
-    }, [user, faveStarship.id])
+    }, [user, faveStarship.id, setAddButtonClick])
 
     const s = usersStarships
     return (

@@ -7,6 +7,7 @@ const FaveFilmDetails = (props) => {
     const [usersFilms, setUsersFilms] = useState([])
     const { user } = props
     const faveFilm = useParams()
+    const { setAddButtonClick } = props
 
     useEffect(() => {
         getFilms(user)
@@ -16,13 +17,14 @@ const FaveFilmDetails = (props) => {
                     if (film === true) {
                         setUsersFilms(films)
                     }
+                    setAddButtonClick(false)
                     return films
                 })
             })
             .catch((error) => {
                 console.log(error)
             })
-    }, [user, faveFilm.id])
+    }, [user, faveFilm.id, setAddButtonClick])
 
     const f = usersFilms
     

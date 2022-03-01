@@ -2,8 +2,6 @@ import apiUrl from '../apiConfig'
 import axios from 'axios'
 
 export const addStarships = (info, user) => {
-    console.log("Adding starship API client, this is the info: ", info)
-    console.log("Client API user info: ", user)
     return axios({
         method: 'POST',
         headers: {
@@ -31,7 +29,6 @@ export const addStarships = (info, user) => {
 }
 
 export const getStarships = (res) => {
-    console.log("Client API route hit for getStarship")
     return axios({
     method: 'GET',
     headers: {

@@ -7,6 +7,7 @@ const FavePlanetDetails = (props) => {
     const [usersPlanets, setUsersPlanets] = useState([])
     const { user } = props
     const favePlanet = useParams()
+    const { setAddButtonClick } = props
 
     useEffect(() => {
         getPlanets(user)
@@ -16,13 +17,14 @@ const FavePlanetDetails = (props) => {
                     if (planet === true) {
                         setUsersPlanets(planets)
                     }
+                    setAddButtonClick(false)
                     return planets
                 })
             })
             .catch((error) => {
                 console.log(error)
             })
-    }, [user, favePlanet.id])
+    }, [user, favePlanet.id, setAddButtonClick])
 
     const p = usersPlanets
 
