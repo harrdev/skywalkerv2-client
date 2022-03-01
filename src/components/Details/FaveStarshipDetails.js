@@ -28,15 +28,14 @@ const FaveStarshipDetails = (props) => {
         <div className="container">
             <div className="listLeft">
                 {props.addButtonClick
-                    ?
+                    &&
                     <div className="listRight">
                         <button onClick={props.addClick}>Cancel</button>
                         <div className="editForm">
                             <h2>Edit Starship</h2>
                             <EditStarship user={user} props={s} />
                         </div>
-                    </div>
-                    : ""}
+                    </div>}
             </div>
             <div className="listRight">
                 <button onClick={props.addClick}>Edit Starship</button>

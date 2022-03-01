@@ -7,6 +7,7 @@ const FaveFilmDetails = (props) => {
     const [usersFilms, setUsersFilms] = useState([])
     const { user } = props
     const faveFilm = useParams()
+
     useEffect(() => {
         getFilms(user)
             .then(res => {
@@ -29,15 +30,14 @@ const FaveFilmDetails = (props) => {
         <div className="container">
             <div className="listLeft">
                 {props.addButtonClick
-                    ?
+                    &&
                     <div className="listRight">
                         <button onClick={props.addClick}>Cancel</button>
                         <div className="editForm">
                             <h2>Edit Film</h2>
                             <EditFilm user={user} film={f} />
                         </div>
-                    </div>
-                    : ""}
+                    </div>}
             </div>
             <div className="listRight">
                 <button onClick={props.addClick}>Edit Film</button>

@@ -32,15 +32,14 @@ const FaveSpeciesDetails = (props) => {
         <div className="container">
             <div className="listLeft">
                 {props.addButtonClick
-                    ?
+                    &&
                     <div className="listRight">
                         <button onClick={props.addClick}>Cancel</button>
                         <div className="editForm">
                             <h2>Edit Species</h2>
                             <EditSpecies user={user} props={s} />
                         </div>
-                    </div>
-                    : ""}
+                    </div>}
             </div>
             <div className="listRight">
                 <button onClick={props.addClick}>Edit Species</button>

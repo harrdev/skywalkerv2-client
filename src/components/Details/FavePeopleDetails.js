@@ -30,15 +30,14 @@ const FavePeopleDetails = (props) => {
         <div className="container">
             <div className="listLeft">
                 {props.addButtonClick
-                    ?
+                    &&
                     <div className="listRight">
                         <button onClick={props.addClick}>Cancel</button>
                         <div className="editForm">
                             <h2>Edit Person</h2>
                             <EditPerson user={user} people={p} />
                         </div>
-                    </div>
-                    : ""}
+                    </div>}
             </div>
             <div className="listRight">
                 <button onClick={props.addClick}>Edit Person</button>

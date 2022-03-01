@@ -30,15 +30,14 @@ const FavePlanetDetails = (props) => {
         <div className="container">
             <div className="listLeft">
                 {props.addButtonClick
-                    ?
+                    &&
                     <div className="listRight">
                         <button onClick={props.addClick}>Cancel</button>
                         <div className="editForm">
                             <h2>Edit Planet</h2>
                             <EditPlanet user={user} planet={p} />
                         </div>
-                    </div>
-                    : ""}
+                    </div>}
 
             </div>
             <div className="listRight">
