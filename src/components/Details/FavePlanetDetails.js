@@ -64,7 +64,7 @@ const FavePlanetDetails = (props) => {
                                         </li>
                                     )
                                 })
-                            : "Loading..."}
+                            : "Loading"}
                     </h3>
                     <h3>Residents:
                         {p.residents
@@ -75,7 +75,7 @@ const FavePlanetDetails = (props) => {
                                     </li>
                                 )
                             })
-                            : "Loading..."}
+                            : "Loading"}
                     </h3>
                 </div>
             </div>

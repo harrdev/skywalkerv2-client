@@ -36,14 +36,18 @@ const PlanetDetails = (props) => {
 			<h3>Surface Water: {p.surface_water}</h3>
 			<h3>Population: {p.population}</h3>
 			<h3>Featured in Films:
+				{planetFilms.length > 0 ?
 				<ul>
 					{planetFilms}
 				</ul>
+				: " None"}
 			</h3>
 			<h3>Residents:
+				{planetResidents.length > 0 ?
 				<ul>
 					{planetResidents}
 				</ul>
+				: " Unknown"}
 			</h3>
 		</div>
 	)
