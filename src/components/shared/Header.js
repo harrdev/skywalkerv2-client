@@ -46,7 +46,7 @@ const unauthenticatedOptions = (
 const Header = ({ user }) => (
 	<Navbar bg='primary' variant='dark' expand='md'>
 		<Navbar.Brand>
-			<Link to='/' style={linkStyle}>
+			<Link to='/dashboard' style={linkStyle}>
 				Skywalker Academy
 			</Link>
 		</Navbar.Brand>
