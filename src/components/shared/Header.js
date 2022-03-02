@@ -11,7 +11,7 @@ const authenticatedOptions = (
 	<>
 		<Nav.Link>
 			<Link to='dashboard' style={linkStyle}>
-				Dashboard
+				Academy
 			</Link>
 		</Nav.Link>
 		<Nav.Link>

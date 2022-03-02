@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { addPlanet } from '../../api/planets'
 import AddPlanetForm from '../Forms/AddPlanetForm'
 import { useState } from 'react'
 
@@ -20,11 +19,6 @@ const Planets = (props) => {
 			return el.name.toLowerCase().includes(inputText)
 		}
 	})
-
-	const addToFave = (info) => {
-		addPlanet(info, user)
-		alert("Planet added to your favorites")
-	}
 
 	return (
 		<div className="container">
@@ -49,9 +43,6 @@ const Planets = (props) => {
 						<li key={i}>
 							<div>
 								<Link to={`${planet.name}`} style={{ fontSize: "25px", padding: "15px" }}>{planet.name}</Link>
-							</div>
-							<div id="buttonDiv">
-								<button className="button" onClick={() => addToFave(planet)}>Add To Favorites</button>
 							</div>
 						</li>
 					))}
