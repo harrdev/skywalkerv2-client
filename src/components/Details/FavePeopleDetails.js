@@ -60,14 +60,13 @@ const FavePeopleDetails = (props) => {
                     <div>
                         <h3>Affiliations:
                             {p.affiliations
-                                ? p.affiliations.map((a, i) => {
+                                && p.affiliations.map((a, i) => {
                                     return (
                                         <li key={i}>
                                             {a}
                                         </li>
                                     )
-                                })
-                                : "Loading..."}
+                                })}
                         </h3>
                     </div>
                     <h3>Wiki: <a rel="noreferrer" target="_blank" href={p.wiki}>{p.name}</a></h3>

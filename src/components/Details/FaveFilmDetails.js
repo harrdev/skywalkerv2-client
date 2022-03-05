@@ -52,13 +52,14 @@ const FaveFilmDetails = (props) => {
                     <h3>Release Date: {f.release_date}</h3>
                     <h3>Characters in film:
                         {f.characters
-                            && props.swapiPeople.filter(character => f.characters.includes(character.url)).map((person, i) => {
+                            ? props.swapiPeople.filter(character => f.characters.includes(character.url)).map((person, i) => {
                                 return (
                                     <li key={i}>
                                         {person.name}
                                     </li>
                                 )
-                            })}
+                            })
+                        : "Loading..."}
                     </h3>
                 </div>
             </div>
